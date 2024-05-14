@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&family=Oxanium:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
 
 @font-face {
   font-family: 'Xolonium';
@@ -459,6 +459,91 @@ strong {
 }
 
 /* end font */
+
+/* start button */
+
+.btn {
+  width: 300px;
+  padding: 18px;
+  position: relative;
+  background: var(--color);
+  border-radius: 50px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn span:first-child {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.btn span:not(:first-child) {
+  background-color: var(--text);
+  transition: top 0.5s ease, left 0.5s ease, right 0.5s ease;
+  z-index: 1;
+}
+
+.btn span:nth-child(2) {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 0;
+  z-index: 1;
+  width: 25%;
+  height: 100%;
+}
+
+.btn:hover span:nth-child(2) {
+  top: 0;
+  right: 0;
+}
+
+.btn span:nth-child(3) {
+  content: "";
+  position: absolute;
+  left: 25%;
+  top: -100%;
+  z-index: 1;
+  height: 100%;
+  width: 25%;
+}
+
+.btn:hover span:nth-child(3) {
+  top: 0;
+  left: 50%;
+}
+
+.btn span:nth-child(4) {
+  content: "";
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  top: 100%;
+  width: 25%;
+}
+
+.btn:hover span:nth-child(4) {
+  top: 0;
+  left: 25%;
+}
+
+.btn span:nth-child(5) {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 0;
+  height: 100%;
+  width: 25%;
+}
+
+.btn:hover span:nth-child(5) {
+  top: 0;
+  left: 0;
+}
+
+/* end button */
 
 /* start header */
 
