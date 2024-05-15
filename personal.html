@@ -116,16 +116,111 @@
               </button>
             </div>
             <div class="personal__forms active">
-              <form action="" class="personal__form">
+              <form action="" id="personal__form" class="personal__form">
                 <h3 class="personal__form_head">Основные данные:</h3>
+                <div class="form__group">
+                  <div class="form__control">
+                    <input class="form__input" type="text" minl="4" maxl="40" id="lastname" placeholder="Иванов" />
+                    <small class="form__counter"><span class="form__counter_min">0</span> из <span class="form__counter_max">40</span></small>
+                    <label class="form__label body__small" for="lastname">Фамилия: <span>*</span></label>
+                    <span class="form__bar"><span></span></span>
+                    <span class="form__border"><span></span></span>
+                    <small class="form__error">Введите фамилию</small>
+                  </div>
+                  <div class="form__control">
+                    <input class="form__input" type="text" minl="4" maxl="40" id="firstname" placeholder="Иван" />
+                    <small class="form__counter"><span class="form__counter_min">0</span> из <span class="form__counter_max">40</span></small>
+                    <label class="form__label body__small" for="firstname">Имя: <span>*</span></label>
+                    <span class="form__bar"><span></span></span>
+                    <span class="form__border"><span></span></span>
+                    <small class="form__error">Введите имя</small>
+                  </div>
+                  <div class="form__control">
+                    <input class="form__input" type="text" minl="4" maxl="40" id="surname" placeholder="Иванович" />
+                    <small class="form__counter"><span class="form__counter_min">0</span> из <span class="form__counter_max">40</span></small>
+                    <label class="form__label body__small" for="surname">Отчество: <span>*</span></label>
+                    <span class="form__bar"><span></span></span>
+                    <span class="form__border"><span></span></span>
+                    <small class="form__error">Введите отчество</small>
+                  </div>
+                </div>
+                <div class="form__group">
+                  <div class="form__control">
+                    <input class="form__input" type="date" minl="0" maxl="12" id="dateofbirth" />
+                    <small class="form__counter"><span class="form__counter_min">0</span> из <span class="form__counter_max">40</span></small>
+                    <label class="form__label body__small" for="dateofbirth">Дата рождения: <span>*</span></label>
+                    <span class="form__bar"><span></span></span>
+                    <span class="form__border"><span></span></span>
+                    <small class="form__error">Введите дату рождения</small>
+                  </div>
+                  <div class="form__control">
+                    <input class="form__input" type="text" minl="4" maxl="40" id="email" placeholder="0fggjj@mail.ru" />
+                    <small class="form__counter"><span class="form__counter_min">0</span> из <span class="form__counter_max">40</span></small>
+                    <label class="form__label body__small" for="email">E-mail: <span>*</span></label>
+                    <span class="form__bar"><span></span></span>
+                    <span class="form__border"><span></span></span>
+                    <small class="form__error">Введите e-mail</small>
+                  </div>
+                  <div class="form__control">
+                    <input class="form__input" data-phone-pattern type="text" minl="4" maxl="40" id="phone" placeholder="+7 (999) 555-66-77" />
+                    <small class="form__counter"><span class="form__counter_min">0</span> из <span class="form__counter_max">40</span></small>
+                    <label class="form__label body__small" for="phone">Номер телефона: <span>*</span></label>
+                    <span class="form__bar"><span></span></span>
+                    <span class="form__border"><span></span></span>
+                    <small class="form__error">Введите корректный номер</small>
+                  </div>
+                </div>
                 <div class="form__control">
-                  <input class="form__input" type="text" minl="4" maxl="40" id="username" />
+                  <input class="form__input" type="text" minl="4" maxl="40" id="address" placeholder="г.Москва, ул. Пролетарская, д.55, кв. 6" />
                   <small class="form__counter"><span class="form__counter_min">0</span> из <span class="form__counter_max">0</span></small>
-                  <label class="form__label body__small" for="username">Фамилия: <span>*</span></label>
+                  <label class="form__label body__small" for="address">Адрес регистрации: <span>*</span></label>
                   <span class="form__bar"><span></span></span>
                   <span class="form__border"><span></span></span>
-                  <small class="form__error">Введите фамилию</small>
+                  <small class="form__error">Введите корректный адрес</small>
                 </div>
+                <button class="btn btn__white form__btn">
+                  <span>Cохранить</span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+              </form>
+              <form action="" id="change__form" class="personal__form">
+                <h3 class="personal__form_head">Основные данные:</h3>
+                <div class="form__group">
+                  <div class="form__control">
+                    <input class="form__input" type="text" minl="4" maxl="40" id="lastname" placeholder="Старый пароль" />
+                    <small class="form__counter"><span class="form__counter_min">0</span> из <span class="form__counter_max">40</span></small>
+                    <label class="form__label body__small" for="lastname">Старый пароль: <span>*</span></label>
+                    <span class="form__bar"><span></span></span>
+                    <span class="form__border"><span></span></span>
+                    <small class="form__error">Введите фамилию</small>
+                  </div>
+                  <div class="form__control">
+                    <input class="form__input" type="text" minl="4" maxl="40" id="firstname" placeholder="Новый пароль" />
+                    <small class="form__counter"><span class="form__counter_min">0</span> из <span class="form__counter_max">40</span></small>
+                    <label class="form__label body__small" for="firstname">Новый пароль: <span>*</span></label>
+                    <span class="form__bar"><span></span></span>
+                    <span class="form__border"><span></span></span>
+                    <small class="form__error">Введите имя</small>
+                  </div>
+                  <div class="form__control">
+                    <input class="form__input" type="text" minl="4" maxl="40" id="surname" placeholder="Повторите пароль" />
+                    <small class="form__counter"><span class="form__counter_min">0</span> из <span class="form__counter_max">40</span></small>
+                    <label class="form__label body__small" for="surname">Повторите пароль: <span>*</span></label>
+                    <span class="form__bar"><span></span></span>
+                    <span class="form__border"><span></span></span>
+                    <small class="form__error">Введите отчество</small>
+                  </div>
+                </div>
+                <button class="btn btn__white form__btn">
+                  <span>Cохранить</span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
               </form>
             </div>
           </div>
@@ -201,6 +296,7 @@
     </footer>
   </main>
   <script src="js/main.js"></script>
+  <script src="js/form.js"></script>
   <script>
     window.onload = function () {
       window.setTimeout(function () {
