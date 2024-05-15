@@ -1,0 +1,57 @@
+/* Winston font */
+
+@font-face {
+  font-family: 'Winston';
+  src: url('../fonts/Winston/Winston-Bold.woff2') format('woff2'),
+       url('../fonts/Winston/Winston-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Winston';
+  src: url('../fonts/Winston/Winston-SemiBold.woff2') format('woff2'),
+       url('../fonts/Winston/Winston-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Winston';
+  src: url('../fonts/Winston/Winston-Medium.woff2') format('woff2'),
+       url('../fonts/Winston/Winston-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Winston';
+  src: url('../fonts/Winston/Winston-Regular.woff2') format('woff2'),
+      url('../fonts/Winston/Winston-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Rubik font */
+
+@font-face {
+  font-display: swap;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Rubik/Rubik-Regular.woff2') format('woff2'),
+       url('../fonts/Rubik/Rubik-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/Rubik/Rubik-Light.woff2') format('woff2'),
+       url('../fonts/Rubik/Rubik-Light.woff') format('woff');
+}

@@ -73,14 +73,62 @@
       <div class="container personal__container">
         <div class="personal__block">
           <h1 class="personal__head">ЛИЧНЫЙ КАБИНЕТ</h1>
-          <img src="img/personal.webp" alt="">
-          <button class="btn">
-            <span>Активировать</span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+          <div class="personal__flex">
+            <div class="personal__image">
+              <img src="img/personal.webp" alt="">
+            </div>
+            <div class="personal__info">
+              <div class="personal__left">
+                <div class="personal__top">
+                  <h4 class="personal__heading">Иванов иван иванович</h4>
+                  <p class="personal__article">ID : 45968772</p>
+                </div>
+                <div class="personal__bottom">
+                  <p class="personal__age body_one">Возраст: <span>38 лет</span></p>
+                  <p class="personal__male body_one">Пол: <span>Мужской</span></p>
+                </div>
+              </div>
+              <div class="personal__right">
+                <div class="personal__right_flex">
+                  <p class="personal__desc sub_one">Стрелок лиги</p>
+                  <p class="personal__status body_small">Неактивный</p>
+                </div>
+                <button class="btn">
+                  <span>Активировать</span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="personal__data">
+            <div class="personal__tabs">
+              <button class="personal__tab body_small active">
+                Личные данные
+              </button>
+              <button class="personal__tab body_small">
+                Мои соревнования
+              </button>
+              <button class="personal__tab body_small">
+                Моя статистика
+              </button>
+            </div>
+            <div class="personal__forms active">
+              <form action="" class="personal__form">
+                <h3 class="personal__form_head">Основные данные:</h3>
+                <div class="form__control">
+                  <input class="form__input" type="text" minl="4" maxl="40" id="username" />
+                  <small class="form__counter"><span class="form__counter_min">0</span> из <span class="form__counter_max">0</span></small>
+                  <label class="form__label body__small" for="username">Фамилия: <span>*</span></label>
+                  <span class="form__bar"><span></span></span>
+                  <span class="form__border"><span></span></span>
+                  <small class="form__error">Введите фамилию</small>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </section>
