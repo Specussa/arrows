@@ -855,9 +855,31 @@ strong {
   gap: 80px;
 }
 
+.personal__tab_block {
+  max-height: 0;
+  opacity: 0;
+  -webkit-transition: max-height 0s linear, opacity 0.2s linear;
+  transition: max-height 0s linear, opacity 0.2s linear;
+  -webkit-transition-delay: 0.2s, 0s;
+  transition-delay: 0.2s, 0s;
+  overflow: hidden;
+}
+
+.personal__tab_block.active {
+  max-height: 100000px;
+  opacity: 1;
+  -webkit-transition-delay: 0.2s, 0.3s;
+  transition-delay: 0.2s, 0.3s;
+}
+
 .personal__head {
   padding: 0 0 10px;
   text-align: center;
+}
+
+.personal__heading,
+.personal__desc {
+  text-transform: uppercase;
 }
 
 .personal__flex {
@@ -956,7 +978,7 @@ strong {
 }
 
 .personal__tab.active {
-  border-bottom: none;
+  border-bottom: 1px solid transparent;
   background-color: transparent;
 }
 
@@ -967,6 +989,158 @@ strong {
 .personal__form_head {
   padding: 0 0 20px;
   text-transform: uppercase;
+}
+
+.personal__competitions_button,
+.personal__competitions_info {
+  width: 100%;
+}
+
+.personal__competitions_button {
+  display: flex;
+  padding: 40px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.personal__competitions_button_left {
+  display: flex;
+  width: calc(50% - 50px);
+  text-align: left;
+}
+
+.personal__competitions_button_right {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  text-align: left;
+}
+
+.personal__competitions_date,
+.personal__competitions_record {
+  width: calc(50% - 34px);
+}
+
+.personal__competitions_info {
+  max-height: 0px;
+  opacity: 0;
+  -webkit-transition: max-height 0.3s linear, opacity 0.3s linear;
+  transition: max-height 0.3s linear, opacity 0.3s linear;
+  overflow: hidden;
+}
+
+.personal__competitions_info.active {
+  max-height: 2000px;
+  opacity: 1;
+}
+
+.personal__competitions_flex {
+  display: flex;
+  padding: 0 40px 40px;
+  gap: 50px;
+}
+
+.personal__competitions_left {
+  display: flex;
+  width: calc(50% - 50px);
+}
+
+.personal__competitions_image {
+  display: flex;
+  align-items: flex-start;
+}
+
+.personal__competitions_image img {
+  display: flex;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.personal__competitions_right {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.personal__competitions_top {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.personal__competitions_bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.personal__competitions_arrow {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  -webkit-transition: max-height 0.3s linear, opacity 0.3s linear;
+  transition: max-height 0.3s linear, opacity 0.3s linear;
+}
+
+.personal__competitions_arrow {
+  display: flex;
+  width: 24px;
+  height: 24px;
+}
+
+.personal__competitions_arrow svg {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+}
+
+.personal__competitions_button.active:hover .personal__competitions_arrow svg,
+.personal__competitions_button .personal__competitions_arrow svg {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.personal__competitions_button.active .personal__competitions_arrow svg,
+.personal__competitions_button:hover .personal__competitions_arrow svg {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.personal__competitions_record {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.personal__competitions_record::before {
+  content: "•";
+  font-size: 24px;
+}
+
+.personal__competitions_record.active {
+  color: var(--green);
+}
+
+.personal__competitions_record.over {
+  color: var(--error);
+}
+
+.personal__competitions_item {
+  border-top: 1px solid var(--border-gray);
+}
+
+.personal__competitions_discipline span,
+.personal__competitions_place span {
+  color: var(--text-gray);
 }
 
 /* end personal */

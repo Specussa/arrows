@@ -58,3 +58,76 @@ overlay.addEventListener('click', function() {
   document.body.style.height = null;
 })
 // end overlay
+
+// start personal__tab
+const ptActive = document.querySelectorAll(".personal__data .personal__tab");
+const ptforms = document.querySelector('.personal__tab_forms');
+const ptcompetitions = document.querySelector('.personal__tab_competitions');
+const ptstatistics = document.querySelector('.personal__tab_statistics');
+
+const ptbActive = document.querySelectorAll(".personal__data .personal__tab_block");
+const pforms = document.querySelector('.personal__forms');
+const pcompetitions = document.querySelector('.personal__competitions');
+const pstatistics = document.querySelector('.personal__statistics');
+
+if (ptforms && ptcompetitions && ptstatistics) {
+  ptforms.addEventListener('click', function() {
+    if (!ptforms.classList.contains("active")) {
+      ptActive.forEach((n) => n.classList.remove("active"));
+      ptbActive.forEach((n) => n.classList.remove("active"));
+      pforms.classList.add("active");
+      ptforms.classList.add("active");
+    }
+  })
+  
+  ptcompetitions.addEventListener('click', function() {
+    if (!ptcompetitions.classList.contains("active")) {
+      ptActive.forEach((n) => n.classList.remove("active"));
+      ptbActive.forEach((n) => n.classList.remove("active"));
+      pcompetitions.classList.add("active");
+      ptcompetitions.classList.add("active");
+    }
+  })
+  
+  ptstatistics.addEventListener('click', function() {
+    if (!ptstatistics.classList.contains("active")) {
+      ptActive.forEach((n) => n.classList.remove("active"));
+      ptbActive.forEach((n) => n.classList.remove("active"));
+      pstatistics.classList.add("active");
+      ptstatistics.classList.add("active");
+    }
+  })
+}
+// end personal__tab
+
+// start personal__tab
+if (ptforms && ptcompetitions && ptstatistics) {
+  const pcbutton = document.getElementsByClassName("personal__competitions_button");
+  for (i = 0; i < pcbutton.length; i++) {
+    pcbutton[i].onclick = function(e) {
+      const pcbuttonNext = this.nextElementSibling;
+      const headernsl = document.getElementsByClassName("personal__competitions_info");
+      const pcbuttonActive = document.getElementsByClassName("personal__competitions_button active");
+
+      if (pcbuttonNext && pcbuttonNext.classList.contains("active")) {
+        this.classList.remove("active");
+        pcbuttonNext.classList.remove("active");
+        pcbuttonNext.style.maxHeight = null;
+      } else if (pcbuttonNext) {
+        for (var q = 0; q < pcbuttonActive.length; q++) {
+          pcbuttonActive[q].classList.remove("active");
+          headernsl[q].classList.remove("active");
+        }
+        for (var p = 0; p < headernsl.length; p++) {
+          this.classList.remove("active");
+          headernsl[p].classList.remove("active");
+          headernsl[p].style.maxHeight = null;
+        }
+        pcbuttonNext.style.maxHeight = pcbuttonNext.scrollHeight + "px";
+        pcbuttonNext.classList.add("active");
+        this.classList.add("active");
+      }
+    };
+  }
+}
+// end personal__tab

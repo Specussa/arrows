@@ -64,7 +64,7 @@
             <a href="index.html" class="body_small breadcrumbs__link">Главная</a>
           </li>
           <li class="breadcrumbs__item">
-            <a href="systems.html" class="body_small breadcrumbs__link">Авторизация</a>
+            <a href="systems.html" class="body_small breadcrumbs__link">Личный кабинет</a>
           </li>
         </ul>
       </div>
@@ -105,17 +105,17 @@
           </div>
           <div class="personal__data">
             <div class="personal__tabs">
-              <button class="personal__tab body_small active">
+              <button class="personal__tab personal__tab_forms body_small">
                 Личные данные
               </button>
-              <button class="personal__tab body_small">
+              <button class="personal__tab personal__tab_competitions body_small active">
                 Мои соревнования
               </button>
-              <button class="personal__tab body_small">
+              <button class="personal__tab personal__tab_statistics body_small">
                 Моя статистика
               </button>
             </div>
-            <div class="personal__forms active">
+            <div class="personal__tab_block personal__forms">
               <form action="" id="personal__form" class="personal__form">
                 <h3 class="personal__form_head">Основные данные:</h3>
                 <div class="form__group">
@@ -267,6 +267,58 @@
                   <span></span>
                 </button>
               </form>
+            </div>
+            <div class="personal__tab_block personal__competitions active">
+              <ul class="personal__competitions_list">
+                <li class="personal__competitions_item">
+                  <button class="personal__competitions_button">
+                    <div class="personal__competitions_button_left">
+                      <p class="personal__competitions_heading sub_two">Всероссийский Кубок ice dream (xii этап гран-при россии и снг фрмфк)</p>
+                    </div>
+                    <div class="personal__competitions_button_right">
+                      <p class="personal__competitions_date body_two">18-25 мая, 2024г.</p>
+                      <p class="personal__competitions_record body_two active">Идёт запись</p>
+                      <div class="personal__competitions_arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path d="M14.625 8V11.6H4V13.4H14.625V17L21 12.446L14.625 8Z" fill="currentColor"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                  <div class="personal__competitions_info">
+                    <div class="personal__competitions_flex">
+                      <div class="personal__competitions_left">
+                        <div class="personal__competitions_image">
+                          <img src="img/competitions.webp" alt="">
+                        </div>
+                      </div>
+                      <div class="personal__competitions_right">
+                        <div class="personal__competitions_top">
+                          <p class="personal__competitions_discipline body_two"><span>Дисциплина:</span> Спортинг-компакт</p>
+                          <p class="personal__competitions_place body_two"><span>Место:</span> МАУ ГСЦ Ермак, Ростов-на-Дону</p>
+                        </div>
+                        <div class="personal__competitions_bottom">
+                          <p class="personal__competitions_desc body_two">
+                            Lorem ipsum dolor sit amet consectetur. Ante egestas etiam lectus 
+                            lectus cursus blandit. Tellus blandit adipiscing venenatis enim 
+                            sit arcu libero vestibulum condimentum. 
+                          </p>
+                          <button class="btn btn__white personal__competitions_btn">
+                            <span>Подробнее о мероприятии</span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="personal__tab_block personal__statistics">
+              
             </div>
           </div>
         </div>
