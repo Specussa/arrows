@@ -1,3 +1,4 @@
+var i;
 const finputs = document.querySelectorAll(".form__input");
 for (i = 0; i < finputs.length; i++) {
   finputs[i].addEventListener("input", updateformValue);
@@ -68,7 +69,22 @@ if (phone_input) {
 }
 // end mask phone
 
-// start validate form header
+// start form__button_pass
+var fbp = document.getElementsByClassName("form__button_pass");
+for (i = 0; i < fbp.length; i++) {
+  fbp[i].onclick = function(e) {
+    if (this.classList.contains("active")) {
+      this.classList.remove("active");
+      this.parentElement.children[0].setAttribute('type', 'password');
+    } else {
+      this.classList.add("active");
+      this.parentElement.children[0].setAttribute('type', 'text');
+    }
+  };
+}
+// end form__button_pass
+
+// start validate form
 const personalform = document.getElementById('personal__form');
 
 if(personalform) {
@@ -143,9 +159,9 @@ if(personalform) {
 
   personalform.addEventListener('submit', e => {
     e.preventDefault();
-    checkFormInputs();
+    checkpersonalformInputs();
   });
-  function checkFormInputs() {
+  function checkpersonalformInputs() {
     const lastnameValue = lastname.value.trim();
     const firstnameValue = firstname.value.trim();
     const surnameValue = surname.value.trim();
@@ -198,7 +214,8 @@ if(personalform) {
       setErrorFor(email);
     } else if(!/^\d{4}\-\d{2}\-\d{2}$/.test(dateofbirthValue)) {
       setErrorFor(dateofbirth);
-    } else if(lastnameValue !== '' && lastnameValue.length >= lastnameMin && lastnameValue.length <= lastnameMax && 
+    } else if(
+    lastnameValue !== '' && lastnameValue.length >= lastnameMin && lastnameValue.length <= lastnameMax && 
     firstnameValue !== '' && firstnameValue.length >= firstnameMin && firstnameValue.length <= firstnameMax && 
     dateofbirthValue.split("-", 1) < (new Date().getFullYear() - 1) && dateofbirthValue.split("-", 1) > (new Date().getFullYear() - 99) && dateofbirthValue !== '' && dateofbirthValue.length >= dateofbirthMin && dateofbirthValue.length <= dateofbirthMax && 
     emailValue !== '' && emailValue.length >= emailMin && emailValue.length <= emailMax && 
@@ -222,4 +239,73 @@ if(personalform) {
     }
   }
 }
-// end validate personalform header
+// end validate personalform
+
+// start validate personalpass
+const personalpass = document.getElementById('personal__pass');
+
+if(personalpass) {
+  const oldpass = document.getElementById('oldpass');
+  const newpass = document.getElementById('newpass');
+  const repeatpass = document.getElementById('repeatpass');
+  const oldpassMin = oldpass.getAttribute('minl');
+  const oldpassMax = oldpass.getAttribute('maxl');
+  const newpassMin = newpass.getAttribute('minl');
+  const newpassMax = newpass.getAttribute('maxl');
+  const repeatpassMin = repeatpass.getAttribute('minl');
+  const repeatpassMax = repeatpass.getAttribute('maxl');
+
+  oldpass.oninput = function(){
+    this.value = this.value.substr(0, oldpassMax);
+  }
+  newpass.oninput = function(){
+    this.value = this.value.substr(0, newpassMax);
+  }
+  repeatpass.oninput = function(){
+    this.value = this.value.substr(0, repeatpassMax);
+  }
+
+  personalpass.addEventListener('submit', e => {
+    e.preventDefault();
+    checkpersonalpassInputs();
+  });
+  function checkpersonalpassInputs() {
+    const oldpassValue = oldpass.value.trim();
+    const newpassValue = newpass.value.trim();
+    const repeatpassValue = repeatpass.value.trim();
+    
+    if(oldpassValue !== '' && oldpassValue.length >= oldpassMin && oldpassValue.length <= oldpassMax) {
+      setSuccessFor(oldpass);
+    } else {
+      setErrorFor(oldpass);
+    }
+    if(newpassValue !== '' && newpassValue.length >= newpassMin && newpassValue.length <= newpassMax) {
+      setSuccessFor(newpass);
+    } else {
+      setErrorFor(newpass);
+    }
+    if(repeatpassValue !== '' && repeatpassValue.length >= repeatpassMin && repeatpassValue.length <= repeatpassMax && newpassValue === repeatpassValue) {
+      setSuccessFor(repeatpass);
+    } else {
+      setErrorFor(repeatpass);
+    }
+    
+    if(
+    oldpassValue !== '' && oldpassValue.length >= oldpassMin && oldpassValue.length <= oldpassMax && 
+    newpassValue !== '' && newpassValue.length >= newpassMin && newpassValue.length <= newpassMax && 
+    repeatpassValue !== '' && repeatpassValue.length >= repeatpassMin && repeatpassValue.length <= repeatpassMax && newpassValue === repeatpassValue) {
+      fetch('/ajax/sendMail.php', {
+        method: 'POST',
+        body: JSON.stringify({
+          oldpassValue: oldpassValue,
+          newpassValue: newpassValue,
+          repeatpassValue: repeatpassValue
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        },
+      });
+    }
+  }
+}
+// end validate personalpass

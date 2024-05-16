@@ -461,8 +461,8 @@ strong {
   position: relative;
   background-color: var(--color);
   border-radius: 50px;
-  -webkit-transition: background-color 0.4s linear;
-  transition: background-color 0.4s linear;
+  -webkit-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear;
   overflow: hidden;
   cursor: pointer;
 }
@@ -486,8 +486,8 @@ strong {
   z-index: 2;
   color: var(--white);
   text-transform: uppercase;
-  -webkit-transition: color 0.4s linear;
-  transition: color 0.4s linear;
+  -webkit-transition: color 0.3s linear;
+  transition: color 0.3s linear;
 }
 
 .btn__white span:first-child {
@@ -499,71 +499,63 @@ strong {
 }
 
 .btn span:not(:first-child) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
   background-color: var(--text);
-  transition: top 0.5s ease, left 0.5s ease, right 0.5s ease;
+  border-radius: 10px;
+}
+
+.btn span:nth-child(2) {
+  -webkit-transform:translate(-100%, -100%);
+  transform:translate(-100%, -100%);
+}
+
+.btn span:nth-child(3) {
+  -webkit-transform: translate(-100%, 100%);
+  transform: translate(-100%, 100%);
+}
+
+.btn span:nth-child(4) {
+  -webkit-transform: translate(100%, -100%);
+  transform: translate(100%, -100%);
+}
+
+.btn span:nth-child(5) {
+  -webkit-transform: translate(100%, 100%);
+  transform: translate(100%, 100%);
+}
+
+.btn:hover span:nth-child(2) {
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.btn:hover span:nth-child(3) {
+  -webkit-transform: translate(-50%, 50%);
+  transform: translate(-50%, 50%);
+}
+
+.btn:hover span:nth-child(4) {
+  -webkit-transform: translate(50%, -50%);
+  transform: translate(50%, -50%);
+}
+
+.btn:hover span:nth-child(5) {
+  -webkit-transform: translate(50%, 50%);
+  transform: translate(50%, 50%);
+}
+
+.btn span:not(:first-child) {
+  background-color: var(--text);
+  transition: transform 0.4s ease-out;
   z-index: 1;
 }
 
 .btn__white span:not(:first-child) {
   background-color: var(--color);
-}
-
-.btn span:nth-child(2) {
-  content: "";
-  position: absolute;
-  right: 100%;
-  top: 0;
-  z-index: 1;
-  width: 25%;
-  height: 100%;
-}
-
-.btn:hover span:nth-child(2) {
-  top: 0;
-  right: 0;
-}
-
-.btn span:nth-child(3) {
-  content: "";
-  position: absolute;
-  left: 25%;
-  top: -100%;
-  z-index: 1;
-  height: 100%;
-  width: 25%;
-}
-
-.btn:hover span:nth-child(3) {
-  top: 0;
-  left: 50%;
-}
-
-.btn span:nth-child(4) {
-  content: "";
-  position: absolute;
-  left: 50%;
-  height: 100%;
-  top: 100%;
-  width: 25%;
-}
-
-.btn:hover span:nth-child(4) {
-  top: 0;
-  left: 25%;
-}
-
-.btn span:nth-child(5) {
-  content: "";
-  position: absolute;
-  left: 100%;
-  top: 0;
-  height: 100%;
-  width: 25%;
-}
-
-.btn:hover span:nth-child(5) {
-  top: 0;
-  left: 0;
 }
 
 /* end button */
@@ -973,11 +965,8 @@ strong {
 }
 
 .personal__form_head {
+  padding: 0 0 20px;
   text-transform: uppercase;
-}
-
-.personal__forms {
-  padding: 80px 40px;
 }
 
 /* end personal */
@@ -986,6 +975,7 @@ strong {
 
 .personal__forms {
   display: flex;
+  padding: 80px 40px 40px;
   flex-direction: column;
   gap: 40px;
 }
@@ -993,7 +983,7 @@ strong {
 .personal__form {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
 }
 
 .form__group {
@@ -1008,7 +998,7 @@ strong {
 .form__control {
   display: flex;
   margin: 0 0 13px;
-  padding: 0 0 17px;
+  padding: 10px 0 17px;
   flex-direction: column-reverse;
   position: relative;
   -webkit-touch-callout: none;
@@ -1055,18 +1045,49 @@ strong {
 }
 
 .form__input {
-  display: block;
+  display: flex;
   width: calc(100% - 2px);
   height: 54px;
   max-height: 54px;
   padding: 0 20px 0;
   margin: 1px 1px 0;
   border: none;
+  color: var(--text-gray);
   background-color: var(--border-gray);
   position: relative;
   z-index: 2;
-  -webkit-transition: max-height 0.3s linear;
-  transition: max-height 0.3s linear;
+  -webkit-transition: max-height 0.3s linear, background-color 0.3s linear;
+  transition: max-height 0.3s linear, background-color 0.3s linear;
+}
+
+.form__input::-webkit-calendar-picker-indicator {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  z-index: 2;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUgMjJIMTlDMjAuMTAzIDIyIDIxIDIxLjEwMyAyMSAyMFY2QzIxIDQuODk3IDIwLjEwMyA0IDE5IDRIMTdWMkgxNVY0SDlWMkg3VjRINUMzLjg5NyA0IDMgNC44OTcgMyA2VjIwQzMgMjEuMTAzIDMuODk3IDIyIDUgMjJaTTUgN0gxOVY5SDVWN1oiIGZpbGw9IiMzMjMyMzIiLz4KPC9zdmc+Cg==");
+  opacity: 0.5;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+
+.form__input:focus::-webkit-calendar-picker-indicator {
+  opacity: 1;
+}
+
+.form__input::placeholder {
+  color: var(--text-gray);
+}
+
+.form__input:focus,
+.form__input:focus::-webkit-calendar-picker-indicator {
+  color: var(--text);
+  background-color: var(--white);
 }
 
 .form__input:focus {
@@ -1127,7 +1148,7 @@ strong {
 .form__bar::after,
 .form__bar span::before,
 .form__bar span::after {
-  background-color: var(--color);
+  background-color: var(--text);
 }
 
 .form__border::before,
@@ -1207,16 +1228,16 @@ strong {
   padding: 0 0 10px;
   color: var(--text);
   text-transform: uppercase;
-  -webkit-transform: translateX(0px);
-  transform: translateX(0px);
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
   -webkit-transition: transform 0.2s linear, font-size 0.2s linear, color 0.2s linear;
   transition: transform 0.2s linear, font-size 0.2s linear, color 0.2s linear;
 }
 
 .form__input:focus ~ .form__label {
   color: var(--text-gray);
-  -webkit-transform: translateX(20px);
-  transform: translateX(20px);
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
 }
 
 .form__file {
@@ -1264,6 +1285,43 @@ strong {
   width: 200px;
   padding: 14px;
   margin: -13px 0 0 auto;
+}
+
+.form__input.form__input_pass {
+  padding: 0 64px 0 20px;
+}
+
+.form__button_pass {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 20px;
+  bottom: 32px;
+  z-index: 2;
+  color: var(--text-gray);
+  -webkit-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+}
+
+.form__button_pass:hover {
+  color: var(--color);
+}
+
+.form__button_pass svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.form__button_pass svg:nth-child(1),
+.form__button_pass.active svg:nth-child(2) {
+  display: flex;
+}
+
+.form__button_pass.active svg:nth-child(1),
+.form__button_pass svg:nth-child(2) {
+  display: none;
 }
 
 /* end form */
@@ -1314,6 +1372,11 @@ strong {
     font-size: 14px;
     line-height: 17.85px;
   }
+
+  .personal__block {
+    padding: 90px 0 100px;
+    gap: 70px;
+  }
 }
 /* end 1919px */
 
@@ -1322,6 +1385,18 @@ strong {
   .container {
     padding:  0 30px;
   }
+
+  .personal__block {
+    padding: 50px 0px;
+    gap: 70px;
+  }
+  .personal__form_head {
+    padding: 0 0 20px;
+  }
+  .personal__form {
+    gap: 10px;
+  }
+
   .footer__list {
     gap: 20px 40px;
   }
@@ -1377,9 +1452,15 @@ strong {
     font-size: 14px;
     line-height: 17.85px;
   }
+
   .container {
     padding:  0 15px;
   }
+
+  .btn {
+    width: 100%;
+  }
+
   .header__personal span,
   .header__social_link {
     display: none;
@@ -1394,6 +1475,60 @@ strong {
     padding: 15px 0;
     gap: 15px 0;
   }
+
+  .form__group {
+    flex-direction: column;
+    gap: 0;
+  }
+  .form__group .form__control {
+    width: 100%;
+  }
+  .form__btn {
+    margin: 17px 0 0;
+  }
+
+  .personal__image {
+    width: 100%;
+    height: auto;
+  }
+  .personal__flex {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .personal__info {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .personal__left {
+    width: 100%;
+    gap: 20px;
+  }
+  .personal__right {
+    width: 100%;
+    gap: 20px;
+  }
+  .personal__top,
+  .personal__bottom {
+    gap: 10px;
+  }
+  .personal__block {
+    padding: 40px 0 80px;
+    gap: 50px;
+  }
+  .personal__form_head {
+    padding: 0 0 30px;
+  }
+  .personal__form {
+    gap: 0;
+  }
+  .personal__forms {
+    padding: 40px 10px;
+  }
+  .personal__head {
+    padding: 0;
+  }
+
   .footer__logo {
     width: 110px;
     height: 110px;
