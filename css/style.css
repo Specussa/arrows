@@ -1284,7 +1284,7 @@ strong {
 .form__btn {
   width: 200px;
   padding: 14px;
-  margin: -13px 0 0 auto;
+  margin: 7px 0 0 auto;
 }
 
 .form__input.form__input_pass {
@@ -1384,6 +1384,10 @@ strong {
 @media (max-width: 1439px) {
   .container {
     padding:  0 30px;
+  }
+  
+  .form__btn {
+    margin: 17px 0 0 auto;
   }
 
   .personal__block {
