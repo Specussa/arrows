@@ -219,15 +219,15 @@ section {
   opacity: 0;
   visibility: hidden;
   background: transparent;
-  -webkit-transition: visibility 0.5s linear, opacity 0.5s linear, background-color 0.5s linear;
-  transition: visibility 0.5s linear, opacity 0.5s linear, background-color 0.5s linear;
-  -webkit-transition-delay: 0.6s;
-  transition-delay: 0.6s;
+  -webkit-transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
+  transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
 }
 
 .overlay.active {
-  background-color: var(--color);
-  opacity: 0.2;
+  background-color: var(--text);
+  opacity: 0.84;
   visibility: visible;
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
@@ -589,7 +589,7 @@ strong {
 .header {
   display: flex;
   width: 100%;
-  height: 69px;
+  height: 70px;
   align-items: center;
   position: fixed;
   top: 0;
@@ -614,18 +614,74 @@ strong {
 
 .header__buttons {
   display: flex;
+  height: 70px;
   align-items: center;
   gap: 50px;
 }
 
 .header__personal {
   display: flex;
+  height: 70px;
   align-items: center;
   gap: 20px;
 }
 
+.header__personal_list {
+  display: flex;
+  width: max-content;
+  max-height: 0px;
+  flex-direction: column;
+  gap: 15px;
+  position: absolute;
+  top: 69px;
+  right: 0;
+  z-index: 1;
+  opacity: 0;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  -webkit-transition: max-height 0.3s linear, opacity 0.3s linear;
+  transition: max-height 0.3s linear, opacity 0.3s linear;
+  overflow: hidden;
+}
+
+.header__personal_flex.active .header__personal_list {
+  max-height: 2000px;
+  opacity: 1;
+}
+
+.header__personal_item:first-child {
+  padding: 20px 0 0;
+}
+
+.header__personal_item:nth-last-child(2) {
+  padding: 0 0 5px;
+}
+
+.header__personal_link {
+  display: flex;
+  padding: 0 20px;
+}
+
+.header__personal_item:last-child .header__personal_link {
+  padding: 12px 20px;
+  color: var(--text-gray);
+  border-top: 1px solid var(--border);
+  -webkit-transition:  color 0.15s linear, background-color 0.15s linear;
+  transition:  color 0.15s linear, background-color 0.15s linear;
+}
+
+.header__personal_item:last-child .header__personal_link:hover {
+  color: var(--white);
+  background-color: var(--color);
+}
+
+.header__personal_flex.active .header__personal,
 .header__personal:hover {
   color: var(--color);
+}
+
+.header__personal_flex {
+  position: relative;
 }
 
 .header__social {
@@ -957,8 +1013,9 @@ strong {
 
 .personal__right {
   display: flex;
+  width: min-content;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
 }
 
 .personal__right_flex {
@@ -977,6 +1034,11 @@ strong {
   padding: 5px 15px;
   color: var(--text-gray);
   background-color: var(--border);
+}
+
+.personal__status.active {
+  color: var(--green);
+  background-color: #dff0d8;
 }
 
 .personal__data {
@@ -1757,7 +1819,7 @@ strong {
   }
   h3 {
     font-size: 18px;
-    line-height: 21.69px;
+    line-height: 21.70px;
   }
   h4 {
     font-size: 16px;
@@ -1810,6 +1872,61 @@ strong {
   .header__buttons {
     gap: 20px;
   }
+  .header__personal_list {
+    width: 100%;
+    max-height: 100% !important;
+    position: fixed;
+    top: auto;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: 102;
+    border-radius: 15px 15px 0 0;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    -webkit-transition: -webkit-transform 0.3s linear, opacity 0s linear;
+    transition: transform 0.3s linear, opacity 0s linear;
+    -webkit-transition-delay: 0s, 0.3s;
+    transition-delay: 0s, 0.3s;
+  }
+  .header__personal_flex.active .header__personal_list {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+  }
+  .header__personal_overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 101;
+    opacity: 0;
+    visibility: hidden;
+    background: transparent;
+    -webkit-transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
+    transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+  }
+  .header__personal_overlay.active {
+    background-color: var(--text);
+    opacity: 0.84;
+    visibility: visible;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+  }
+  .header__personal_link {
+    padding: 0 15px;
+  }
+  .header__personal_item:first-child {
+    padding: 40px 0 0;
+  }
+  .header__personal_item:nth-last-child(2) {
+    padding: 0 0 15px;
+  }
+
   .breadcrumbs__list {
     padding: 15px 0;
     gap: 15px 0;

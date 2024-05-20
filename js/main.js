@@ -158,3 +158,50 @@ if (pctabfuture && pctabpast) {
   })
 }
 // end personal__competitions_tab
+
+// start personal__tab
+const hp = document.querySelector('.header__personal');
+const hpflex = document.querySelector('.header__personal_flex');
+const hplist = document.querySelector('.header__personal_list');
+const hoverlay = document.querySelector('.header__personal_overlay');
+
+if (hp) {
+  const headerpersonal = document.getElementsByClassName("header__personal");
+  for (i = 0; i < headerpersonal.length; i++) {
+    headerpersonal[i].onclick = function(e) {
+      if (hplist && this.parentElement.classList.contains("active")) {
+        this.parentElement.classList.remove("active");
+        hoverlay.classList.remove("active");
+        hplist.style.maxHeight = null;
+      } else if (hplist) {
+        hplist.style.maxHeight = hplist.scrollHeight + "px";
+        this.parentElement.classList.add("active");
+        hoverlay.classList.add("active");
+      }
+    };
+  }
+  hoverlay.addEventListener('click', function() {
+    if (hoverlay.classList.contains("active")) {
+      hoverlay.classList.remove("active");
+      hpflex.classList.remove("active");
+      hplist.style.maxHeight = null;
+    }
+  })
+  const hplink = document.getElementsByClassName("header__personal_link");
+  for (i = 0; i < hplink.length; i++) {
+    hplink[i].onclick = function(e) {
+      hoverlay.classList.remove("active");
+      hpflex.classList.remove("active");
+      hplist.style.maxHeight = null;
+    };
+  }
+  window.addEventListener('click', e => {
+    const target = e.target
+    if (!target.closest('.header__personal_flex')) {
+      hoverlay.classList.remove("active");
+      hpflex.classList.remove("active");
+      hplist.style.maxHeight = null;
+    }
+  })
+}
+// end personal__tab
