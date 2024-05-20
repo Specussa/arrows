@@ -522,7 +522,11 @@ strong {
   right: 0;
   left: 0;
   bottom: 0;
+  opacity: 0;
   background-color: var(--text);
+  -webkit-transition: transform 0.4s ease-out, opacity 0.4s linear;
+  transition: transform 0.4s ease-out, opacity 0.4s linear;
+  z-index: 1;
   border-radius: 10px;
 }
 
@@ -547,29 +551,27 @@ strong {
 }
 
 .btn:hover span:nth-child(2) {
+  opacity: 0.4;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
 .btn:hover span:nth-child(3) {
+  opacity: 0.4;
   -webkit-transform: translate(-50%, 50%);
   transform: translate(-50%, 50%);
 }
 
 .btn:hover span:nth-child(4) {
+  opacity: 0.4;
   -webkit-transform: translate(50%, -50%);
   transform: translate(50%, -50%);
 }
 
 .btn:hover span:nth-child(5) {
+  opacity: 0.4;
   -webkit-transform: translate(50%, 50%);
   transform: translate(50%, 50%);
-}
-
-.btn span:not(:first-child) {
-  background-color: var(--text);
-  transition: transform 0.4s ease-out;
-  z-index: 1;
 }
 
 .btn__white span:not(:first-child) {
@@ -961,6 +963,7 @@ strong {
 
 .personal__right_flex {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
@@ -1206,6 +1209,90 @@ strong {
 .personal__competitions_tab {
   width: max-content;
   padding: 10px 25px;
+}
+
+.personal__statistics {
+  display: flex;
+  padding: 80px 0 0;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.personal__statistics_head {
+  padding: 0 40px;
+}
+
+.personal__statistics_information {
+  display: flex;
+  padding: 30px 40px;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid var(--border-gray);
+  border-bottom: 1px solid var(--border-gray);
+  background-color: var(--bg-gray);
+}
+
+.personal__statistics_flex {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.personal__statistics_heading {
+  color: var(--color);
+}
+
+.personal__statistics_table_head {
+  padding: 30px 40px;
+}
+
+.personal__statistics_desc {
+  color: var(--text-gray);
+}
+
+.personal__statistics_item {
+  display: flex;
+}
+
+.personal__statistics_item {
+  border-top: 1px solid var(--border-gray);
+}
+
+.personal__statistics_tr {
+  display: flex;
+  flex-direction: column;
+}
+
+.personal__statistics_tr:not(:nth-child(2)):not(:nth-child(3)) {
+  width: 18%;
+}
+
+.personal__statistics_tr:nth-child(2),
+.personal__statistics_tr:nth-child(3) {
+  width: 14%;
+}
+
+.personal__statistics_type,
+.personal__statistics_td {
+  padding: 16px 0 16px 40px;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.personal__statistics_type {
+  border-bottom: 1px solid var(--border-gray);
+}
+
+.personal__statistics_item:not(:first-child) .personal__statistics_type {
+  display: none;
+}
+
+.personal__statistics_tr:not(:last-child) {
+  border-right: 1px solid var(--border-gray);
+}
+
+.personal__statistics_item:nth-child(2n) .personal__statistics_td {
+  background-color: var(--bg-gray);
 }
 
 /* end personal */
@@ -1624,7 +1711,7 @@ strong {
 }
 /* end 1919px */
 
-/* start 1919px */
+/* start 1439px */
 @media (max-width: 1439px) {
   .container {
     padding:  0 30px;
@@ -1645,6 +1732,10 @@ strong {
     gap: 10px;
   }
 
+  .personal__statistics_type, .personal__statistics_td {
+    padding: 16px 0 16px 15px;
+  }
+
   .footer__list {
     gap: 20px 40px;
   }
@@ -1652,9 +1743,9 @@ strong {
     gap: 40px;
   }
 }
-/* end 1919px */
+/* end 1439px */
 
-/* start 1439px */
+/* start 1023px */
 @media (max-width: 1023px) {
   h1 {
     font-size: 24px;
@@ -1735,6 +1826,22 @@ strong {
     margin: 17px 0 0;
   }
 
+  .personal__tabs {
+    overflow-x: scroll;
+  }
+  .personal__tabs::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+    background: var(--bg);
+  }
+  .personal__tabs::-webkit-scrollbar-thumb {
+    display: none;
+    width: 0px;
+    background: var(--color);
+  }
+  .personal__tab {
+    white-space: nowrap;
+  }
   .personal__image {
     width: 100%;
     height: auto;
@@ -1828,6 +1935,95 @@ strong {
   .personal__competitions_bottom {
     gap: 30px;
   }
+  .personal__competitions_date,
+  .personal__competitions_record {
+    width: 100%;
+  }
+  .personal__competitions_button:hover .personal__competitions_arrow svg,
+  .personal__competitions_button .personal__competitions_arrow svg {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  .personal__competitions_item.active .personal__competitions_button .personal__competitions_arrow svg,
+  .personal__competitions_item.active .personal__competitions_button:hover .personal__competitions_arrow svg {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  
+  .personal__statistics {
+    padding: 40px 0 0;
+    gap: 20px;
+  }
+  .personal__statistics_head {
+    padding: 0 15px;
+  }
+  .personal__statistics_information {
+    padding: 20px 15px;
+    flex-direction: column;
+  }
+  .personal__statistics_table_head {
+    padding: 20px 15px;
+  }
+  .personal__statistics_list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .personal__statistics_item {
+    flex-direction: column;
+  }
+  .personal__statistics_item:not(:last-child) {
+    border-top: none;
+  }
+  .personal__statistics_item:not(:last-child) {
+    border-bottom: 1px solid var(--border-gray);
+  }
+  .personal__statistics_tr:not(:nth-child(2)):not(:nth-child(3)),
+  .personal__statistics_tr:nth-child(2),
+  .personal__statistics_tr:nth-child(3) {
+    width: 100%;
+  }
+  .personal__statistics_type {
+    border-bottom: none;
+  }
+  .personal__statistics_item:not(:first-child) .personal__statistics_type {
+    display: block;
+  }
+  .personal__statistics_tr:not(:last-child) {
+    border-right: none;
+  }
+  .personal__statistics_item:nth-child(2n) .personal__statistics_td {
+    background-color: transparent;
+  }
+  .personal__statistics_tr {
+    width: 100%;
+    padding: 16px 15px;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 15px;
+  }
+  .personal__statistics_item:not(:last-child) .personal__statistics_tr {
+    border-top: 1px solid var(--border-gray);
+  }
+  .personal__statistics_tr:not(:first-child) {
+    border-top: 1px solid var(--border-gray);
+  }
+  .personal__statistics_tr:nth-child(2n) {
+    background-color: var(--bg-gray);
+  }
+  .personal__statistics_type,
+  .personal__statistics_td {
+    padding: 0;
+  }
+  .personal__statistics_type,
+  .personal__statistics_td {
+    flex: 1 1 auto;
+    white-space: normal;
+  }
+  .personal__statistics_td {
+    text-align: right;
+  }
 
   .footer__logo {
     width: 110px;
@@ -1867,4 +2063,13 @@ strong {
     gap: 10px;
   }
 }
-/* end 1439px */
+/* end 1023px */
+
+
+/* start 389px */
+@media (max-width: 389px) {
+  .personal__statistics_tr {
+    flex-wrap: wrap;
+  }
+}
+/* end 389px */
