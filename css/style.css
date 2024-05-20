@@ -619,7 +619,8 @@ strong {
   gap: 50px;
 }
 
-.header__personal {
+.header__personal,
+.header__personal_button {
   display: flex;
   height: 70px;
   align-items: center;
@@ -676,6 +677,7 @@ strong {
 }
 
 .header__personal_flex.active .header__personal,
+.header__personal_flex.active .header__personal_button,
 .header__personal:hover {
   color: var(--color);
 }
@@ -695,6 +697,7 @@ strong {
 }
 
 .header__personal svg,
+.header__personal_button svg,
 .header__social_link svg {
   display: flex;
   width: 24px;
@@ -1863,6 +1866,7 @@ strong {
   }
 
   .header__personal span,
+  .header__personal_button span,
   .header__social_link {
     display: none;
   }

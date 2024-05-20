@@ -160,15 +160,15 @@ if (pctabfuture && pctabpast) {
 // end personal__competitions_tab
 
 // start personal__tab
-const hp = document.querySelector('.header__personal');
+const hpbutton = document.querySelector('.header__personal_button');
 const hpflex = document.querySelector('.header__personal_flex');
 const hplist = document.querySelector('.header__personal_list');
 const hoverlay = document.querySelector('.header__personal_overlay');
 
-if (hp) {
-  const headerpersonal = document.getElementsByClassName("header__personal");
-  for (i = 0; i < headerpersonal.length; i++) {
-    headerpersonal[i].onclick = function(e) {
+if (hpbutton) {
+  const headerpersonalButton = document.getElementsByClassName("header__personal_button");
+  for (i = 0; i < headerpersonalButton.length; i++) {
+    headerpersonalButton[i].onclick = function(e) {
       if (hplist && this.parentElement.classList.contains("active")) {
         this.parentElement.classList.remove("active");
         hoverlay.classList.remove("active");
