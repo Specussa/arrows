@@ -1525,7 +1525,7 @@ strong {
   padding: 0 20px 0;
   margin: 1px 1px 0;
   border: none;
-  color: var(--text-gray);
+  color: var(--border);
   background-color: var(--border-gray);
   position: relative;
   z-index: 2;
