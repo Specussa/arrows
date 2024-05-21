@@ -207,9 +207,15 @@ section {
   margin: -1px 0 0;
   padding: 1px 0 0;
   position: relative;
-  opacity: 1;
+  opacity: 0;
   pointer-events: all;
   background-color: var(--bg);
+  -webkit-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+
+body.loaded section {
+  opacity: 1;
 }
 
 .container {
@@ -924,6 +930,10 @@ strong {
 /* end footer */
 
 /* start breadcrumbs */
+
+.breadcrumbs {
+  opacity: 1;
+}
 
 .breadcrumbs__list {
   display: flex;
