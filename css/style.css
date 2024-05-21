@@ -33,12 +33,14 @@
   --text-font: "Onest", sans-serif;
   --bg: #fff;
   --bg-gray: #f9f9f9;
+  --bg-hover: #f3f3f3;
   --white: #fff;
   --text: #323232;
   --text-gray: #949494;
   --border: #f3f3f3;
   --border-gray: #e9e9e9;
   --border-dgray: #404040;
+  --border-hover: #d5d5d5;
   --color: #f6694a;
   --error: #c01818;
   --green: #0a7146;
@@ -485,7 +487,10 @@ strong {
   background-color: var(--color);
 }
 
-.btn__gray:hover,
+.btn__gray:hover {
+  background-color: var(--bg-hover);
+}
+
 .btn__gray.active {
   background-color: var(--text);
 }
@@ -511,7 +516,6 @@ strong {
   color: var(--white);
 }
 
-.btn__gray:hover span:first-child,
 .btn__gray.active span:first-child {
   color: var(--white);
 }
@@ -524,8 +528,8 @@ strong {
   bottom: 0;
   opacity: 0;
   background-color: var(--text);
-  -webkit-transition: transform 0.4s ease-out, opacity 0.4s linear;
-  transition: transform 0.4s ease-out, opacity 0.4s linear;
+  -webkit-transition: transform 0.4s ease-out, opacity 0.4s linear, background-color 0.4s linear;
+  transition: transform 0.4s ease-out, opacity 0.4s linear, background-color 0.4s linear;
   z-index: 1;
   border-radius: 10px;
 }
@@ -579,6 +583,10 @@ strong {
 }
 
 .btn__gray span:not(:first-child) {
+  background-color: var(--bg-hover);
+}
+
+.btn__gray.active span:not(:first-child) {
   background-color: var(--text);
 }
 
@@ -1052,9 +1060,12 @@ strong {
   display: flex;
 }
 
-.personal__tab {
+.personal__tab,
+.personal__tabs_button {
   width: 100%;
   padding: 15px;
+  align-items: center;
+  justify-content: space-between;
   border-bottom: 1px solid var(--border-gray);
   background-color: var(--bg-gray);
   text-transform: uppercase;
@@ -1062,9 +1073,37 @@ strong {
   transition: border 0.2s linear, background-color 0.2s linear;
 }
 
+.personal__tab {
+  display: flex;
+}
+
+.personal__tabs_button {
+  display: none;
+}
+
+.personal__tabs_button svg {
+  display: flex;
+  width: 10px;
+  height: 7px;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+}
+
+.personal__tabs_flex.active .personal__tabs_button svg {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
 .personal__tab:hover {
   border-bottom: 1px solid var(--border-gray);
   background-color: transparent;
+}
+
+.personal__tabs_button:hover {
+  border-bottom: 1px solid var(--border-gray);
+  background-color: var(--bg-gray);
 }
 
 .personal__tab.active {
@@ -1274,6 +1313,10 @@ strong {
 .personal__competitions_tab {
   width: max-content;
   padding: 10px 25px;
+}
+
+.personal__competitions_heading {
+  text-transform: uppercase;
 }
 
 .personal__statistics {
@@ -1529,8 +1572,6 @@ strong {
   position: absolute;
   -webkit-transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
   transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
-  -webkit-transition-delay: 0s, 0s, 0.3s;
-  transition-delay: 0s, 0s, 0.3s;
 }
 
 .form__border::before,
@@ -1544,7 +1585,7 @@ strong {
 .form__bar::after,
 .form__bar span::before,
 .form__bar span::after {
-  background-color: var(--text);
+  background-color: var(--border-hover);
 }
 
 .form__border::before,
@@ -1599,6 +1640,17 @@ strong {
 .form__input:focus ~ .form__bar::after,
 .form__input:focus ~ .form__bar span::after {
   height: 100%;
+}
+
+.form__input:focus ~ .form__border::after,
+.form__input:focus ~ .form__border span::after,
+.form__input:focus ~ .form__border::after,
+.form__input:focus ~ .form__border span::after,
+.form__input:focus ~ .form__bar::before,
+.form__input:focus ~ .form__bar span::before,
+.form__input:focus ~ .form__bar::after,
+.form__input:focus ~ .form__bar span::after {
+  background-color: var(--text);
 }
 
 .form__control.success .form__border::before,
@@ -1947,22 +1999,6 @@ strong {
     margin: 17px 0 0;
   }
 
-  .personal__tabs {
-    overflow-x: scroll;
-  }
-  .personal__tabs::-webkit-scrollbar {
-    display: none;
-    width: 0px;
-    background: var(--bg);
-  }
-  .personal__tabs::-webkit-scrollbar-thumb {
-    display: none;
-    width: 0px;
-    background: var(--color);
-  }
-  .personal__tab {
-    white-space: nowrap;
-  }
   .personal__image {
     width: 100%;
     height: auto;
@@ -2069,6 +2105,28 @@ strong {
   .personal__competitions_item.active .personal__competitions_button:hover .personal__competitions_arrow svg {
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
+  }
+  .personal__tabs {
+    max-height: 0px;
+    flex-direction: column;
+    opacity: 0;
+    -webkit-transition: max-height 0.3s linear, opacity 0.3s linear;
+    transition: max-height 0.3s linear, opacity 0.3s linear;
+    overflow: hidden;
+  }
+  .personal__tabs_flex.active .personal__tabs {
+    max-height: 2000px;
+    opacity: 1;
+  }
+  .personal__tab:not(:last-child) {
+    border-right: none;
+  }
+  .personal__tab.active {
+      border-bottom: 1px solid var(--border-gray);
+      background-color: var(--white);
+  }
+  .personal__tabs_button {
+    display: flex;
   }
   
   .personal__statistics {

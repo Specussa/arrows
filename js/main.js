@@ -60,6 +60,7 @@ overlay.addEventListener('click', function() {
 // end overlay
 
 // start personal__tab
+const ptabsbutton = document.querySelector('.personal__tabs_button');
 const ptActive = document.querySelectorAll(".personal__data .personal__tab");
 const ptforms = document.querySelector('.personal__tab_forms');
 const ptcompetitions = document.querySelector('.personal__tab_competitions');
@@ -77,6 +78,9 @@ if (ptforms && ptcompetitions && ptstatistics) {
       ptbActive.forEach((n) => n.classList.remove("active"));
       pforms.classList.add("active");
       ptforms.classList.add("active");
+      ptabsbutton.children[0].innerText = ptforms.innerText;
+      ptabsbutton.parentElement.classList.remove("active");
+      ptabsbutton.nextElementSibling.style.maxHeight = null;
     }
   })
   
@@ -86,6 +90,9 @@ if (ptforms && ptcompetitions && ptstatistics) {
       ptbActive.forEach((n) => n.classList.remove("active"));
       pcompetitions.classList.add("active");
       ptcompetitions.classList.add("active");
+      ptabsbutton.children[0].innerText = ptcompetitions.innerText;
+      ptabsbutton.parentElement.classList.remove("active");
+      ptabsbutton.nextElementSibling.style.maxHeight = null;
     }
   })
   
@@ -95,39 +102,32 @@ if (ptforms && ptcompetitions && ptstatistics) {
       ptbActive.forEach((n) => n.classList.remove("active"));
       pstatistics.classList.add("active");
       ptstatistics.classList.add("active");
+      ptabsbutton.children[0].innerText = ptstatistics.innerText;
+      ptabsbutton.parentElement.classList.remove("active");
+      ptabsbutton.nextElementSibling.style.maxHeight = null;
     }
   })
 }
 // end personal__tab
 
-// start personal__tab
+// start personal__competitions_button
 if (ptforms && ptcompetitions && ptstatistics) {
   const pcbutton = document.getElementsByClassName("personal__competitions_button");
   for (i = 0; i < pcbutton.length; i++) {
     pcbutton[i].onclick = function(e) {
       const pcbuttonNext = this.nextElementSibling;
-      // const pcinfo = document.getElementsByClassName("personal__competitions_info");
-      // const pcbuttonActive = document.getElementsByClassName("personal__competitions_item active");
 
       if (pcbuttonNext && this.parentElement.classList.contains("active")) {
         this.parentElement.classList.remove("active");
         pcbuttonNext.style.maxHeight = null;
       } else if (pcbuttonNext) {
-        // for (var q = 0; q < pcbuttonActive.length; q++) {
-        //   pcbuttonActive[q].classList.remove("active");
-        //   pcinfo[q].classList.remove("active");
-        // }
-        // for (var p = 0; p < pcinfo.length; p++) {
-        //   pcinfo[p].classList.remove("active");
-        //   pcinfo[p].style.maxHeight = null;
-        // }
         pcbuttonNext.style.maxHeight = pcbuttonNext.scrollHeight + "px";
         this.parentElement.classList.add("active");
       }
     };
   }
 }
-// end personal__tab
+// end personal__competitions_button
 
 // start personal__competitions_tab
 const ptabActive = document.querySelectorAll(".personal__data .personal__competitions_tab");
@@ -159,7 +159,7 @@ if (pctabfuture && pctabpast) {
 }
 // end personal__competitions_tab
 
-// start personal__tab
+// start header__personal_button
 const hpbutton = document.querySelector('.header__personal_button');
 const hpflex = document.querySelector('.header__personal_flex');
 const hplist = document.querySelector('.header__personal_list');
@@ -204,4 +204,22 @@ if (hpbutton) {
     }
   })
 }
-// end personal__tab
+// end header__personal_button
+
+// start personal__tabs_button
+if (ptabsbutton) {
+  const ptbutton = document.getElementsByClassName("personal__tabs_button");
+  for (i = 0; i < ptbutton.length; i++) {
+    ptbutton[i].onclick = function(e) {
+      const ptbuttonNext = this.nextElementSibling;
+      if (ptbuttonNext && this.parentElement.classList.contains("active")) {
+        this.parentElement.classList.remove("active");
+        ptbuttonNext.style.maxHeight = null;
+      } else if (ptbuttonNext) {
+        ptbuttonNext.style.maxHeight = ptbuttonNext.scrollHeight + "px";
+        this.parentElement.classList.add("active");
+      }
+    };
+  }
+}
+// end personal__tabs_button
