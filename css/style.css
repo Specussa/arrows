@@ -1362,6 +1362,7 @@ strong {
 
 .personal__statistics_head {
   padding: 0 40px;
+  text-transform: uppercase;
 }
 
 .personal__statistics_information {
@@ -1386,6 +1387,7 @@ strong {
 
 .personal__statistics_table_head {
   padding: 30px 40px;
+  text-transform: uppercase;
 }
 
 .personal__statistics_desc {
@@ -1427,10 +1429,6 @@ strong {
 
 .personal__statistics_item:not(:first-child) .personal__statistics_type {
   display: none;
-}
-
-.personal__statistics_tr:not(:last-child) {
-  border-right: 1px solid var(--border-gray);
 }
 
 .personal__statistics_item:nth-child(2n) .personal__statistics_td {
