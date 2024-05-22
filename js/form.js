@@ -88,59 +88,72 @@ for (i = 0; i < fbp.length; i++) {
 const personalform = document.getElementById('personal__form');
 
 if(personalform) {
-  const lastname = document.getElementById('lastname');
-  const firstname = document.getElementById('firstname');
-  const surname = document.getElementById('surname');
-  const dateofbirth = document.getElementById('dateofbirth');
-  const email = document.getElementById('email');
-  const phone = document.getElementById('phone');
-  const address = document.getElementById('address');
-  const lastnameMin = lastname.getAttribute('minl');
-  const lastnameMax = lastname.getAttribute('maxl');
-  const firstnameMin = firstname.getAttribute('minl');
-  const firstnameMax = firstname.getAttribute('maxl');
-  const surnameMin = surname.getAttribute('minl');
-  const surnameMax = surname.getAttribute('maxl');
-  const dateofbirthMin = dateofbirth.getAttribute('minl');
-  const dateofbirthMax = dateofbirth.getAttribute('maxl');
-  const emailMin = email.getAttribute('minl');
-  const emailMax = email.getAttribute('maxl');
-  const phoneMin = phone.getAttribute('minl');
-  const phoneMax = phone.getAttribute('maxl');
-  const addressMin = address.getAttribute('minl');
-  const addressMax = address.getAttribute('maxl');
-  lastname.oninput = function(){
-    this.value = this.value.substr(0, lastnameMax);
+  const fpsuccess = document.querySelector(".personal__form .form__pop_success");
+  const fperror = document.querySelector(".personal__form .form__pop_error");
+  const plastname = document.getElementById('personal__lastname');
+  const pfirstname = document.getElementById('personal__firstname');
+  const psurname = document.getElementById('personal__surname');
+  const pdateofbirth = document.getElementById('personal__dateofbirth');
+  const pemail = document.getElementById('personal__email');
+  const pphone = document.getElementById('personal__phone');
+  const paddress = document.getElementById('personal__address');
+  const plastnameMin = plastname.getAttribute('minl');
+  const plastnameMax = plastname.getAttribute('maxl');
+  const pfirstnameMin = pfirstname.getAttribute('minl');
+  const pfirstnameMax = pfirstname.getAttribute('maxl');
+  const psurnameMin = psurname.getAttribute('minl');
+  const psurnameMax = psurname.getAttribute('maxl');
+  const pdateofbirthMin = pdateofbirth.getAttribute('minl');
+  const pdateofbirthMax = pdateofbirth.getAttribute('maxl');
+  const pemailMin = pemail.getAttribute('minl');
+  const pemailMax = pemail.getAttribute('maxl');
+  const pphoneMin = pphone.getAttribute('minl');
+  const pphoneMax = pphone.getAttribute('maxl');
+  const paddressMin = paddress.getAttribute('minl');
+  const paddressMax = paddress.getAttribute('maxl');
+  plastname.oninput = function(){
+    this.value = this.value.substr(0, plastnameMax);
     this.value = this.value.replace(/[0-9]/g, '');
     this.value = this.value.replace(/[()!?•—@:,'";№\-_=« »<>%#~`&\/\$\^\.\*\+\\\{\}\[\]\(\|]$/g, '');
+    if(fpsuccess && fpsuccess.classList.contains("active")){fpsuccess.classList.remove('active')};
+    if(fperror && fperror.classList.contains("active")){fperror.classList.remove('active')};
   }
-  firstname.oninput = function(){
-    this.value = this.value.substr(0, firstnameMax);
+  pfirstname.oninput = function(){
+    this.value = this.value.substr(0, pfirstnameMax);
     this.value = this.value.replace(/[0-9]/g, '');
     this.value = this.value.replace(/[()!?•—@:,'";№\-_=« »<>%#~`&\/\$\^\.\*\+\\\{\}\[\]\(\|]$/g, '');
+    if(fpsuccess && fpsuccess.classList.contains("active")){fpsuccess.classList.remove('active')};
+    if(fperror && fperror.classList.contains("active")){fperror.classList.remove('active')};
   }
-  surname.oninput = function(){
-    this.value = this.value.substr(0, surnameMax);
+  psurname.oninput = function(){
+    this.value = this.value.substr(0, psurnameMax);
     this.value = this.value.replace(/[0-9]/g, '');
     this.value = this.value.replace(/[()!?•—@:,'";№\-_=« »<>%#~`&\/\$\^\.\*\+\\\{\}\[\]\(\|]$/g, '');
+    if(fpsuccess && fpsuccess.classList.contains("active")){fpsuccess.classList.remove('active')};
+    if(fperror && fperror.classList.contains("active")){fperror.classList.remove('active')};
   }
-  dateofbirth.oninput = function(){
-    this.value = this.value.substr(0, dateofbirthMax);
+  pdateofbirth.oninput = function(){
+    this.value = this.value.substr(0, pdateofbirthMax);
   }
-  email.oninput = function(){
-    this.value = this.value.substr(0, emailMax);
+  pemail.oninput = function(){
+    this.value = this.value.substr(0, pemailMax);
+    this.value = this.value.replace(/[а-яА-ЯёЁ]$/g, '');
     this.value = this.value.replace(/[()!?•—:,'";№\-_=« »<>%#~`&\/\$\^\*\+\\\{\}\[\]\(\|]$/g, '');
+    if(fpsuccess && fpsuccess.classList.contains("active")){fpsuccess.classList.remove('active')};
+    if(fperror && fperror.classList.contains("active")){fperror.classList.remove('active')};
   }
-  phone.oninput = function(){
-    this.value = this.value.substr(0, phoneMax);
+  pphone.oninput = function(){
+    this.value = this.value.substr(0, pphoneMax);
   }
-  address.oninput = function(){
-    this.value = this.value.substr(0, addressMax);
+  paddress.oninput = function(){
+    this.value = this.value.substr(0, paddressMax);
     this.value = this.value.replace(/[()!?•—@'";№_=« »<>%#~`&\/\$\^\\*\+\\\{\}\[\]\(\|]$/g, '');
+    if(fpsuccess && fpsuccess.classList.contains("active")){fpsuccess.classList.remove('active')};
+    if(fperror && fperror.classList.contains("active")){fperror.classList.remove('active')};
   }
 
-  email.addEventListener('input', function () {
-    const emailValid = email.value.trim();
+  pemail.addEventListener('input', function () {
+    const emailValid = pemail.value.trim();
     this.nextElementSibling.children[0].textContent = Math.max(0, Math.min(this.getAttribute('maxl'), this.value.length));
     if (this.value.length < this.getAttribute('minl')) {
       this.parentElement.classList.add('error');
@@ -162,75 +175,77 @@ if(personalform) {
     checkpersonalformInputs();
   });
   function checkpersonalformInputs() {
-    const lastnameValue = lastname.value.trim();
-    const firstnameValue = firstname.value.trim();
-    const surnameValue = surname.value.trim();
-    const dateofbirthValue = dateofbirth.value.trim();
-    const emailValue = email.value.trim();
-    const phoneValue = phone.value.trim();
-    const addressValue = address.value.trim();
+    const plastnameValue = plastname.value.trim();
+    const pfirstnameValue = pfirstname.value.trim();
+    const psurnameValue = psurname.value.trim();
+    const pdateofbirthValue = pdateofbirth.value.trim();
+    const pemailValue = pemail.value.trim();
+    const pphoneValue = pphone.value.trim();
+    const paddressValue = paddress.value.trim();
     
-    if(lastnameValue !== '' && lastnameValue.length >= lastnameMin && lastnameValue.length <= lastnameMax) {
-      setSuccessFor(lastname);
+    if(plastnameValue !== '' && plastnameValue.length >= plastnameMin && plastnameValue.length <= plastnameMax) {
+      setSuccessFor(plastname);
     } else {
-      setErrorFor(lastname);
+      setErrorFor(plastname);
     }
-    if(firstnameValue !== '' && firstnameValue.length >= firstnameMin && firstnameValue.length <= firstnameMax) {
-      setSuccessFor(firstname);
+    if(pfirstnameValue !== '' && pfirstnameValue.length >= pfirstnameMin && pfirstnameValue.length <= pfirstnameMax) {
+      setSuccessFor(pfirstname);
     } else {
-      setErrorFor(firstname);
+      setErrorFor(pfirstname);
     }
-    if(surnameValue !== '' && surnameValue.length >= surnameMin && surnameValue.length <= surnameMax) {
-      setSuccessFor(surname);
+    if(psurnameValue !== '' && psurnameValue.length >= psurnameMin && psurnameValue.length <= psurnameMax) {
+      setSuccessFor(psurname);
     } else {
-      setErrorFor(surname);
+      setErrorFor(psurname);
     }
-    if(!/^\d{4}\-\d{2}\-\d{2}$/.test(dateofbirthValue)) {
-      setErrorFor(dateofbirth);
-    } else if (dateofbirthValue.split("-", 1) < (new Date().getFullYear() - 1) && dateofbirthValue.split("-", 1) > (new Date().getFullYear() - 99) && dateofbirthValue !== '' && dateofbirthValue.length >= dateofbirthMin && dateofbirthValue.length <= dateofbirthMax) {
-      setSuccessFor(dateofbirth);
+    if(!/^\d{4}\-\d{2}\-\d{2}$/.test(pdateofbirthValue)) {
+      setErrorFor(pdateofbirth);
+    } else if (pdateofbirthValue.split("-", 1) < (new Date().getFullYear() - 1) && pdateofbirthValue.split("-", 1) > (new Date().getFullYear() - 99) && pdateofbirthValue !== '' && pdateofbirthValue.length >= pdateofbirthMin && pdateofbirthValue.length <= pdateofbirthMax) {
+      setSuccessFor(pdateofbirth);
     } else {
-      setErrorFor(dateofbirth);
+      setErrorFor(pdateofbirth);
     }
-    if(!isFormEmailValid(emailValue)) {
-      setErrorFor(email);
-    } else if (emailValue !== '' && emailValue.length >= emailMin && emailValue.length <= emailMax) {
-      setSuccessFor(email);
+    if(!isFormEmailValid(pemailValue)) {
+      setErrorFor(pemail);
+    } else if (pemailValue !== '' && pemailValue.length >= pemailMin && pemailValue.length <= pemailMax) {
+      setSuccessFor(pemail);
     } else {
-      setErrorFor(email);
+      setErrorFor(pemail);
     }
-    if(phoneValue !== '' && phoneValue.length >= phoneMin && phoneValue.length <= phoneMax) {
-      setSuccessFor(phone);
+    if(pphoneValue !== '' && pphoneValue.length >= pphoneMin && pphoneValue.length <= pphoneMax) {
+      setSuccessFor(pphone);
     } else {
-      setErrorFor(phone);
+      setErrorFor(pphone);
     }
-    if(addressValue !== '' && addressValue.length >= addressMin && addressValue.length <= addressMax) {
-      setSuccessFor(address);
+    if(paddressValue !== '' && paddressValue.length >= paddressMin && paddressValue.length <= paddressMax) {
+      setSuccessFor(paddress);
     } else {
-      setErrorFor(address);
+      setErrorFor(paddress);
     }
     
-    if(!isFormEmailValid(emailValue)) {
-      setErrorFor(email);
-    } else if(!/^\d{4}\-\d{2}\-\d{2}$/.test(dateofbirthValue)) {
-      setErrorFor(dateofbirth);
+    if(!isFormEmailValid(pemailValue)) {
+      setErrorFor(pemail);
+    } else if(!/^\d{4}\-\d{2}\-\d{2}$/.test(pdateofbirthValue)) {
+      setErrorFor(pdateofbirth);
     } else if(
-    lastnameValue !== '' && lastnameValue.length >= lastnameMin && lastnameValue.length <= lastnameMax && 
-    firstnameValue !== '' && firstnameValue.length >= firstnameMin && firstnameValue.length <= firstnameMax && 
-    dateofbirthValue.split("-", 1) < (new Date().getFullYear() - 1) && dateofbirthValue.split("-", 1) > (new Date().getFullYear() - 99) && dateofbirthValue !== '' && dateofbirthValue.length >= dateofbirthMin && dateofbirthValue.length <= dateofbirthMax && 
-    emailValue !== '' && emailValue.length >= emailMin && emailValue.length <= emailMax && 
-    phoneValue !== '' && phoneValue.length >= phoneMin && phoneValue.length <= phoneMax && 
-    addressValue !== '' && addressValue.length >= addressMin && addressValue.length <= addressMax) {
+    plastnameValue !== '' && plastnameValue.length >= plastnameMin && plastnameValue.length <= plastnameMax && 
+    pfirstnameValue !== '' && pfirstnameValue.length >= pfirstnameMin && pfirstnameValue.length <= pfirstnameMax && 
+    pdateofbirthValue.split("-", 1) < (new Date().getFullYear() - 1) && pdateofbirthValue.split("-", 1) > (new Date().getFullYear() - 99) && pdateofbirthValue !== '' && pdateofbirthValue.length >= pdateofbirthMin && pdateofbirthValue.length <= pdateofbirthMax && 
+    pemailValue !== '' && pemailValue.length >= pemailMin && pemailValue.length <= pemailMax && 
+    pphoneValue !== '' && pphoneValue.length >= pphoneMin && pphoneValue.length <= pphoneMax && 
+    paddressValue !== '' && paddressValue.length >= paddressMin && paddressValue.length <= paddressMax) {
+      fperror.classList.add('active');
+      fpsuccess.classList.add('active');
       fetch('/ajax/sendMail.php', {
         method: 'POST',
         body: JSON.stringify({
-          lastnameValue: lastnameValue,
-          firstnameValue: firstnameValue,
-          surnameValue: surnameValue,
-          dateofbirthValue: dateofbirthValue,
-          emailValue: emailValue,
-          phoneValue: phoneValue,
-          addressValue: addressValue
+          plastnameValue: plastnameValue,
+          pfirstnameValue: pfirstnameValue,
+          psurnameValue: psurnameValue,
+          pdateofbirthValue: pdateofbirthValue,
+          pemailValue: pemailValue,
+          pphoneValue: pphoneValue,
+          paddressValue: paddressValue
         }),
         headers: {
           "Content-type": "application/json; charset=UTF-8"
@@ -245,24 +260,32 @@ if(personalform) {
 const personalpass = document.getElementById('personal__pass');
 
 if(personalpass) {
-  const oldpass = document.getElementById('oldpass');
-  const newpass = document.getElementById('newpass');
-  const repeatpass = document.getElementById('repeatpass');
-  const oldpassMin = oldpass.getAttribute('minl');
-  const oldpassMax = oldpass.getAttribute('maxl');
-  const newpassMin = newpass.getAttribute('minl');
-  const newpassMax = newpass.getAttribute('maxl');
-  const repeatpassMin = repeatpass.getAttribute('minl');
-  const repeatpassMax = repeatpass.getAttribute('maxl');
+  const fpsuccess = document.querySelector(".personal__pass .form__pop_success");
+  const fperror = document.querySelector(".personal__pass .form__pop_error");
+  const poldpass = document.getElementById('personal__oldpass');
+  const pnewpass = document.getElementById('personal__newpass');
+  const prepeatpass = document.getElementById('personal__repeatpass');
+  const poldpassMin = poldpass.getAttribute('minl');
+  const poldpassMax = poldpass.getAttribute('maxl');
+  const pnewpassMin = pnewpass.getAttribute('minl');
+  const pnewpassMax = pnewpass.getAttribute('maxl');
+  const prepeatpassMin = prepeatpass.getAttribute('minl');
+  const prepeatpassMax = prepeatpass.getAttribute('maxl');
 
-  oldpass.oninput = function(){
-    this.value = this.value.substr(0, oldpassMax);
+  poldpass.oninput = function(){
+    this.value = this.value.substr(0, poldpassMax);
+    if(fpsuccess && fpsuccess.classList.contains("active")){fpsuccess.classList.remove('active')};
+    if(fperror && fperror.classList.contains("active")){fperror.classList.remove('active')};
   }
-  newpass.oninput = function(){
-    this.value = this.value.substr(0, newpassMax);
+  pnewpass.oninput = function(){
+    this.value = this.value.substr(0, pnewpassMax);
+    if(fpsuccess && fpsuccess.classList.contains("active")){fpsuccess.classList.remove('active')};
+    if(fperror && fperror.classList.contains("active")){fperror.classList.remove('active')};
   }
-  repeatpass.oninput = function(){
-    this.value = this.value.substr(0, repeatpassMax);
+  prepeatpass.oninput = function(){
+    this.value = this.value.substr(0, prepeatpassMax);
+    if(fpsuccess && fpsuccess.classList.contains("active")){fpsuccess.classList.remove('active')};
+    if(fperror && fperror.classList.contains("active")){fperror.classList.remove('active')};
   }
 
   personalpass.addEventListener('submit', e => {
@@ -270,36 +293,38 @@ if(personalpass) {
     checkpersonalpassInputs();
   });
   function checkpersonalpassInputs() {
-    const oldpassValue = oldpass.value.trim();
-    const newpassValue = newpass.value.trim();
-    const repeatpassValue = repeatpass.value.trim();
+    const poldpassValue = poldpass.value.trim();
+    const pnewpassValue = pnewpass.value.trim();
+    const prepeatpassValue = prepeatpass.value.trim();
     
-    if(oldpassValue !== '' && oldpassValue.length >= oldpassMin && oldpassValue.length <= oldpassMax) {
-      setSuccessFor(oldpass);
+    if(poldpassValue !== '' && poldpassValue.length >= poldpassMin && poldpassValue.length <= poldpassMax) {
+      setSuccessFor(poldpass);
     } else {
-      setErrorFor(oldpass);
+      setErrorFor(poldpass);
     }
-    if(newpassValue !== '' && newpassValue.length >= newpassMin && newpassValue.length <= newpassMax) {
-      setSuccessFor(newpass);
+    if(pnewpassValue !== '' && pnewpassValue.length >= pnewpassMin && pnewpassValue.length <= pnewpassMax) {
+      setSuccessFor(pnewpass);
     } else {
-      setErrorFor(newpass);
+      setErrorFor(pnewpass);
     }
-    if(repeatpassValue !== '' && repeatpassValue.length >= repeatpassMin && repeatpassValue.length <= repeatpassMax && newpassValue === repeatpassValue) {
-      setSuccessFor(repeatpass);
+    if(prepeatpassValue !== '' && prepeatpassValue.length >= prepeatpassMin && prepeatpassValue.length <= prepeatpassMax && pnewpassValue === prepeatpassValue) {
+      setSuccessFor(prepeatpass);
     } else {
-      setErrorFor(repeatpass);
+      setErrorFor(prepeatpass);
     }
     
     if(
-    oldpassValue !== '' && oldpassValue.length >= oldpassMin && oldpassValue.length <= oldpassMax && 
-    newpassValue !== '' && newpassValue.length >= newpassMin && newpassValue.length <= newpassMax && 
-    repeatpassValue !== '' && repeatpassValue.length >= repeatpassMin && repeatpassValue.length <= repeatpassMax && newpassValue === repeatpassValue) {
+    poldpassValue !== '' && poldpassValue.length >= poldpassMin && poldpassValue.length <= poldpassMax && 
+    pnewpassValue !== '' && pnewpassValue.length >= pnewpassMin && pnewpassValue.length <= pnewpassMax && 
+    prepeatpassValue !== '' && prepeatpassValue.length >= prepeatpassMin && prepeatpassValue.length <= prepeatpassMax && pnewpassValue === prepeatpassValue) {
+      fperror.classList.add('active');
+      fpsuccess.classList.add('active');
       fetch('/ajax/sendMail.php', {
         method: 'POST',
         body: JSON.stringify({
-          oldpassValue: oldpassValue,
-          newpassValue: newpassValue,
-          repeatpassValue: repeatpassValue
+          poldpassValue: poldpassValue,
+          pnewpassValue: pnewpassValue,
+          prepeatpassValue: prepeatpassValue
         }),
         headers: {
           "Content-type": "application/json; charset=UTF-8"
@@ -309,3 +334,159 @@ if(personalpass) {
   }
 }
 // end validate personalpass
+
+// start validate auth__form
+const authform = document.getElementById('auth__form');
+
+if(authform) {
+  const fpsuccess = document.querySelector(".auth__form .form__pop_success");
+  const fperror = document.querySelector(".auth__form .form__pop_error");
+  const aemail = document.getElementById('auth__email');
+  const apass = document.getElementById('auth__pass');
+  const aemailMin = aemail.getAttribute('minl');
+  const apassMin = apass.getAttribute('minl');
+  const apassMax = apass.getAttribute('maxl');
+  const aemailMax = aemail.getAttribute('maxl');
+
+  aemail.oninput = function(){
+    this.value = this.value.substr(0, aemailMax);
+    this.value = this.value.replace(/[а-яА-ЯёЁ]$/g, '');
+    this.value = this.value.replace(/[()!?•—:,'";№\-_=« »<>%#~`&\/\$\^\*\+\\\{\}\[\]\(\|]$/g, '');
+    if(fpsuccess && fpsuccess.classList.contains("active")){fpsuccess.classList.remove('active')};
+    if(fperror && fperror.classList.contains("active")){fperror.classList.remove('active')};
+  }
+  apass.oninput = function(){
+    this.value = this.value.substr(0, apassMax);
+    if(fpsuccess && fpsuccess.classList.contains("active")){fpsuccess.classList.remove('active')};
+    if(fperror && fperror.classList.contains("active")){fperror.classList.remove('active')};
+  }
+
+  aemail.addEventListener('input', function () {
+    const emailValid = aemail.value.trim();
+    this.nextElementSibling.children[0].textContent = Math.max(0, Math.min(this.getAttribute('maxl'), this.value.length));
+    if (this.value.length < this.getAttribute('minl')) {
+      this.parentElement.classList.add('error');
+      this.parentElement.classList.remove('success');
+      this.nextElementSibling.classList.remove('success');
+    } else if (!isFormEmailValid(emailValid)) {
+      this.parentElement.classList.add('error');
+      this.parentElement.classList.remove('success');
+      this.nextElementSibling.classList.remove('success');
+    } else {
+      this.parentElement.classList.remove('error');
+      this.parentElement.classList.add('success');
+      this.nextElementSibling.classList.add('success');
+    }
+  })
+
+  authform.addEventListener('submit', e => {
+    e.preventDefault();
+    checkauthformInputs();
+  });
+  function checkauthformInputs() {
+    const apassValue = apass.value.trim();
+    const aemailValue = aemail.value.trim();
+    
+    if(apassValue !== '' && apassValue.length >= apassMin && apassValue.length <= apassMax) {
+      setSuccessFor(apass);
+    } else {
+      setErrorFor(apass);
+    }
+    if(!isFormEmailValid(aemailValue)) {
+      setErrorFor(aemail);
+    } else if (aemailValue !== '' && aemailValue.length >= aemailMin && aemailValue.length <= aemailMax) {
+      setSuccessFor(aemail);
+    } else {
+      setErrorFor(aemail);
+    }
+    
+    if(!isFormEmailValid(aemailValue)) {
+      setErrorFor(aemail);
+    } else if(
+    apassValue !== '' && apassValue.length >= apassMin && apassValue.length <= apassMax && 
+    aemailValue !== '' && aemailValue.length >= aemailMin && aemailValue.length <= aemailMax ) {
+      // window.location.href = 'personal.html';
+      fperror.classList.add('active');
+      fpsuccess.classList.add('active');
+      fetch('/ajax/sendMail.php', {
+        method: 'POST',
+        body: JSON.stringify({
+          aemailValue: aemailValue,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        },
+      });
+    }
+  }
+}
+// end validate auth__form
+
+// start validate recovery__form
+const recoveryform = document.getElementById('recovery__form');
+
+if(recoveryform) {
+  const fpsuccess = document.querySelector(".recovery__form .form__pop_success");
+  const fperror = document.querySelector(".recovery__form .form__pop_error");
+  const remail = document.getElementById('recovery__email');
+  const remailMin = remail.getAttribute('minl');
+  const remailMax = remail.getAttribute('maxl');
+  remail.oninput = function(){
+    this.value = this.value.substr(0, remailMax);
+    this.value = this.value.replace(/[а-яА-ЯёЁ]$/g, '');
+    this.value = this.value.replace(/[()!?•—:,'";№\-_=« »<>%#~`&\/\$\^\*\+\\\{\}\[\]\(\|]$/g, '');
+    if(fpsuccess && fpsuccess.classList.contains("active")){fpsuccess.classList.remove('active')};
+    if(fperror && fperror.classList.contains("active")){fperror.classList.remove('active')};
+  }
+
+  remail.addEventListener('input', function () {
+    const emailValid = remail.value.trim();
+    this.nextElementSibling.children[0].textContent = Math.max(0, Math.min(this.getAttribute('maxl'), this.value.length));
+    if (this.value.length < this.getAttribute('minl')) {
+      this.parentElement.classList.add('error');
+      this.parentElement.classList.remove('success');
+      this.nextElementSibling.classList.remove('success');
+    } else if (!isFormEmailValid(emailValid)) {
+      this.parentElement.classList.add('error');
+      this.parentElement.classList.remove('success');
+      this.nextElementSibling.classList.remove('success');
+    } else {
+      this.parentElement.classList.remove('error');
+      this.parentElement.classList.add('success');
+      this.nextElementSibling.classList.add('success');
+    }
+  })
+
+  recoveryform.addEventListener('submit', e => {
+    e.preventDefault();
+    checkrecoveryformInputs();
+  });
+  function checkrecoveryformInputs() {
+    const remailValue = remail.value.trim();
+    
+    if(!isFormEmailValid(remailValue)) {
+      setErrorFor(remail);
+    } else if (remailValue !== '' && remailValue.length >= remailMin && remailValue.length <= remailMax) {
+      setSuccessFor(remail);
+    } else {
+      setErrorFor(remail);
+    }
+    
+    if(!isFormEmailValid(remailValue)) {
+      setErrorFor(remail);
+    } else if(remailValue !== '' && remailValue.length >= remailMin && remailValue.length <= remailMax ) {
+      fperror.classList.add('active');
+      fpsuccess.classList.add('active');
+      fetch('/ajax/sendMail.php', {
+        method: 'POST',
+        body: JSON.stringify({
+          remailValue: remailValue,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        },
+      });
+    }
+  }
+}
+// end validate recovery__form

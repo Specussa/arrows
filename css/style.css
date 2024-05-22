@@ -34,6 +34,8 @@
   --bg: #fff;
   --bg-gray: #f9f9f9;
   --bg-hover: #f3f3f3;
+  --bg-error: #f9e8e8;
+  --bg-success: #dff0d8;
   --white: #fff;
   --text: #323232;
   --text-gray: #949494;
@@ -878,7 +880,7 @@ strong {
 
 .footer__right {
   display: flex;
-  padding: 41px 0 0;
+  padding: 40px 0 0;
   flex-direction: column;
   gap: 50px;
 }
@@ -1082,7 +1084,7 @@ strong {
 
 .personal__status.active {
   color: var(--green);
-  background-color: #dff0d8;
+  background-color: var(--bg-success);
 }
 
 .personal__data {
@@ -1462,8 +1464,17 @@ strong {
   gap: 20px;
 }
 
+.form__flex {
+  display: flex;
+  gap: 20px;
+}
+
 .form__group .form__control {
   width: calc(33.333% - 14px);
+}
+
+.form__flex .form__control {
+  width: calc(50% - 10px);
 }
 
 .form__control {
@@ -1547,6 +1558,7 @@ strong {
   transition: opacity 0.2s linear;
 }
 
+.form__control.success .form__input::-webkit-calendar-picker-indicator,
 .form__input:focus::-webkit-calendar-picker-indicator {
   opacity: 1;
 }
@@ -1704,6 +1716,7 @@ strong {
 }
 
 .form__label {
+  width: max-content;
   min-height: 24px;
   padding: 0 0 10px;
   color: var(--text);
@@ -1804,6 +1817,104 @@ strong {
   display: none;
 }
 
+.form__bottom {
+  display: flex;
+  margin: 20px 0 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.form__link {
+  color: var(--color);
+}
+
+.form__link:hover {
+  color: var(--text);
+}
+
+.form__texts {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.form__pop_success,
+.form__pop_error {
+  display: none;
+  padding: 12px 20px;
+}
+
+.form__pop_success {
+  color: var(--green);
+  background-color: var(--bg-success);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+
+.form__pop_error {
+  color: var(--error);
+  background-color: var(--bg-error);
+}
+
+.form__pop_success.active,
+.form__pop_error.active {
+  display: block;
+  opacity: 1;
+}
+
+.form__pop_error.active {
+   animation-name: errorShake;
+   animation-duration: 0.3s;
+}
+
+@keyframes errorShake {
+  0% {
+    -webkit-transform: translateX(-25px);
+    transform: translateX(-25px);
+  }
+  25% {
+    -webkit-transform: translateX(25px);
+    transform: translateX(25px);
+  }
+  50% {
+    -webkit-transform: translateX(-25px);
+    transform: translateX(-25px);
+  }
+  75% {
+    -webkit-transform: translateX(25px);
+    transform: translateX(25px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes errorShake {
+  0% {
+    -webkit-transform: translateX(-25px);
+    transform: translateX(-25px);
+  }
+  25% {
+    -webkit-transform: translateX(25px);
+    transform: translateX(25px);
+  }
+  50% {
+    -webkit-transform: translateX(-25px);
+    transform: translateX(-25px);
+  }
+  75% {
+    -webkit-transform: translateX(25px);
+    transform: translateX(25px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
 /* end form */
 
 /* start activation */
@@ -1839,6 +1950,53 @@ strong {
 
 .activation__button {
   margin: 40px 0 0;
+}
+
+/* end activation */
+
+/* start activation */
+
+.auth__block,
+.recovery__block,
+.change__block,
+.regisrtation__block {
+  display: flex;
+  padding: 100px 0 120px;
+  flex-direction: column;
+}
+
+.auth__head,
+.recovery__head,
+.change__head,
+.regisrtation__head {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.auth__desc,
+.recovery__desc,
+.change__desc,
+.regisrtation__desc {
+  display: inline-block;
+  margin: 30px 0 0;
+  text-align: center;
+}
+
+.auth__form,
+.recovery__form,
+.change__form,
+.regisrtation__form {
+  margin: 50px 0 0;
+  padding: 60px 40px;
+  border: 1px solid var(--border-gray);
+}
+
+.auth__button,
+.recovery__button,
+.change__button,
+.regisrtation__button  {
+  width: calc(50% - 10px);
+  margin: 0 0 0 auto;
 }
 
 /* end activation */
@@ -1898,6 +2056,12 @@ strong {
   .activation__block {
     padding: 90px 0 100px;
   }
+  .auth__block,
+  .recovery__block,
+  .change__block,
+  .regisrtation__block  {
+    padding: 90px 0 100px;
+  }
 }
 /* end 1919px */
 
@@ -1928,6 +2092,20 @@ strong {
   
   .activation__block {
     padding: 60px 0 80px;
+  }
+
+  .auth__block,
+  .recovery__block,
+  .change__block,
+  .regisrtation__block  {
+    padding: 60px 0 80px;
+  }
+  .auth__form,
+  .recovery__form,
+  .change__form,
+  .regisrtation__form {
+    margin: 40px 0 0;
+    padding: 50px 30px;
   }
 
   .footer__list {
@@ -1997,6 +2175,45 @@ strong {
   }
   .activation__button {
     margin: 30px 0 0;
+  }
+
+  .auth__block,
+  .recovery__block,
+  .change__block,
+  .regisrtation__block {
+    padding: 50px 0 80px;
+  }
+  .auth__desc,
+  .recovery__desc,
+  .change__desc,
+  .regisrtation__desc {
+    margin: 20px 0 0;
+  }
+  .auth__form,
+  .recovery__form,
+  .change__form,
+  .regisrtation__form {
+    margin: 40px 0 0;
+    padding: 50px 20px;
+  }
+  
+  .footer__top {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  .footer__flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .footer__contact {
+    flex-direction: row;
+    gap: 60px;
+  }
+  .footer__right {
+    align-items: center;
+    gap: 40px;
   }
 }
 /* end 1023px */
@@ -2127,15 +2344,22 @@ strong {
     gap: 15px 0;
   }
 
-  .form__group {
+  .form__group,
+  .form__flex {
     flex-direction: column;
     gap: 0;
   }
-  .form__group .form__control {
+  .form__group .form__control,
+  .form__flex .form__control {
     width: 100%;
   }
   .form__btn {
     margin: 17px 0 0;
+  }
+  .form__bottom {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 40px;
   }
 
   .personal__image {
@@ -2351,19 +2575,20 @@ strong {
   .activation__button {
     margin: 20px 0 0;
   }
+  
+  .auth__form,
+  .recovery__form,
+  .change__form,
+  .regisrtation__form {
+    padding: 30px 15px;
+  }
 
+  .footer__flex {
+    gap: 40px;
+  }
   .footer__logo {
     width: 110px;
     height: 110px;
-  }
-  .footer__top {
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-  }
-  .footer__flex {
-    flex-direction: column;
-    align-items: center;
   }
   .footer__list {
     display: flex;
@@ -2372,6 +2597,7 @@ strong {
     gap: 20px;
   }
   .footer__contact {
+    flex-direction: column;
     align-items: center;
     gap: 15px;
   }
