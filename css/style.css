@@ -1523,8 +1523,8 @@ strong {
   padding: 0 20px 0;
   margin: 1px 1px 0;
   border: none;
-  color: var(--border);
-  background-color: var(--border-gray);
+  color: var(--text);
+  background-color: var(--border);
   position: relative;
   z-index: 2;
   -webkit-transition: max-height 0.3s linear, background-color 0.3s linear;
