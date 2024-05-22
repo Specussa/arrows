@@ -1448,7 +1448,8 @@ strong {
   gap: 40px;
 }
 
-.personal__form {
+.personal__form,
+.personal__pass {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -2082,7 +2083,8 @@ strong {
   .personal__form_head {
     padding: 0 0 20px;
   }
-  .personal__form {
+  .personal__form,
+  .personal__pass {
     gap: 10px;
   }
 
@@ -2394,7 +2396,8 @@ strong {
   .personal__form_head {
     padding: 0 0 30px;
   }
-  .personal__form {
+  .personal__form,
+  .personal__pass {
     gap: 0;
   }
   .personal__forms {
