@@ -26,6 +26,16 @@ if(year){
 }
 // end year
 
+// start domen
+const domen = document.querySelector('.domen');
+if(domen){
+  let domens = document.querySelectorAll(".domen");
+  for (let i = 0; i < domens.length; i++) {
+    domens[i].innerText = window.location.hostname;
+  }
+}
+// end domen
+
 // start navbar
 const overlay = document.querySelector('.overlay');
 const menu = document.querySelector('.header__nav');

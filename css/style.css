@@ -1836,6 +1836,8 @@ strong {
 
 .form__texts {
   display: inline-flex;
+  width: calc(50% - 10px);
+  margin: 0 auto 0 0;
   flex-wrap: wrap;
   gap: 10px;
 }
@@ -1868,6 +1870,91 @@ strong {
 .form__pop_error.active {
    animation-name: errorShake;
    animation-duration: 0.3s;
+}
+
+.form__buttons {
+  display: flex;
+  width: calc(50% - 10px);
+  margin: 0 0 0 auto;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form__buttons .btn {
+  width: 100%;
+}
+
+.form__checkbox {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.form__checkbox_text {
+  -webkit-transform: translateY(-1.5px);
+  transform: translateY(-1.5px);
+}
+
+.form__checkbox_text,
+.form__checkbox_text a {
+  color: var(--text);
+}
+
+.form__checkbox_text a {
+  text-decoration: underline;
+  color: var(--text);
+}
+
+.form__checkbox_text a:hover {
+  color: var(--color);
+}
+
+.form__checkbox_input {
+  display: none;
+  position: absolute;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form__checkbox_check {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  padding: 2px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--border-hover);
+  -webkit-transition: border 0.15s linear;
+  transition: border 0.15s linear;
+  cursor: pointer;
+}
+
+.form__checkbox_check.error {
+  border: 2px solid var(--error);
+}
+
+.form__checkbox_input:checked ~ .form__checkbox_check,
+.form__checkbox_input:checked ~ .form__checkbox_check.error {
+  border: 2px solid var(--color);
+}
+
+.form__checkbox_check::after {
+  content: "";
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color);
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+
+.form__checkbox input:checked ~ .form__checkbox_check::after {
+  opacity: 1;
+}
+
+.form__checkbox input ~ .form__checkbox_check::after {
+  opacity: 0;
 }
 
 @keyframes errorShake {
@@ -1955,12 +2042,13 @@ strong {
 
 /* end activation */
 
-/* start activation */
+/* start reg */
 
 .auth__block,
 .recovery__block,
 .change__block,
-.regisrtation__block {
+.registration__block,
+.confirmation__block {
   display: flex;
   padding: 100px 0 120px;
   flex-direction: column;
@@ -1969,7 +2057,8 @@ strong {
 .auth__head,
 .recovery__head,
 .change__head,
-.regisrtation__head {
+.registration__head,
+.confirmation__head {
   text-transform: uppercase;
   text-align: center;
 }
@@ -1977,7 +2066,8 @@ strong {
 .auth__desc,
 .recovery__desc,
 .change__desc,
-.regisrtation__desc {
+.registration__desc,
+.confirmation__desc {
   display: inline-block;
   margin: 30px 0 0;
   text-align: center;
@@ -1986,18 +2076,58 @@ strong {
 .auth__form,
 .recovery__form,
 .change__form,
-.regisrtation__form {
+.registration__form,
+.confirmation__form {
   margin: 50px 0 0;
   padding: 60px 40px;
   border: 1px solid var(--border-gray);
 }
 
-.auth__button,
-.recovery__button,
-.change__button,
-.regisrtation__button  {
-  width: calc(50% - 10px);
-  margin: 0 0 0 auto;
+/* end reg */
+
+/* start activation */
+
+.policy__block {
+  display: flex;
+  padding: 100px 0 120px;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.policy__divider {
+  display: flex;
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-gray);
+}
+
+.policy__head,
+.policy__heading {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.policy__info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.policy__head,
+.policy__desc {
+  max-width: 840px;
+}
+
+.policy__heading {
+  max-width: 620px;
+}
+
+.policy__heading:not(:first-child) {
+  padding: 20px 0 0;
+}
+
+.policy__desc {
+  margin: 0 auto;
 }
 
 /* end activation */
@@ -2060,8 +2190,14 @@ strong {
   .auth__block,
   .recovery__block,
   .change__block,
-  .regisrtation__block  {
+  .registration__block,
+  .confirmation__bloc  {
     padding: 90px 0 100px;
+  }
+  
+  .policy__block {
+    padding: 90px 0 100px;
+    gap: 60px;
   }
 }
 /* end 1919px */
@@ -2099,15 +2235,27 @@ strong {
   .auth__block,
   .recovery__block,
   .change__block,
-  .regisrtation__block  {
+  .registration__block,
+  .confirmation__bloc  {
     padding: 60px 0 80px;
   }
   .auth__form,
   .recovery__form,
   .change__form,
-  .regisrtation__form {
+  .registration__form,
+  .confirmation__form {
     margin: 40px 0 0;
     padding: 50px 30px;
+  }
+  
+  .policy__block {
+    padding: 60px 0 80px;
+    gap: 50px;
+  }
+  .policy__head,
+  .policy__desc,
+  .policy__heading {
+    max-width: 800px;
   }
 
   .footer__list {
@@ -2182,21 +2330,29 @@ strong {
   .auth__block,
   .recovery__block,
   .change__block,
-  .regisrtation__block {
+  .registration__block,
+  .confirmation__block {
     padding: 50px 0 80px;
   }
   .auth__desc,
   .recovery__desc,
   .change__desc,
-  .regisrtation__desc {
+  .registration__desc,
+  .confirmation__desc {
     margin: 20px 0 0;
   }
   .auth__form,
   .recovery__form,
   .change__form,
-  .regisrtation__form {
+  .registration__form,
+  .confirmation__form {
     margin: 40px 0 0;
     padding: 50px 20px;
+  }
+  
+  .policy__block {
+    padding: 50px 0 80px;
+    gap: 40px;
   }
   
   .footer__top {
@@ -2362,6 +2518,11 @@ strong {
     flex-direction: column-reverse;
     align-items: flex-start;
     gap: 40px;
+  }
+  .form__buttons,
+  .form__texts {
+    width: 100%;
+    margin: 0;
   }
 
   .personal__image {
@@ -2582,8 +2743,14 @@ strong {
   .auth__form,
   .recovery__form,
   .change__form,
-  .regisrtation__form {
+  .registration__form,
+  .confirmation__form {
     padding: 30px 15px;
+  }
+  
+  .policy__block {
+    padding: 40px 0 80px;
+    gap: 30px;
   }
 
   .footer__flex {
