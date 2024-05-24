@@ -1,12 +1,6 @@
 var i;
-const finputs = document.querySelectorAll(".form__input");
-for (i = 0; i < finputs.length; i++) {
-  finputs[i].addEventListener("input", updateformValue);
-  finputs[i].nextElementSibling.children[1].textContent = finputs[i].getAttribute('maxl');
-}
 
 function updateformValue() {
-  this.nextElementSibling.children[0].textContent = Math.max(0, Math.min(this.getAttribute('maxl'), this.value.length));
   if (this.value.length < this.getAttribute('minl')) {
     this.parentElement.classList.add('error');
     this.parentElement.classList.remove('success');
@@ -154,7 +148,6 @@ if(personalform) {
 
   pemail.addEventListener('input', function () {
     const emailValid = pemail.value.trim();
-    this.nextElementSibling.children[0].textContent = Math.max(0, Math.min(this.getAttribute('maxl'), this.value.length));
     if (this.value.length < this.getAttribute('minl')) {
       this.parentElement.classList.add('error');
       this.parentElement.classList.remove('success');
@@ -367,7 +360,6 @@ if(authform) {
 
   aemail.addEventListener('input', function () {
     const emailValid = aemail.value.trim();
-    this.nextElementSibling.children[0].textContent = Math.max(0, Math.min(this.getAttribute('maxl'), this.value.length));
     if (this.value.length < this.getAttribute('minl')) {
       this.parentElement.classList.add('error');
       this.parentElement.classList.remove('success');
@@ -445,7 +437,6 @@ if(recoveryform) {
 
   remail.addEventListener('input', function () {
     const emailValid = remail.value.trim();
-    this.nextElementSibling.children[0].textContent = Math.max(0, Math.min(this.getAttribute('maxl'), this.value.length));
     if (this.value.length < this.getAttribute('minl')) {
       this.parentElement.classList.add('error');
       this.parentElement.classList.remove('success');
@@ -671,7 +662,6 @@ if(registrationform) {
 
   remail.addEventListener('input', function () {
     const emailValid = remail.value.trim();
-    this.nextElementSibling.children[0].textContent = Math.max(0, Math.min(this.getAttribute('maxl'), this.value.length));
     if (this.value.length < this.getAttribute('minl')) {
       this.parentElement.classList.add('error');
       this.parentElement.classList.remove('success');
