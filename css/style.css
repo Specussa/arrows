@@ -678,6 +678,20 @@ strong {
   overflow: hidden;
 }
 
+.header__personal_list::before {
+  content: "";
+  display: none;
+  width: 30px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--border-hover);
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
 .header__personal_flex.active .header__personal_list {
   max-height: 2000px;
   opacity: 1;
@@ -1534,6 +1548,7 @@ strong {
   max-height: 54px;
   padding: 0 20px 0;
   margin: 1px 1px 0;
+  flex: 0 0 auto;
   border: none;
   color: var(--text);
   background-color: var(--border);
@@ -2464,6 +2479,9 @@ strong {
     transform: translateY(0px);
     -webkit-transition-delay: 0s;
     transition-delay: 0s;
+  }
+  .header__personal_list::before {
+    display: block;
   }
   .header__personal_overlay {
     width: 100%;

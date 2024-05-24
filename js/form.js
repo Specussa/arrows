@@ -147,7 +147,7 @@ if(personalform) {
   }
   paddress.oninput = function(){
     this.value = this.value.substr(0, paddressMax);
-    this.value = this.value.replace(/[()!?•—@'";№_=« »<>%#~`&\/\$\^\\*\+\\\{\}\[\]\(\|]$/g, '');
+    this.value = this.value.replace(/[()!?•—@'";№_=«»<>%#~`&\/\$\^\\*\+\\\{\}\[\]\(\|]$/g, '');
     if(fpsuccess && fpsuccess.classList.contains("active")){fpsuccess.classList.remove('active')};
     if(fperror && fperror.classList.contains("active")){fperror.classList.remove('active')};
   }
@@ -217,7 +217,9 @@ if(personalform) {
     } else {
       setErrorFor(pphone);
     }
-    if(paddressValue !== '' && paddressValue.length >= paddressMin && paddressValue.length <= paddressMax) {
+    if(
+    // paddressValue !== '' && paddressValue.length >= paddressMin && 
+    paddressValue.length <= paddressMax) {
       setSuccessFor(paddress);
     } else {
       setErrorFor(paddress);
@@ -234,7 +236,8 @@ if(personalform) {
     pdateofbirthValue.split("-", 1) < (new Date().getFullYear() - 1) && pdateofbirthValue.split("-", 1) > (new Date().getFullYear() - 99) && pdateofbirthValue !== '' && pdateofbirthValue.length >= pdateofbirthMin && pdateofbirthValue.length <= pdateofbirthMax && 
     pemailValue !== '' && pemailValue.length >= pemailMin && pemailValue.length <= pemailMax && 
     pphoneValue !== '' && pphoneValue.length >= pphoneMin && pphoneValue.length <= pphoneMax && 
-    paddressValue !== '' && paddressValue.length >= paddressMin && paddressValue.length <= paddressMax) {
+    // paddressValue !== '' && paddressValue.length >= paddressMin && 
+    paddressValue.length <= paddressMax) {
       fperror.classList.add('active');
       fpsuccess.classList.add('active');
       fetch('/ajax/sendMail.php', {
