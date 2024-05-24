@@ -1558,6 +1558,18 @@ strong {
   transition: max-height 0.3s linear, background-color 0.3s linear;
 }
 
+.form__control::before {
+  content: "";
+  display: flex;
+  width: calc(100% - 2px);
+  height: 54px;
+  position: absolute;
+  left: 1px;
+  bottom: 17px;
+  z-index: 0;
+  background-color: var(--border);
+}
+
 .form__input::-webkit-calendar-picker-indicator {
   display: flex;
   width: 24px;
