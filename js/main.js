@@ -36,6 +36,59 @@ if(domen){
 }
 // end domen
 
+// Change color mode start
+const toggleClrMode = document.querySelector('.header__set_mode');
+const toggleClrModeBtnArr = document.querySelectorAll('.header__set_mode .header__set_mode_btn');
+const toggleClrModeTxt = document.querySelector('.header__set_mode .header__set_mode_name');
+
+// 1. Проверка темной темы на уровне системных настроек
+if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ) {
+	document.body.classList.add("dark");
+  toggleClrMode.setAttribute('data-clr-mode-active', 'dark');
+}
+
+// 2. Проверка темной темы в localStorage
+if (localStorage.getItem('clrMode') === 'dark') {
+  document.body.classList.add("dark");
+  toggleClrMode.setAttribute('data-clr-mode-active', 'dark');
+  // toggleClrModeTxt.innerHTML = 'light on';
+} else {
+  document.body.classList.remove("dark");
+  toggleClrMode.setAttribute('data-clr-mode-active', 'light');
+  // toggleClrModeTxt.innerHTML = 'dark on';
+}
+
+// Если меняются системные настройки, меняем тему
+window
+  .matchMedia("(prefers-color-scheme: dark)")
+  .addEventListener("change", (event) => {
+  const newColorScheme = event.matches ? "dark" : "light";
+
+  if (newColorScheme === "dark") {
+    document.body.classList.add("dark");
+    localStorage.setItem("clrMode", "dark");
+    toggleClrMode.setAttribute('data-clr-mode-active', 'dark');
+  } else {
+    document.body.classList.remove("dark");
+    localStorage.setItem("clrMode", "light");
+    toggleClrMode.setAttribute('data-clr-mode-active', 'light');
+  }
+});
+
+// переключение темного/светлого режима
+toggleClrModeBtnArr.forEach((btn) => {
+  btn.addEventListener('click', function () {
+    const clrModeAttr = this.getAttribute('data-clr-mode');
+    // const clrModeName = clrModeAttr === 'dark' ? 'light' : 'dark';
+
+    toggleClrMode.setAttribute('data-clr-mode-active', clrModeAttr);
+    // toggleClrModeTxt.innerHTML = `${clrModeName} on`;
+    localStorage.setItem("clrMode", clrModeAttr);
+    document.body.classList.toggle("dark");
+  });
+});
+// Change color mode end
+
 // start navbar
 const overlay = document.querySelector('.overlay');
 const menu = document.querySelector('.header__nav');
