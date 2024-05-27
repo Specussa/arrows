@@ -91,21 +91,25 @@ toggleClrModeBtnArr.forEach((btn) => {
 
 // start navbar
 const overlay = document.querySelector('.overlay');
-const menu = document.querySelector('.header__nav');
+const menu = document.querySelector('.header__navigation');
 const burger = document.querySelector('.header__burger');
+const headerbuttons = document.querySelector('.header__buttons');
 
 // кнопка header__burger
 burger.addEventListener('click', function() {
   if (burger.classList.contains("active")) {
     overlay.classList.remove("active");
-    // menu.classList.remove("active");
+    menu.classList.remove("active");
     burger.classList.remove("active");
+    headerbuttons.classList.remove("active");
     document.body.style.overflow = null;
     document.body.style.height = null;
   } else {
+    menu.scrollTop = 0;
     overlay.classList.add("active");
-    // menu.classList.add("active");
+    menu.classList.add("active");
     burger.classList.add("active");
+    headerbuttons.classList.add("active");
     document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
   }
@@ -115,8 +119,9 @@ burger.addEventListener('click', function() {
 // кнопка overlay
 overlay.addEventListener('click', function() {
   overlay.classList.remove("active");
-  // menu.classList.remove("active");
+  menu.classList.remove("active");
   burger.classList.remove("active");
+  headerbuttons.classList.remove("active");
   document.body.style.overflow = null;
   document.body.style.height = null;
 })
