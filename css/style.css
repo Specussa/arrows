@@ -798,6 +798,7 @@ strong {
 }
 
 .header__nav_social {
+  display: none;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -2529,7 +2530,7 @@ strong {
   }
   
   .header__nav_list {
-    gap: 10px 30px;
+    gap: 10px 20px;
   }
   
   .form__btn {
@@ -2660,6 +2661,9 @@ strong {
     left: 0;
     z-index: 2;
     background-color: var(--bg);
+  }
+  .header__nav_social {
+    display: flex;
   }
   .header__buttons,
   .header__social,
@@ -2945,7 +2949,7 @@ strong {
     display: none;
   }
   .header__nav_list {
-    gap: 30px;
+    gap: 0px;
   }
   .header__nav_link.sub_one {
     font-size: 32px;
@@ -3291,7 +3295,7 @@ strong {
   .header__navigation {
     gap: 20px;
   }
-  
+
   .personal__statistics_tr {
     flex-wrap: wrap;
   }
