@@ -1474,6 +1474,12 @@ strong {
   text-transform: uppercase;
 }
 
+.personal__form_btn,
+.personal__pass_btn {
+  width: 200px;
+  margin: 0 0 0 auto;
+}
+
 .form__group {
   display: flex;
   gap: 20px;
@@ -1847,8 +1853,7 @@ strong {
 .form__bottom {
   display: flex;
   margin: 20px 0 0;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 20px;
 }
 
@@ -1862,7 +1867,7 @@ strong {
 
 .form__texts {
   display: inline-flex;
-  width: calc(50% - 10px);
+  width: 100%;
   margin: 0 auto 0 0;
   flex-wrap: wrap;
   gap: 10px;
@@ -1900,7 +1905,7 @@ strong {
 
 .form__buttons {
   display: flex;
-  width: calc(50% - 10px);
+  width: 100%;
   margin: 0 0 0 auto;
   flex-direction: column;
   gap: 20px;
@@ -2595,9 +2600,7 @@ strong {
     margin: 17px 0 0;
   }
   .form__bottom {
-    flex-direction: column-reverse;
-    align-items: flex-start;
-    gap: 40px;
+    gap: 30px;
   }
   .form__buttons,
   .form__texts {
