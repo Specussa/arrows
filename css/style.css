@@ -82,6 +82,16 @@
   color: var(--bg);
 }
 
+.dark *::-moz-selection {
+  background-color: var(--text);
+  color: var(--bg);
+}
+
+.dark *::selection {
+  background-color: var(--text);
+  color: var(--bg);
+}
+
 input {
   outline: none;
 }
@@ -1259,12 +1269,49 @@ strong {
   width: 305px;
   height: 260px;
   flex: 0 0 auto;
+  position: relative;
 }
 
 .personal__image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.personal__image_button {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  color: var(--white);
+  background-color: #323232A8;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s linear, background-color 0.2s linear;
+  transition: opacity 0.2s linear, background-color 0.2s linear;
+}
+
+.personal__image:hover .personal__image_button {
+  opacity: 1;
+}
+
+.personal__image_button:hover {
+  background-color: var(--text);
+}
+
+.dark .personal__image_button:hover {
+  background-color: var(--border);
+}
+
+.personal__image_file {
+  display: none;
+  position: absolute;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .personal__info {
@@ -2852,6 +2899,13 @@ strong {
   .confirmation__form {
     margin: 40px 0 0;
     padding: 50px 20px;
+  }
+  
+  .personal__image_button {
+    opacity: 1;
+  }
+  .personal__image_button:hover {
+    background-color: #323232A8;
   }
   
   .policy__block {
