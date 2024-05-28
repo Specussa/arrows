@@ -1293,6 +1293,7 @@ strong {
   opacity: 0;
   -webkit-transition: opacity 0.2s linear, background-color 0.2s linear;
   transition: opacity 0.2s linear, background-color 0.2s linear;
+  cursor: pointer;
 }
 
 .personal__image:hover .personal__image_button {
