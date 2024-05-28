@@ -1834,6 +1834,15 @@ strong {
   transition: max-height 0.3s linear, background-color 0.3s linear;
 }
 
+#personal__dateofbirth {
+  color: var(--text-gray);
+}
+
+.form__control.success #personal__dateofbirth,
+.form__control.error #personal__dateofbirth {
+  color: var(--text);
+}
+
 .dark .form__input {
   background-color: var(--bg-gray);
 }
@@ -1870,6 +1879,7 @@ strong {
   transition: opacity 0.2s linear;
 }
 
+.form__control.error .form__input::-webkit-calendar-picker-indicator,
 .form__control.success .form__input::-webkit-calendar-picker-indicator,
 .form__input:focus::-webkit-calendar-picker-indicator {
   opacity: 1;

@@ -128,6 +128,13 @@ if(personalform) {
   }
   pdateofbirth.oninput = function(){
     this.value = this.value.substr(0, pdateofbirthMax);
+    if(!/^\d{4}\-\d{2}\-\d{2}$/.test(pdateofbirth.value.trim())) {
+      setErrorFor(pdateofbirth);
+    } else if (pdateofbirth.value.trim().split("-", 1) < (new Date().getFullYear() - 1) && pdateofbirth.value.trim().split("-", 1) > (new Date().getFullYear() - 99) && pdateofbirth.value.trim() !== '' && pdateofbirth.value.trim().length >= pdateofbirthMin && pdateofbirth.value.trim().length <= pdateofbirthMax) {
+      setSuccessFor(pdateofbirth);
+    } else {
+      setErrorFor(pdateofbirth);
+    }
   }
   pemail.oninput = function(){
     this.value = this.value.substr(0, pemailMax);
