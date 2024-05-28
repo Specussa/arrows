@@ -1863,6 +1863,7 @@ strong {
   background-color: var(--border);
 }
 
+.dark .form__input:focus::-webkit-calendar-picker-indicator,
 .form__input::-webkit-calendar-picker-indicator {
   display: flex;
   width: 24px;
@@ -1871,12 +1872,18 @@ strong {
   top: 50%;
   right: 20px;
   z-index: 2;
+  border-radius: 20px;
+  background-color: transparent;
   background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUgMjJIMTlDMjAuMTAzIDIyIDIxIDIxLjEwMyAyMSAyMFY2QzIxIDQuODk3IDIwLjEwMyA0IDE5IDRIMTdWMkgxNVY0SDlWMkg3VjRINUMzLjg5NyA0IDMgNC44OTcgMyA2VjIwQzMgMjEuMTAzIDMuODk3IDIyIDUgMjJaTTUgN0gxOVY5SDVWN1oiIGZpbGw9IiMzMjMyMzIiLz4KPC9zdmc+Cg==");
   opacity: 0.5;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   -webkit-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
+}
+
+.dark .form__input::-webkit-calendar-picker-indicator {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUgMjJIMTlDMjAuMTAzIDIyIDIxIDIxLjEwMyAyMSAyMFY2QzIxIDQuODk3IDIwLjEwMyA0IDE5IDRIMTdWMkgxNVY0SDlWMkg3VjRINUMzLjg5NyA0IDMgNC44OTcgMyA2VjIwQzMgMjEuMTAzIDMuODk3IDIyIDUgMjJaTTUgN0gxOVY5SDVWN1oiIGZpbGw9IiNmZmZmZmYiLz4KPC9zdmc+Cg==")
 }
 
 .form__control.error .form__input::-webkit-calendar-picker-indicator,
