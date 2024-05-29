@@ -36,6 +36,19 @@ if(domen){
 }
 // end domen
 
+// start header active
+const headernew = document.querySelector('.header__new');
+if (headernew) {
+  window.addEventListener("scroll", () => {
+    if (Math.round(window.scrollY) > headernew.clientHeight) {
+      headernew.classList.add('active');
+    } else {
+      headernew.classList.remove('active');
+    }
+  })
+}
+// end header active
+
 // Change color mode start
 const toggleClrMode = document.querySelector('.header__set_mode');
 const toggleClrModeBtnArr = document.querySelectorAll('.header__set_mode .header__set_mode_btn');
