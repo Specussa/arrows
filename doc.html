@@ -230,45 +230,132 @@
             <a href="index.html" class="body_small breadcrumbs__link">Главная</a>
           </li>
           <li class="breadcrumbs__item">
-            <a href="systems.html" class="body_small breadcrumbs__link">Личный кабинет</a>
+            <a href="doc.html" class="body_small breadcrumbs__link">Документы</a>
           </li>
         </ul>
       </div>
     </section>
-    <section class="recovery">
-      <div class="container recovery__container">
-        <div class="recovery__block">
-          <h1 class="recovery__head">Восстановление пароля</h1>
-          <form action="" id="recovery__form" class="recovery__form">
-            <div class="form__control">
-              <input class="form__input" type="text" minl="4" maxl="40" id="recovery__email" placeholder="name@gmail.com" />
-              <label class="form__label body__small" for="recovery__email">E-mail: <span>*</span></label>
-              <span class="form__bar"><span></span></span>
-              <span class="form__border"><span></span></span>
-              <small class="form__error">Введите корректный e-mail</small>
-            </div>
-            <p class="form__pop_success body_two">
-              Пожалуйста, проверьте ваш e-mail с инструкцией для восстановления пароля.
-            </p>
-            <p class="form__pop_error body_two">
-              Такого пользователя не существует.
-            </p>
-            <div class="form__bottom">
-              <div class="form__texts">
-                <p class="form__text body_one">Я вспомнил пароль</p>
-                <a href="auth.html" class="form__link body_one">Войти</a>
+    <section class="doc">
+      <div class="container doc__container">
+        <div class="doc__block">
+          <div class="doc__top">
+            <div class="doc__heading">Положения и регламенты</div>
+            <h1 class="doc__head body_big">Документы</h1>
+          </div>
+          <div class="doc__divider"></div>
+          <div class="doc__flex">
+            <form action="" class="doc__form">
+              <div class="form__control">
+                <input class="form__input" type="text" minl="2" maxl="40" id="registration__lastname" placeholder="Поиск" />
+                <span class="form__bar"><span></span></span>
+                <span class="form__border"><span></span></span>
               </div>
-              <div class="form__buttons">
-                <button class="btn recovery__button">
-                  <span>Войти</span>
+              <button class="form__search_button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M10 2C5.589 2 2 5.589 2 10C2 14.411 5.589 18 10 18C11.775 17.9996 13.4988 17.4054 14.897 16.312L19.293 20.708L20.707 19.294L16.311 14.898C17.405 13.4997 17.9996 11.7754 18 10C18 5.589 14.411 2 10 2Z" fill="currentColor"/>
+                </svg>
+              </button>
+            </form>
+            <div class="doc__buttons">
+              <label class="doc__checkbox">
+                <input class="checkbox__input doc__checkbox" name="type" type="radio" checked>
+                <div class="btn btn__gray doc__button">
+                  <span>Все документы</span>
                   <span></span>
                   <span></span>
                   <span></span>
                   <span></span>
-                </button>
-              </div>
+                </div>
+              </label>
+              <label class="doc__checkbox">
+                <input class="checkbox__input doc__checkbox" name="type" type="radio">
+                <div class="btn btn__gray doc__button">
+                  <span>Положения</span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </label>
+              <label class="doc__checkbox">
+                <input class="checkbox__input doc__checkbox" name="type" type="radio">
+                <div class="btn btn__gray doc__button">
+                  <span>Регламенты</span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </label>
             </div>
-          </form>
+          </div>
+          <h2 class="doc__name">Все документы</h2>
+          <ul class="doc__list">
+            <li class="doc__item">
+              <a href="#" class="doc__link" download>
+                <div class="doc__info">
+                  <p class="doc__desc sub_two">Положение для примера с минимальными требованиями «Клубная Лига» для руководителей клубов</p>
+                  <div class="doc__info_flex">
+                    <p class="doc__date">18.05.2024г.</p>
+                    <p class="doc__size">PDF 1.05 МБ</p>
+                  </div>
+                </div>
+                <div class="doc__image">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2375 16.1071H20.4375L16.4855 21.5714L12.4375 16.1071H15.6375V7H17.2375V16.1071ZM8 24.9996V23.2853H24V24.9996H8Z" fill="currentColor"/>
+                  </svg>
+                </div>
+              </a>
+            </li>
+            <li class="doc__item">
+              <a href="#" class="doc__link" download>
+                <div class="doc__info">
+                  <p class="doc__desc sub_two">Положение о целевых взносах</p>
+                  <div class="doc__info_flex">
+                    <p class="doc__date">18.05.2024г.</p>
+                    <p class="doc__size">PDF 1.05 МБ</p>
+                  </div>
+                </div>
+                <div class="doc__image">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2375 16.1071H20.4375L16.4855 21.5714L12.4375 16.1071H15.6375V7H17.2375V16.1071ZM8 24.9996V23.2853H24V24.9996H8Z" fill="currentColor"/>
+                  </svg>
+                </div>
+              </a>
+            </li>
+            <li class="doc__item">
+              <a href="#" class="doc__link" download>
+                <div class="doc__info">
+                  <p class="doc__desc sub_two">Положение об экспертном совете</p>
+                  <div class="doc__info_flex">
+                    <p class="doc__date">18.05.2024г.</p>
+                    <p class="doc__size">PDF 1.05 МБ</p>
+                  </div>
+                </div>
+                <div class="doc__image">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2375 16.1071H20.4375L16.4855 21.5714L12.4375 16.1071H15.6375V7H17.2375V16.1071ZM8 24.9996V23.2853H24V24.9996H8Z" fill="currentColor"/>
+                  </svg>
+                </div>
+              </a>
+            </li>
+            <li class="doc__item">
+              <a href="#" class="doc__link" download>
+                <div class="doc__info">
+                  <p class="doc__desc sub_two">Положение на турнир «Один в поле не воин»</p>
+                  <div class="doc__info_flex">
+                    <p class="doc__date">18.05.2024г.</p>
+                    <p class="doc__size">PDF 1.05 МБ</p>
+                  </div>
+                </div>
+                <div class="doc__image">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2375 16.1071H20.4375L16.4855 21.5714L12.4375 16.1071H15.6375V7H17.2375V16.1071ZM8 24.9996V23.2853H24V24.9996H8Z" fill="currentColor"/>
+                  </svg>
+                </div>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -415,7 +502,6 @@
     </footer>
   </main>
   <script src="js/main.js"></script>
-  <script src="js/form.js"></script>
   <script>
     window.onload = function () {
       window.setTimeout(function () {
