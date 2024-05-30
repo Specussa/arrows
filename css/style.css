@@ -2925,7 +2925,7 @@ strong {
   border-bottom: 1px solid var(--bg);
 }
 
-.partner__container {
+.container.partner__container {
   padding: 0;
 }
 
