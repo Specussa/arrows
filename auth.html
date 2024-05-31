@@ -226,10 +226,10 @@
     <section class="breadcrumbs">
       <div class="container breadcrumbs__container">
         <ul class="breadcrumbs__list">
-          <li class="breadcrumbs__item">
+          <li class="breadcrumbs__item animate_top">
             <a href="index.html" class="body_small breadcrumbs__link">Главная</a>
           </li>
-          <li class="breadcrumbs__item">
+          <li class="breadcrumbs__item animate_top">
             <a href="systems.html" class="body_small breadcrumbs__link">Личный кабинет</a>
           </li>
         </ul>
@@ -238,18 +238,18 @@
     <section class="auth">
       <div class="container auth__container">
         <div class="auth__block">
-          <h1 class="auth__head">Авторизация</h1>
-          <p class="auth__desc body_one">Нет аккаунта? <a href="registration.html" class="form__link">Зарегистрироваться</a>.</p>
+          <h1 class="auth__head animate_top">Авторизация</h1>
+          <p class="auth__desc animate_left body_one">Нет аккаунта? <a href="registration.html" class="form__link">Зарегистрироваться</a>.</p>
           <form action="" id="auth__form" class="auth__form">
             <div class="form__flex">
-              <div class="form__control">
+              <div class="form__control animate_top">
                 <input class="form__input" type="text" minl="4" maxl="40" id="auth__email" placeholder="name@gmail.com" />
                 <label class="form__label body__small" for="auth__email">E-mail: <span>*</span></label>
                 <span class="form__bar"><span></span></span>
                 <span class="form__border"><span></span></span>
                 <small class="form__error">Введите корректный e-mail</small>
               </div>
-              <div class="form__control">
+              <div class="form__control animate_top">
                 <input class="form__input form__input_pass" type="password" minl="4" maxl="40" id="auth__pass" placeholder="Введите пароль" />
                 <label class="form__label body__small" for="auth__pass">Пароль: <span>*</span></label>
                 <span class="form__bar"><span></span></span>
@@ -272,7 +272,7 @@
               E-mail или пароль неверный.
             </p>
             <div class="form__bottom">
-              <div class="form__buttons">
+              <div class="form__buttons animate_top">
                 <button class="btn auth__button">
                   <span>Войти</span>
                   <span></span>
@@ -281,7 +281,7 @@
                   <span></span>
                 </button>
               </div>
-              <div class="form__texts">
+              <div class="form__texts animate_left">
                 <a href="recovery.html" class="form__link body_one">Забыли пароль?</a>
               </div>
             </div>
@@ -433,6 +433,7 @@
   </main>
   <script src="js/main.js"></script>
   <script src="js/form.js"></script>
+  <script src="js/animate.js"></script>
   <script>
     window.onload = function () {
       window.setTimeout(function () {

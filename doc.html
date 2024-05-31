@@ -227,10 +227,10 @@
       <div class="container breadcrumbs__container">
         <ul class="breadcrumbs__list">
           <li class="breadcrumbs__item">
-            <a href="index.html" class="body_small breadcrumbs__link">Главная</a>
+            <a href="index.html" class="body_small breadcrumbs__link animate_top">Главная</a>
           </li>
           <li class="breadcrumbs__item">
-            <a href="doc.html" class="body_small breadcrumbs__link">Документы</a>
+            <a href="doc.html" class="body_small breadcrumbs__link animate_top">Документы</a>
           </li>
         </ul>
       </div>
@@ -239,12 +239,12 @@
       <div class="container doc__container">
         <div class="doc__block">
           <div class="doc__top">
-            <div class="doc__heading">Положения и регламенты</div>
-            <h1 class="doc__head body_big">Документы</h1>
+            <div class="doc__heading animate_left">Положения и регламенты</div>
+            <h1 class="doc__head animate_top body_big">Документы</h1>
           </div>
           <div class="doc__divider"></div>
           <div class="doc__flex">
-            <form action="" class="doc__form">
+            <form action="" class="doc__form animate_top">
               <div class="form__control">
                 <input class="form__input" type="text" minl="2" maxl="40" id="registration__lastname" placeholder="Поиск" />
                 <span class="form__bar"><span></span></span>
@@ -257,7 +257,7 @@
               </button>
             </form>
             <div class="doc__buttons">
-              <label class="doc__checkbox">
+              <label class="doc__checkbox animate_top">
                 <input class="checkbox__input doc__checkbox" name="type" type="radio" checked>
                 <div class="btn btn__gray doc__button">
                   <span>Все документы</span>
@@ -267,7 +267,7 @@
                   <span></span>
                 </div>
               </label>
-              <label class="doc__checkbox">
+              <label class="doc__checkbox animate_top">
                 <input class="checkbox__input doc__checkbox" name="type" type="radio">
                 <div class="btn btn__gray doc__button">
                   <span>Положения</span>
@@ -277,7 +277,7 @@
                   <span></span>
                 </div>
               </label>
-              <label class="doc__checkbox">
+              <label class="doc__checkbox animate_top">
                 <input class="checkbox__input doc__checkbox" name="type" type="radio">
                 <div class="btn btn__gray doc__button">
                   <span>Регламенты</span>
@@ -289,9 +289,9 @@
               </label>
             </div>
           </div>
-          <h2 class="doc__name">Все документы</h2>
+          <h2 class="doc__name animate_left">Все документы</h2>
           <ul class="doc__list">
-            <li class="doc__item">
+            <li class="doc__item animate_top">
               <a href="#" class="doc__link" download>
                 <div class="doc__info">
                   <p class="doc__desc sub_two">Положение для примера с минимальными требованиями «Клубная Лига» для руководителей клубов</p>
@@ -307,7 +307,7 @@
                 </div>
               </a>
             </li>
-            <li class="doc__item">
+            <li class="doc__item animate_top">
               <a href="#" class="doc__link" download>
                 <div class="doc__info">
                   <p class="doc__desc sub_two">Положение о целевых взносах</p>
@@ -323,7 +323,7 @@
                 </div>
               </a>
             </li>
-            <li class="doc__item">
+            <li class="doc__item animate_top">
               <a href="#" class="doc__link" download>
                 <div class="doc__info">
                   <p class="doc__desc sub_two">Положение об экспертном совете</p>
@@ -339,7 +339,7 @@
                 </div>
               </a>
             </li>
-            <li class="doc__item">
+            <li class="doc__item animate_top">
               <a href="#" class="doc__link" download>
                 <div class="doc__info">
                   <p class="doc__desc sub_two">Положение на турнир «Один в поле не воин»</p>
@@ -502,6 +502,7 @@
     </footer>
   </main>
   <script src="js/main.js"></script>
+  <script src="js/animate.js"></script>
   <script>
     window.onload = function () {
       window.setTimeout(function () {

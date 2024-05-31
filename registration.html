@@ -226,10 +226,10 @@
     <section class="breadcrumbs">
       <div class="container breadcrumbs__container">
         <ul class="breadcrumbs__list">
-          <li class="breadcrumbs__item">
+          <li class="breadcrumbs__item animate_top">
             <a href="index.html" class="body_small breadcrumbs__link">Главная</a>
           </li>
-          <li class="breadcrumbs__item">
+          <li class="breadcrumbs__item animate_top">
             <a href="systems.html" class="body_small breadcrumbs__link">Личный кабинет</a>
           </li>
         </ul>
@@ -238,18 +238,18 @@
     <section class="registration">
       <div class="container registration__container">
         <div class="registration__block">
-          <h1 class="registration__head">Регистрация</h1>
-          <p class="auth__desc body_one">Уже есть аккаунт? <a href="auth.html" class="form__link">Войти</a>.</p>
+          <h1 class="registration__head animate_top">Регистрация</h1>
+          <p class="auth__desc animate_left body_one">Уже есть аккаунт? <a href="auth.html" class="form__link">Войти</a>.</p>
           <form action="" id="registration__form" class="registration__form">
             <div class="form__flex">
-              <div class="form__control">
+              <div class="form__control animate_top">
                 <input class="form__input" type="text" minl="2" maxl="40" id="registration__lastname" placeholder="Иванов" />
                 <label class="form__label body__small" for="registration__lastname">Фамилия: <span>*</span></label>
                 <span class="form__bar"><span></span></span>
                 <span class="form__border"><span></span></span>
                 <small class="form__error">Введите фамилию</small>
               </div>
-              <div class="form__control">
+              <div class="form__control animate_top">
                 <input class="form__input" type="text" minl="2" maxl="40" id="registration__firstname" placeholder="Иван" />
                 <label class="form__label body__small" for="registration__firstname">Имя: <span>*</span></label>
                 <span class="form__bar"><span></span></span>
@@ -258,14 +258,14 @@
               </div>
             </div>
             <div class="form__flex">
-              <div class="form__control">
+              <div class="form__control animate_top">
                 <input class="form__input" type="text" minl="4" maxl="40" id="registration__surname" placeholder="Иванович" />
                 <label class="form__label body__small" for="registration__surname">Отчество: <span>*</span></label>
                 <span class="form__bar"><span></span></span>
                 <span class="form__border"><span></span></span>
                 <small class="form__error">Введите отчество</small>
               </div>
-              <div class="form__control">
+              <div class="form__control animate_top">
                 <input class="form__input" type="text" minl="4" maxl="40" id="registration__email" placeholder="name@gmail.com" />
                 <label class="form__label body__small" for="registration__email">E-mail: <span>*</span></label>
                 <span class="form__bar"><span></span></span>
@@ -274,7 +274,7 @@
               </div>
             </div>
             <div class="form__flex">
-              <div class="form__control">
+              <div class="form__control animate_top">
                 <input class="form__input form__input_pass" type="password" minl="4" maxl="40" id="registration__pass" placeholder="Новый пароль" />
                 <label class="form__label body__small" for="registration__newpass">Новый пароль: <span>*</span></label>
                 <span class="form__bar"><span></span></span>
@@ -289,7 +289,7 @@
                   </svg>
                 </a>
               </div>
-              <div class="form__control">
+              <div class="form__control animate_top">
                 <input class="form__input form__input_pass" type="password" minl="4" maxl="40" id="registration__repeatpass" placeholder="Повторите пароль" />
                 <label class="form__label body__small" for="personal__repeatpass">Повторите пароль: <span>*</span></label>
                 <span class="form__bar"><span></span></span>
@@ -312,11 +312,11 @@
               E-mail или пароль неверный.
             </p>
             <div class="form__bottom">
-              <div class="form__buttons">
+              <div class="form__buttons animate_top">
                 <label class="form__checkbox">
                   <input type="checkbox" id="registration__checkbox" name="form__checkbox_input" class="form__checkbox_input">
                   <span class="form__checkbox_check"></span>
-                  <p class="form__checkbox_text body_two">Я ознакомлен и согласен с <a href="policy.html">политикой конфиденциальности</a></p>
+                  <p class="form__checkbox_text animate_left body_two">Я ознакомлен и согласен с <a href="policy.html">политикой конфиденциальности</a></p>
                 </label>
                 <button class="btn registration__button">
                   <span>Войти</span>
@@ -475,6 +475,7 @@
   </main>
   <script src="js/main.js"></script>
   <script src="js/form.js"></script>
+  <script src="js/animate.js"></script>
   <script>
     window.onload = function () {
       window.setTimeout(function () {
