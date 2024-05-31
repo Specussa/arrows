@@ -3162,8 +3162,18 @@ strong {
 
 .tournament__item {
   width: calc(33.333% - 27px);
-  -webkit-transition: opacity 0.4s linear;
-  transition: opacity 0.4s linear;
+}
+
+.tournament__list .tournament__item.animate_top:nth-child(3n + 1) {
+  transition-delay: 0.3s;
+}
+
+.tournament__list .tournament__item.animate_top:nth-child(3n + 2) {
+  transition-delay: 0.5s;
+}
+
+.tournament__list .tournament__item.animate_top:nth-child(3n + 3) {
+  transition-delay: 0.7s;
 }
 
 .tournament__link {
@@ -4186,6 +4196,12 @@ strong {
   .tournament__item:nth-child(6n+5) {
     padding: 0;
   }
+  .tournament__list .tournament__item.animate_top:nth-child(1n) {
+    transition-delay: 0.3s;
+  }
+  .tournament__list .tournament__item.animate_top:nth-child(2n) {
+    transition-delay: 0.5s;
+  }
   
   .member__block {
     padding: 60px 0;
@@ -4655,6 +4671,9 @@ strong {
   .tournament__flex {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .tournament__list .tournament__item.animate_top:nth-child(1n) {
+    transition-delay: 0.3s;
   }
   
   .contacts__right .contacts__image {
