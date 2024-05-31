@@ -2855,6 +2855,7 @@ strong {
 
 .hero {
   position: relative;
+  opacity: 1;
   overflow: hidden;
 }
 
