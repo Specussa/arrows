@@ -3162,8 +3162,8 @@ strong {
 .tournament__item {
   width: calc(33.333% - 27px);
   opacity: 0;
-  -webkit-transition: opacity 0.2s linear;
-  transition: opacity 0.2s linear;
+  -webkit-transition: opacity 0.4s linear;
+  transition: opacity 0.4s linear;
 }
 
 .tournament__item.animated {
@@ -3189,8 +3189,8 @@ strong {
 .tournament__item:nth-child(6n+5) {
   -webkit-transform: translateY(50px);
   transform: translateY(50px);
-  -webkit-transition: -webkit-transform 0.2s linear;
-  transition: transform 0.2s linear;
+  -webkit-transition: -webkit-transform 0.2s linear, opacity 0.4s linear;;
+  transition: transform 0.2s linear, opacity 0.4s linear;;
 }
 
 .visible.tournament__item:nth-child(6n+2),
