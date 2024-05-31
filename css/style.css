@@ -3184,16 +3184,18 @@ strong {
   background-color: transparent;
 }
 
-.tournament__item:nth-child(6n+2) .tournament__top,
-.tournament__item:nth-child(6n+5) .tournament__top {
-  margin: 50px 0 0;
-  -webkit-transition: margin 0.2s linear;
-  transition: margin 0.2s linear;
+.tournament__item:nth-child(6n+2),
+.tournament__item:nth-child(6n+5) {
+  -webkit-transform: translateY(50px);
+  transform: translateY(50px);
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
 }
 
-.visible.tournament__item:nth-child(6n+2) .tournament__top,
-.visible.tournament__item:nth-child(6n+5) .tournament__top {
-  margin: 0;
+.visible.tournament__item:nth-child(6n+2),
+.visible.tournament__item:nth-child(6n+5) {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
 }
 
 .tournament__item:nth-child(6n + 3) .tournament__top {
@@ -3473,9 +3475,10 @@ strong {
   .tournament__item:nth-child(2n):not(:nth-child(6n + 3)):not(:nth-child(6n+5)):not(:nth-child(6n+1)) .tournament__image {
     height: 550px;
   }
-  .tournament__item:nth-child(6n+2) .tournament__top,
-  .tournament__item:nth-child(6n+5) .tournament__top {
-    margin: 40px 0 0;
+  .visible.tournament__item:nth-child(6n+2),
+  .visible.tournament__item:nth-child(6n+5) {
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px);
   }
   .tournament__name {
     height: 60px;
@@ -3980,9 +3983,10 @@ strong {
   .tournament__item {
     width: calc(50% - 10px);
   }
-  .tournament__item:nth-child(6n+2) .tournament__top,
-  .tournament__item:nth-child(6n+5) .tournament__top {
-    margin: 0;
+  .visible.tournament__item:nth-child(6n+2),
+  .visible.tournament__item:nth-child(6n+5) {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
   
   .footer__top {

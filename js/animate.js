@@ -11,7 +11,7 @@ if(tournamentitem){
     }
   });};
 
-  let tournamentitemsopt = {threshold: [0.5]};
+  let tournamentitemsopt = {threshold: [0.7]};
   let tournamentitemsserv = new IntersectionObserver(onEntry, tournamentitemsopt);
   for (let elm of tournamentitems) {tournamentitemsserv.observe(elm);}
 }
