@@ -3156,7 +3156,7 @@ strong {
 .tournament__list {
   display: flex;
   flex-wrap: wrap;
-  gap: 80px 40px;
+  gap: 80px 50px;
 }
 
 .tournament__item {
@@ -3187,12 +3187,14 @@ strong {
 
 .tournament__item:nth-child(6n+2),
 .tournament__item:nth-child(6n+5) {
-  -webkit-transform: translateY(50px);
-  transform: translateY(50px);
-  -webkit-transition: -webkit-transform 0.2s linear, opacity 0.4s linear;;
-  transition: transform 0.2s linear, opacity 0.4s linear;;
+  -webkit-transform: translateY(40px);
+  transform: translateY(40px);
+  -webkit-transition: -webkit-transform 0.2s linear, opacity 0.4s linear;
+  transition: transform 0.2s linear, opacity 0.4s linear;
 }
 
+.animated.visible.tournament__item:nth-child(6n+2),
+.animated.visible.tournament__item:nth-child(6n+5),
 .visible.tournament__item:nth-child(6n+2),
 .visible.tournament__item:nth-child(6n+5) {
   -webkit-transform: translateY(0);
