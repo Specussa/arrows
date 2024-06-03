@@ -194,7 +194,8 @@ if (ptforms && ptcompetitions && ptstatistics) {
 // end personal__tab
 
 // start personal__competitions_button
-if (ptforms && ptcompetitions && ptstatistics) {
+const pcb = document.querySelector('.personal__competitions_button');
+if (pcb) {
   const pcbutton = document.getElementsByClassName("personal__competitions_button");
   for (i = 0; i < pcbutton.length; i++) {
     pcbutton[i].onclick = function(e) {
@@ -346,3 +347,55 @@ if(partnerlist){
   });
 }
 // end partner__list
+
+// start accordion filter
+const filters = document.querySelector('.filters');
+const ffb = document.querySelectorAll(".filters .filters__button");
+const ffs = document.querySelectorAll(".filters .filter__sublist");
+if(filters) {
+  var filter = document.getElementsByClassName("filters__button");
+  for (i = 0; i < filter.length; i++) {
+    filter[i].onclick = function(e) {
+      var filterAccordion = this.nextElementSibling;
+      var courseFilterAccordion = document.getElementsByClassName("filter__sublist");
+      var courseFilterAccordionActive = document.getElementsByClassName("filters__button active");
+      if (filterAccordion.style.maxHeight) {
+        filterAccordion.style.maxHeight = null;
+        this.classList.remove("active");
+        filterAccordion.classList.remove("active");
+      } else {
+        for (var q = 0; q < courseFilterAccordionActive.length; q++) {
+          courseFilterAccordionActive[q].classList.remove("active");
+          courseFilterAccordion[q].classList.remove("active");
+        }
+        for (var p = 0; p < courseFilterAccordion.length; p++) {
+          this.classList.remove("active");
+          courseFilterAccordion[p].classList.remove("active");
+          courseFilterAccordion[p].style.maxHeight = null;
+        }
+        filterAccordion.style.maxHeight = (filterAccordion.scrollHeight * 2) + "px";
+        filterAccordion.classList.add("active");
+        this.classList.add("active");
+      }
+    };
+  }
+  var filtersublink = document.getElementsByClassName("filter__subitem");
+  for (i = 0; i < filtersublink.length; i++) {
+    filtersublink[i].onclick = function(e) {
+      this.parentNode.classList.toggle('active');
+    };
+  }
+
+  const fl = document.querySelectorAll('.filter__sublist'); 
+  [...fl].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
+  
+  window.addEventListener('click', e => {
+    const target = e.target
+    if (!target.closest('.filter__list')) {
+      ffb.forEach((n) => n.classList.remove("active"));
+      ffs.forEach((n) => n.classList.remove("active"));
+      ffs.forEach((n) => n.style.maxHeight = null);
+    }
+  })
+}
+// end accordion filter
