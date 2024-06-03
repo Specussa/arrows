@@ -530,8 +530,8 @@ strong {
   position: relative;
   background-color: var(--color);
   border-radius: 50px;
-  -webkit-transition: background-color 0.3s linear;
-  transition: background-color 0.3s linear;
+  -webkit-transition: background-color 0.3s linear, color 0.3s linear;
+  transition: background-color 0.3s linear, color 0.3s linear;
   overflow: hidden;
   cursor: pointer;
 }
@@ -562,7 +562,6 @@ strong {
   background-color: var(--border-gray);
 }
 
-
 .checkbox__input:checked ~ .btn,
 .btn__gray.active {
   background-color: var(--bg-dgray);
@@ -579,7 +578,8 @@ strong {
 }
 
 .dark .checkbox__input:checked ~ .btn span:first-child,
-.dark .btn__gray.active span:first-child {
+.dark .btn__gray.active span:first-child,
+.dark .btn__gray.active {
   color: var(--bg);
 }
 
@@ -596,7 +596,8 @@ strong {
   color: var(--color);
 }
 
-.btn__gray span:first-child {
+.btn__gray span:first-child,
+.btn__gray {
   color: var(--text);
 }
 
@@ -605,7 +606,8 @@ strong {
 }
 
 .checkbox__input:checked ~ .btn span:first-child,
-.btn__gray.active span:first-child {
+.btn__gray.active span:first-child,
+.btn__gray.active {
   color: var(--white);
 }
 
@@ -966,7 +968,7 @@ strong {
 .header__nav_social {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
 }
 
 .header__nav_social {
@@ -3455,7 +3457,7 @@ strong {
   transition: color 0.2s linear;
 }
 
-.filters__button span {
+.filters__button svg {
   display: inline-flex;
   width: 11px;
   height: 11px;
@@ -3463,32 +3465,22 @@ strong {
   transform: rotate(0deg);
   -webkit-transition: -webkit-transform 0.3s linear;
   transition: transform 0.3s linear;
+  object-fit: contain;
 }
 
-.filters__button.active span {
+.filters__button.active svg {
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
 
-.filters__button svg {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
+.filters__button.btn,
 .filter__button.btn {
+  display: flex;
   width: max-content;
   padding: 10px 25px;
   height: 38px;
-}
-
-.filters__button {
-  display: flex;
-  padding: 10px 25px;
   align-items: center;
   gap: 10px;
-  background-color: var(--bg-gray);
-  border-radius: 69px;
 }
 
 /* end filters */
