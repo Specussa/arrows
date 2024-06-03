@@ -3393,11 +3393,17 @@ strong {
 
 /* start tournaments_top */
 
+.tournaments_top {
+  overflow: hidden;
+}
+
 .tournaments_top__block {
   display: flex;
   padding: 100px 0;
   flex-direction: column;
   gap: 60px;
+  position: relative;
+  z-index: 2;
 }
 
 .tournaments_top__heads {
