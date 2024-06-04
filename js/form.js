@@ -764,3 +764,201 @@ if(registrationform) {
   }
 }
 // end validate registrationform
+
+// start validate form
+const touregform = document.getElementById('toureg__form');
+
+if(touregform) {
+  const fpsuccess = document.querySelector(".toureg__form .form__pop_success");
+  const fperror = document.querySelector(".toureg__form .form__pop_error");
+  const plastname = document.getElementById('toureg__lastname');
+  const pfirstname = document.getElementById('toureg__firstname');
+  const psurname = document.getElementById('toureg__surname');
+  const pdateofbirth = document.getElementById('toureg__dateofbirth');
+  const pemail = document.getElementById('toureg__email');
+  const pphone = document.getElementById('toureg__phone');
+  const paddress = document.getElementById('toureg__address');
+  const touregcheckbox = document.getElementById('toureg__checkbox');
+  const touregpayone = document.getElementById('toureg__pay_one');
+  const touregpaytwo = document.getElementById('toureg__pay_two');
+  const touregpaythree = document.getElementById('toureg__pay_three');
+  const plastnameMin = plastname.getAttribute('minl');
+  const plastnameMax = plastname.getAttribute('maxl');
+  const pfirstnameMin = pfirstname.getAttribute('minl');
+  const pfirstnameMax = pfirstname.getAttribute('maxl');
+  const psurnameMin = psurname.getAttribute('minl');
+  const psurnameMax = psurname.getAttribute('maxl');
+  const pdateofbirthMin = pdateofbirth.getAttribute('minl');
+  const pdateofbirthMax = pdateofbirth.getAttribute('maxl');
+  const pemailMin = pemail.getAttribute('minl');
+  const pemailMax = pemail.getAttribute('maxl');
+  const pphoneMin = pphone.getAttribute('minl');
+  const pphoneMax = pphone.getAttribute('maxl');
+  const paddressMin = paddress.getAttribute('minl');
+  const paddressMax = paddress.getAttribute('maxl');
+  plastname.oninput = function(){
+    this.value = this.value.substr(0, plastnameMax);
+    this.value = this.value.replace(/[0-9]/g, '');
+    this.value = this.value.replace(/[()!?•—@:,'";№\-_=« »<>%#~`&\/\$\^\.\*\+\\\{\}\[\]\(\|]$/g, '');
+    if(fpsuccess && fpsuccess.classList.contains("active")){fpsuccess.classList.remove('active')};
+    if(fperror && fperror.classList.contains("active")){fperror.classList.remove('active')};
+  }
+  pfirstname.oninput = function(){
+    this.value = this.value.substr(0, pfirstnameMax);
+    this.value = this.value.replace(/[0-9]/g, '');
+    this.value = this.value.replace(/[()!?•—@:,'";№\-_=« »<>%#~`&\/\$\^\.\*\+\\\{\}\[\]\(\|]$/g, '');
+    if(fpsuccess && fpsuccess.classList.contains("active")){fpsuccess.classList.remove('active')};
+    if(fperror && fperror.classList.contains("active")){fperror.classList.remove('active')};
+  }
+  psurname.oninput = function(){
+    this.value = this.value.substr(0, psurnameMax);
+    this.value = this.value.replace(/[0-9]/g, '');
+    this.value = this.value.replace(/[()!?•—@:,'";№\-_=« »<>%#~`&\/\$\^\.\*\+\\\{\}\[\]\(\|]$/g, '');
+    if(fpsuccess && fpsuccess.classList.contains("active")){fpsuccess.classList.remove('active')};
+    if(fperror && fperror.classList.contains("active")){fperror.classList.remove('active')};
+  }
+  pdateofbirth.oninput = function(){
+    this.value = this.value.substr(0, pdateofbirthMax);
+    if(!/^\d{4}\-\d{2}\-\d{2}$/.test(pdateofbirth.value.trim())) {
+      setErrorFor(pdateofbirth);
+    } else if (pdateofbirth.value.trim().split("-", 1) < (new Date().getFullYear() - 1) && pdateofbirth.value.trim().split("-", 1) > (new Date().getFullYear() - 99) && pdateofbirth.value.trim() !== '' && pdateofbirth.value.trim().length >= pdateofbirthMin && pdateofbirth.value.trim().length <= pdateofbirthMax) {
+      setSuccessFor(pdateofbirth);
+    } else {
+      setErrorFor(pdateofbirth);
+    }
+  }
+  pemail.oninput = function(){
+    this.value = this.value.substr(0, pemailMax);
+    this.value = this.value.replace(/[а-яА-ЯёЁ]$/g, '');
+    this.value = this.value.replace(/[()!?•—:,'";№\-_=« »<>%#~`&\/\$\^\*\+\\\{\}\[\]\(\|]$/g, '');
+    if(fpsuccess && fpsuccess.classList.contains("active")){fpsuccess.classList.remove('active')};
+    if(fperror && fperror.classList.contains("active")){fperror.classList.remove('active')};
+  }
+  pphone.oninput = function(){
+    this.value = this.value.substr(0, pphoneMax);
+  }
+  paddress.oninput = function(){
+    this.value = this.value.substr(0, paddressMax);
+    this.value = this.value.replace(/[()!?•—@'";№_=«»<>%#~`&\/\$\^\\*\+\\\{\}\[\]\(\|]$/g, '');
+    if(fpsuccess && fpsuccess.classList.contains("active")){fpsuccess.classList.remove('active')};
+    if(fperror && fperror.classList.contains("active")){fperror.classList.remove('active')};
+  }
+
+  pemail.addEventListener('input', function () {
+    const emailValid = pemail.value.trim();
+    if (this.value.length < this.getAttribute('minl')) {
+      this.parentElement.classList.add('error');
+      this.parentElement.classList.remove('success');
+      this.nextElementSibling.classList.remove('success');
+    } else if (!isFormEmailValid(emailValid)) {
+      this.parentElement.classList.add('error');
+      this.parentElement.classList.remove('success');
+      this.nextElementSibling.classList.remove('success');
+    } else {
+      this.parentElement.classList.remove('error');
+      this.parentElement.classList.add('success');
+      this.nextElementSibling.classList.add('success');
+    }
+  })
+
+  touregform.addEventListener('submit', e => {
+    e.preventDefault();
+    checktouregformInputs();
+  });
+  function checktouregformInputs() {
+    const plastnameValue = plastname.value.trim();
+    const pfirstnameValue = pfirstname.value.trim();
+    const psurnameValue = psurname.value.trim();
+    const pdateofbirthValue = pdateofbirth.value.trim();
+    const pemailValue = pemail.value.trim();
+    const pphoneValue = pphone.value.trim();
+    const paddressValue = paddress.value.trim();
+    const touregpayoneValue = touregpayone.value.trim();
+    const touregpaytwoValue = touregpaytwo.value.trim();
+    const touregpaythreealue = touregpaythree.value.trim();
+    
+    if(plastnameValue !== '' && plastnameValue.length >= plastnameMin && plastnameValue.length <= plastnameMax) {
+      setSuccessFor(plastname);
+    } else {
+      setErrorFor(plastname);
+    }
+    if(pfirstnameValue !== '' && pfirstnameValue.length >= pfirstnameMin && pfirstnameValue.length <= pfirstnameMax) {
+      setSuccessFor(pfirstname);
+    } else {
+      setErrorFor(pfirstname);
+    }
+    if(psurnameValue !== '' && psurnameValue.length >= psurnameMin && psurnameValue.length <= psurnameMax) {
+      setSuccessFor(psurname);
+    } else {
+      setErrorFor(psurname);
+    }
+    if(!/^\d{4}\-\d{2}\-\d{2}$/.test(pdateofbirthValue)) {
+      setErrorFor(pdateofbirth);
+    } else if (pdateofbirthValue.split("-", 1) < (new Date().getFullYear() - 1) && pdateofbirthValue.split("-", 1) > (new Date().getFullYear() - 99) && pdateofbirthValue !== '' && pdateofbirthValue.length >= pdateofbirthMin && pdateofbirthValue.length <= pdateofbirthMax) {
+      setSuccessFor(pdateofbirth);
+    } else {
+      setErrorFor(pdateofbirth);
+    }
+    if(!isFormEmailValid(pemailValue)) {
+      setErrorFor(pemail);
+    } else if (pemailValue !== '' && pemailValue.length >= pemailMin && pemailValue.length <= pemailMax) {
+      setSuccessFor(pemail);
+    } else {
+      setErrorFor(pemail);
+    }
+    if(pphoneValue !== '' && pphoneValue.length >= pphoneMin && pphoneValue.length <= pphoneMax) {
+      setSuccessFor(pphone);
+    } else {
+      setErrorFor(pphone);
+    }
+    if(
+    // paddressValue !== '' && paddressValue.length >= paddressMin && 
+    paddressValue.length <= paddressMax) {
+      setSuccessFor(paddress);
+    } else {
+      setErrorFor(paddress);
+    }
+    if(touregcheckbox.checked) {
+      touregcheckbox.nextElementSibling.classList.remove('error');
+    } else {
+      touregcheckbox.nextElementSibling.classList.add('error');
+    }
+    
+    if(!isFormEmailValid(pemailValue)) {
+      setErrorFor(pemail);
+    } else if(!/^\d{4}\-\d{2}\-\d{2}$/.test(pdateofbirthValue)) {
+      setErrorFor(pdateofbirth);
+    } else if(
+    plastnameValue !== '' && plastnameValue.length >= plastnameMin && plastnameValue.length <= plastnameMax && 
+    pfirstnameValue !== '' && pfirstnameValue.length >= pfirstnameMin && pfirstnameValue.length <= pfirstnameMax && 
+    psurnameValue !== '' && psurnameValue.length >= psurnameMin && psurnameValue.length <= psurnameMax && 
+    pdateofbirthValue.split("-", 1) < (new Date().getFullYear() - 1) && pdateofbirthValue.split("-", 1) > (new Date().getFullYear() - 99) && pdateofbirthValue !== '' && pdateofbirthValue.length >= pdateofbirthMin && pdateofbirthValue.length <= pdateofbirthMax && 
+    pemailValue !== '' && pemailValue.length >= pemailMin && pemailValue.length <= pemailMax && 
+    pphoneValue !== '' && pphoneValue.length >= pphoneMin && pphoneValue.length <= pphoneMax && 
+    // paddressValue !== '' && paddressValue.length >= paddressMin && 
+    paddressValue.length <= paddressMax && 
+    touregcheckbox.checked) {
+      fperror.classList.add('active');
+      fpsuccess.classList.add('active');
+      fetch('/ajax/sendMail.php', {
+        method: 'POST',
+        body: JSON.stringify({
+          plastnameValue: plastnameValue,
+          pfirstnameValue: pfirstnameValue,
+          psurnameValue: psurnameValue,
+          pdateofbirthValue: pdateofbirthValue,
+          pemailValue: pemailValue,
+          pphoneValue: pphoneValue,
+          paddressValue: paddressValue,
+          touregpayoneValue: touregpayoneValue,
+          touregpaytwoValue: touregpaytwoValue,
+          touregpaythreealue: touregpaythreealue
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        },
+      });
+    }
+  }
+}
+// end validate touregform

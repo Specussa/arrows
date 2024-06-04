@@ -1907,7 +1907,8 @@ strong {
 
 /* start form */
 
-.personal__forms {
+.personal__forms,
+.toureg__forms {
   display: flex;
   padding: 80px 40px 40px;
   flex-direction: column;
@@ -1915,19 +1916,23 @@ strong {
 }
 
 .personal__form,
-.personal__pass {
+.personal__pass,
+.toureg__form,
+.toureg__pass {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.personal__form_head {
+.personal__form_head,
+.toureg__form_head {
   padding: 0 0 20px;
   text-transform: uppercase;
 }
 
 .personal__form_btn,
-.personal__pass_btn {
+.personal__pass_btn,
+.toureg__pass_btn {
   width: 200px;
   margin: 0 0 0 auto;
 }
@@ -2409,6 +2414,7 @@ strong {
 }
 
 .form__checkbox_text a {
+  display: inline;
   text-decoration: underline;
   color: var(--text);
 }
@@ -2436,6 +2442,8 @@ strong {
   -webkit-transition: border 0.15s linear;
   transition: border 0.15s linear;
   cursor: pointer;
+  -webkit-transform: translateY(3px);
+  transform: translateY(3px);
 }
 
 .form__checkbox_check.error {
@@ -2463,6 +2471,140 @@ strong {
 
 .form__checkbox input ~ .form__checkbox_check::after {
   opacity: 0;
+}
+
+.toureg__form_flex {
+  display: flex;
+  padding: 20px 0 0;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form__radios {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form__radio {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.toureg__form_pay {
+  padding: 30px 0 0;
+  text-transform: uppercase;
+}
+
+.form__radio_head {
+  padding: 0 0 5px;
+  text-transform: uppercase;
+}
+
+.form__radio_text {
+  -webkit-transform: translateY(-1.5px);
+  transform: translateY(-1.5px);
+}
+
+.form__radio_text,
+.form__radio_text a {
+  color: var(--text);
+}
+
+.form__radio_text a {
+  display: inline;
+  text-decoration: underline;
+  color: var(--text);
+}
+
+.form__radio_text a:hover {
+  color: var(--color);
+}
+
+.form__radio_input {
+  display: none;
+  position: absolute;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form__radio_check {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  padding: 2px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--border-hover);
+  border-radius: 50%;
+  -webkit-transition: border 0.15s linear;
+  transition: border 0.15s linear;
+  cursor: pointer;
+  -webkit-transform: translateY(3px);
+  transform: translateY(3px);
+}
+
+.form__radio_check::after {
+  content: "";
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color);
+  border-radius: 50%;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+
+.form__radio input:checked ~ .form__radio_check::after {
+  opacity: 1;
+}
+
+.form__radio input ~ .form__radio_check::after {
+  opacity: 0;
+}
+
+.form__pop_info {
+  display: flex;
+  padding: 10px 20px;
+  margin: -40px 0 0;
+  gap: 10px;
+  color: var(--text-gray);
+  background-color: var(--bg-gray);
+}
+
+.form__pop_info svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  color: var(--white);
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.form__pop_info svg path:first-child {
+  color: var(--error);
+}
+
+.form__prices {
+  display: flex;
+  padding: 10px 0;
+  align-items: center;
+  gap: 20px;
+}
+
+.form__price {
+  padding: 5px 15px;
+  color: var(--green);
+  background-color: var(--bg-success);
+  text-transform: uppercase;
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+
+.toureg__form_btn {
+  margin: 10px 0 0;
 }
 
 @keyframes errorShake {
@@ -3748,6 +3890,67 @@ strong {
 
 /* end contacts */
 
+/* start toureg */
+
+.toureg {
+  overflow: hidden;
+}
+
+.toureg__block {
+  padding: 100px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.toureg__flex {
+  display: flex;
+  padding: 80px 0;
+  gap: 40px;
+}
+
+.toureg__info {
+  width: calc(50% - 20px);
+
+}
+
+.toureg__image {
+  width: calc(50% - 20px);
+  position: relative;
+}
+
+.toureg__info_block {
+  display: flex;
+  padding: 30px 0;
+  flex-direction: column;
+  gap: 15px;
+  border-bottom: 1px solid var(--bg-hover);
+}
+
+.toureg__info_block {
+  border-top: 1px solid var(--bg-hover);
+}
+
+.toureg__image img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.toureg__heading,
+.toureg__desc,
+.toureg__description {
+  text-transform: uppercase;
+}
+
+.toureg__forms {
+  border: 1px solid var(--border-gray);
+}
+
+/* end toureg */
+
 /* start 1919px */
 @media (max-width: 1919px) {
   h1 {
@@ -3909,6 +4112,10 @@ strong {
   .tournaments__block {
     padding: 80px 0;
   }
+  
+  .toureg__block {
+    padding: 80px 0;
+  }
 }
 /* end 1919px */
 
@@ -3931,16 +4138,23 @@ strong {
   .form__btn {
     margin: 17px 0 0 auto;
   }
+  .form__pop_info {
+    margin: -20px 0 0;
+    padding: 10px;
+  }
 
   .personal__block {
     padding: 50px 0px;
     gap: 70px;
   }
-  .personal__form_head {
+  .personal__form_head,
+  .toureg__form_head {
     padding: 0 0 20px;
   }
   .personal__form,
-  .personal__pass {
+  .personal__pass,
+  .toureg__form,
+  .toureg__pass {
     gap: 10px;
   }
   .personal__statistics_type,
@@ -4482,6 +4696,21 @@ strong {
   .tournaments__block {
     padding: 60px 0;
   }
+
+  .toureg__block {
+    padding: 60px 0;
+  }
+  .toureg__flex {
+    padding: 60px 0;
+    gap: 20px;
+  }
+  .toureg__info,
+  .toureg__image {
+    width: calc(50% - 10px);
+  }
+  .toureg__info_block {
+    padding: 20px 0;
+  }
   
   .footer__top {
     flex-direction: column;
@@ -4637,14 +4866,18 @@ strong {
     padding: 40px 0 80px;
     gap: 50px;
   }
-  .personal__form_head {
+  .personal__form_head,
+  .toureg__form_head {
     padding: 0 0 30px;
   }
   .personal__form,
-  .personal__pass {
+  .personal__pass,
+  .toureg__form,
+  .toureg__pass {
     gap: 0;
   }
-  .personal__forms {
+  .personal__forms,
+  .toureg__forms {
     padding: 40px 10px;
   }
   .personal__head {
@@ -4894,6 +5127,24 @@ strong {
   }
   .tournaments_top__list {
     padding: 10px 0 0;
+  }
+
+  .toureg__block {
+    padding: 50px 0;
+  }
+  .toureg__flex {
+    padding: 40px 0;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .toureg__info,
+  .toureg__image {
+    width: 100%;
+  }
+  .toureg__image img {
+    height: auto;
+    position: relative;
+    object-fit: contain;
   }
 
   .footer__flex {
