@@ -40,7 +40,7 @@ if(domen){
 const headertransparent = document.querySelector('.header__transparent');
 if (headertransparent) {
   window.addEventListener("scroll", () => {
-    if (Math.round(window.scrollY) > headertransparent.clientHeight) {
+    if (Math.round(window.scrollY) > 1) {
       headertransparent.classList.add('active');
     } else {
       headertransparent.classList.remove('active');
