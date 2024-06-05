@@ -524,7 +524,7 @@ strong {
 .btn {
   display: flex;
   width: 300px;
-  padding: 18px;
+  padding: 18px 30px;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -1394,6 +1394,10 @@ strong {
   background-size: 11px 11px;
 }
 
+.dark .breadcrumbs__item:not(:last-child):after {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iMTEiIHZpZXdCb3g9IjAgMCAxMSAxMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMgOS40MzVMNi4wOTA0MiA2TDMgMi41NTc1TDMuOTUxNDIgMS41TDggNkwzLjk1MTQyIDEwLjVMMyA5LjQzNVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=")
+}
+
 .breadcrumbs__link {
   text-transform: uppercase;
 }
@@ -1812,7 +1816,7 @@ strong {
   gap: 20px;
 }
 
-.personal__competitions_tab {
+.personal__competitions_tab.btn {
   width: max-content;
   padding: 10px 25px;
 }
@@ -3922,6 +3926,34 @@ strong {
   width: calc(50% - 20px);
 }
 
+.toureg__reg_buttons {
+  display: flex;
+  padding: 60px 0 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.toureg__reg_btn.btn,
+.toureg__reg .personal__competitions_record,
+.toureg__reg_desc {
+  width: calc(50% - 30px);
+}
+
+.toureg__reg_desc {
+  color: var(--text-gray);
+}
+
+.toureg__reg_flex {
+  display: flex;
+  padding: 20px 0 0;
+  gap: 60px;
+}
+
+.toureg__reg_head {
+  text-transform: uppercase;
+}
+
 .toureg__info_block {
   display: flex;
   padding: 30px 0;
@@ -3955,7 +3987,11 @@ strong {
 
 /* end toureg */
 
-/* start toureg */
+/* start tour */
+
+.tour__block {
+  padding: 0 0 100px;
+}
 
 .tour__flex {
   display: flex;
@@ -3963,7 +3999,167 @@ strong {
   gap: 40px;
 }
 
-/* end toureg */
+.tour__divider {
+  width: 100%;
+  height: 1px;
+  margin: 60px 0 40px;
+  background-color: var(--border-gray);
+}
+
+.tour__info {
+  max-height: 0;
+  opacity: 0;
+  -webkit-transition: max-height 0s linear, opacity 0.2s linear;
+  transition: max-height 0s linear, opacity 0.2s linear;
+  -webkit-transition-delay: 0.2s, 0s;
+  transition-delay: 0.2s, 0s;
+  overflow: hidden;
+}
+
+.tour__info.active {
+  max-height: 100000px;
+  opacity: 1;
+  -webkit-transition-delay: 0.2s, 0.3s;
+  transition-delay: 0.2s, 0.3s;
+}
+
+.tour__tab.btn {
+  width: max-content;
+  padding: 10px 25px;
+}
+
+.tour__tabs {
+  display: flex;
+  padding:  0 0 80px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tour__info_flex {
+  display: flex;
+  gap: 180px;
+}
+
+.tour__info_left {
+  display: flex;
+  width: calc(50% - 20px);
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tour__info_right {
+  width: calc(50% - 20px);
+}
+
+.tour__info_head {
+  text-transform: uppercase;
+}
+
+.tour__info_desc {
+  color: var(--text-gray);
+}
+
+.tour__info_links {
+  padding: 20px 0 0;
+}
+
+.tour__info_link {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  color: var(--color);
+}
+
+.tour__info_link:hover {
+  color: var(--text);
+}
+
+.tour__info_link svg {
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
+}
+
+.tour__accordion_button {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.tour__accordion_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.tour__accordion_head span {
+  width: 14px;
+  height: 14px;
+  position: relative;
+}
+
+.tour__accordion_head span::after {
+  content: "";
+  display: flex;
+  width: 14px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: var(--text);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.tour__accordion_head span::before {
+  content: "";
+  display: flex;
+  width: 14px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: var(--text);
+  -webkit-transform: translate(-50%,-50%) rotate(90deg);
+  transform: translate(-50%,-50%) rotate(90deg);
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+}
+
+.tour__accordion_desc {
+  padding: 0 0 20px;
+}
+
+.tour__accordion_item {
+  border-bottom: 1px solid var(--border-gray);
+}
+
+.tour__accordion_item:first-child {
+  border-top: 1px solid var(--border-gray);
+}
+
+.tour__accordion_info {
+  max-height: 0px;
+  opacity: 0;
+  -webkit-transition: max-height 0.3s linear, opacity 0.3s linear;
+  transition: max-height 0.3s linear, opacity 0.3s linear;
+  overflow: hidden;
+}
+
+.tour__accordion_item.active .tour__accordion_info {
+  max-height: 2000px;
+  opacity: 1;
+}
+
+.tour__accordion_item.active .tour__accordion_head span::before {
+  -webkit-transform: translate(-50%,-50%) rotate(0deg);
+  transform: translate(-50%,-50%) rotate(0deg);
+}
+
+/* end tour */
 
 /* start 1919px */
 @media (max-width: 1919px) {
@@ -4129,6 +4325,23 @@ strong {
   
   .toureg__block {
     padding: 80px 0;
+  }
+  .toureg__reg_buttons {
+    padding: 40px 0 0;
+    gap: 30px;
+  }
+  .toureg__reg_btn.btn,
+  .toureg__reg .personal__competitions_record,
+  .toureg__reg_desc {
+    width: calc(50% - 15px);
+  }
+  .toureg__reg_flex {
+    padding: 20px 0 0;
+    gap: 30px;
+  }
+  
+  .tour__block {
+    padding: 0 0 80px;
   }
 }
 /* end 1919px */
@@ -4313,6 +4526,21 @@ strong {
 
   .tournaments__block {
     padding: 50px 0;
+  }
+  
+  .toureg__reg_desc {
+    width: 100%;
+  }
+  .toureg__reg_btn.btn,
+  .toureg__reg .personal__competitions_record {
+    width: auto;
+  }
+  .toureg__reg_flex {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .toureg__reg_buttons {
+    justify-content: flex-start;
   }
 
   .footer__list {
@@ -4727,8 +4955,18 @@ strong {
     padding: 20px 0;
   }
   
+  .tour__block {
+    padding: 0 0 60px;
+  }
   .tour__flex {
     gap: 20px;
+  }
+  .tour__tabs {
+    padding: 0 0 60px;
+  }
+  .tour__info_left,
+  .tour__info_right {
+    width: calc(50% - 10px);
   }
   
   .footer__top {
@@ -4905,9 +5143,6 @@ strong {
 
   .personal__competitions_tabs {
     padding: 40px 15px 0;
-  }
-  .personal__competitions_tab {
-    width: max-content;
   }
   .personal__competitions_head {
     padding: 40px 15px 20px;
@@ -5167,9 +5402,22 @@ strong {
     object-fit: contain;
   }
   
+  .tour__block {
+    padding: 0 0 50px;
+  }
   .tour__flex {
     flex-direction: column;
     gap: 30px;
+  }
+  .tour__tabs {
+    padding: 0 0 50px;
+  }
+  .tour__info_left,
+  .tour__info_right {
+    width: 100%;
+  }
+  .tour__accordion_button {
+    padding: 30px 0;
   }
 
   .footer__flex {
@@ -5285,6 +5533,14 @@ strong {
 
   .hero__block {
     padding: 80px 0;
+  }
+
+  .toureg__reg_buttons {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .toureg__reg_btn.btn {
+    width: 100%;
   }
 }
 /* end 390px */

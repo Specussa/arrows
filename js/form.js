@@ -779,9 +779,13 @@ if(touregform) {
   const pphone = document.getElementById('toureg__phone');
   const paddress = document.getElementById('toureg__address');
   const touregcheckbox = document.getElementById('toureg__checkbox');
+  const touregmale = document.getElementById('toureg__male');
+  const touregfemale = document.getElementById('toureg__female');
+  const touregonemalefemale = document.getElementById('toureg__male_female');
   const touregpayone = document.getElementById('toureg__pay_one');
   const touregpaytwo = document.getElementById('toureg__pay_two');
   const touregpaythree = document.getElementById('toureg__pay_three');
+  const touregonetwothree = document.getElementById('toureg__one_two_three');
   const plastnameMin = plastname.getAttribute('minl');
   const plastnameMax = plastname.getAttribute('maxl');
   const pfirstnameMin = pfirstname.getAttribute('minl');
@@ -873,9 +877,13 @@ if(touregform) {
     const pemailValue = pemail.value.trim();
     const pphoneValue = pphone.value.trim();
     const paddressValue = paddress.value.trim();
-    const touregpayoneValue = touregpayone.value.trim();
-    const touregpaytwoValue = touregpaytwo.value.trim();
-    const touregpaythreealue = touregpaythree.value.trim();
+    const touregpayoneValue = touregpayone.checked;
+    const touregpaytwoValue = touregpaytwo.checked;
+    const touregpaythreeValue = touregpaythree.checked;
+    const touregmaleValue = touregmale.checked;
+    const touregfemaleValue = touregfemale.checked;
+    let touregonemalefemaleValue = touregonemalefemale.value;
+    let touregonetwothreeValue = touregonetwothree.value;
     
     if(plastnameValue !== '' && plastnameValue.length >= plastnameMin && plastnameValue.length <= plastnameMax) {
       setSuccessFor(plastname);
@@ -940,6 +948,18 @@ if(touregform) {
     touregcheckbox.checked) {
       fperror.classList.add('active');
       fpsuccess.classList.add('active');
+      if (touregmaleValue === true) {
+        touregonemalefemaleValue = touregmale.id;
+      } else if (touregfemaleValue === true) {
+        touregonemalefemaleValue = touregfemale.id;
+      }
+      if (touregpayoneValue === true) {
+        touregonetwothreeValue = touregpayone.id;
+      } else if (touregpaytwoValue === true) {
+        touregonetwothreeValue = touregpaytwo.id;
+      } else if (touregpaythreeValue === true) {
+        touregonetwothreeValue = touregpaythree.id;
+      }
       fetch('/ajax/sendMail.php', {
         method: 'POST',
         body: JSON.stringify({
@@ -950,9 +970,8 @@ if(touregform) {
           pemailValue: pemailValue,
           pphoneValue: pphoneValue,
           paddressValue: paddressValue,
-          touregpayoneValue: touregpayoneValue,
-          touregpaytwoValue: touregpaytwoValue,
-          touregpaythreealue: touregpaythreealue
+          touregonemalefemaleValue: touregonemalefemaleValue,
+          touregonetwothreeValue: touregonetwothreeValue
         }),
         headers: {
           "Content-type": "application/json; charset=UTF-8"

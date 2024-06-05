@@ -399,3 +399,23 @@ if(filters) {
   })
 }
 // end accordion filter
+
+// start tour__accordion_button
+const tourab = document.querySelector('.tour__accordion_button');
+if (tourab) {
+  const tourabutton = document.getElementsByClassName("tour__accordion_button");
+  for (i = 0; i < tourabutton.length; i++) {
+    tourabutton[i].onclick = function(e) {
+      const tourabuttonNext = this.nextElementSibling;
+
+      if (tourabuttonNext && this.parentElement.classList.contains("active")) {
+        this.parentElement.classList.remove("active");
+        tourabuttonNext.style.maxHeight = null;
+      } else if (tourabuttonNext) {
+        tourabuttonNext.style.maxHeight = tourabuttonNext.scrollHeight + "px";
+        this.parentElement.classList.add("active");
+      }
+    };
+  }
+}
+// end tour__accordion_button
