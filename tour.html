@@ -8,6 +8,7 @@
   <link href="img/favicon.ico" rel="shortcut icon">
   <link rel="stylesheet" href="css/swiper.min.css">
   <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
   <link rel="stylesheet" href="css/style.css">
   <script>window.console = window.console || function(t) {};</script>
   <title>Arrows</title>
@@ -98,24 +99,16 @@
           <nav class="header__nav">
             <ul class="header__nav_list">
               <li class="header__nav_item">
-                <a href="#" class="header__nav_link sub_one">
-                  Рейтинг
-                </a>
+                <a href="#" class="header__nav_link sub_one">Рейтинг</a>
               </li>
               <li class="header__nav_item">
-                <a href="#" class="header__nav_link sub_one">
-                  Стрелки
-                </a>
+                <a href="#" class="header__nav_link sub_one">Стрелки</a>
               </li>
               <li class="header__nav_item">
-                <a href="#" class="header__nav_link sub_one">
-                  Турниры
-                </a>
+                <a href="tournaments.html" class="header__nav_link sub_one">Турниры</a>
               </li>
               <li class="header__nav_item">
-                <a href="#" class="header__nav_link sub_one">
-                  Документы
-                </a>
+                <a href="#" class="header__nav_link sub_one">Документы</a>
               </li>
             </ul>
           </nav>
@@ -331,7 +324,7 @@
               <div class="tour__info_right">
                 <div class="tour__accordion">
                   <ul class="tour__accordion_list">
-                    <li class="tour__accordion_item">
+                    <li class="tour__accordion_item animate_top">
                       <button class="tour__accordion_button">
                         <h4 class="tour__accordion_head">Общие положения<span></span></h4>
                       </button>
@@ -353,7 +346,7 @@
                         </p>
                       </div>
                     </li>
-                    <li class="tour__accordion_item">
+                    <li class="tour__accordion_item animate_top">
                       <button class="tour__accordion_button">
                         <h4 class="tour__accordion_head">Vесто / сроки проведения<span></span></h4>
                       </button>
@@ -375,7 +368,7 @@
                         </p>
                       </div>
                     </li>
-                    <li class="tour__accordion_item">
+                    <li class="tour__accordion_item animate_top">
                       <button class="tour__accordion_button">
                         <h4 class="tour__accordion_head">Спонсоры<span></span></h4>
                       </button>
@@ -397,7 +390,7 @@
                         </p>
                       </div>
                     </li>
-                    <li class="tour__accordion_item">
+                    <li class="tour__accordion_item animate_top">
                       <button class="tour__accordion_button">
                         <h4 class="tour__accordion_head">Рекомендации / требования<span></span></h4>
                       </button>
@@ -425,7 +418,73 @@
             </div>
           </div>
           <div class="tour__info tour__info_photo">
-            <div class="personal__competitions">
+            <div class="tour__slider">
+              <div class="tour__slider_flex">
+                <div class="tour__slider_info">
+                  <h2 class="tour__slider_head animate_top">Фото и видео с турнира</h2>
+                  <p class="tour__slider_desc animate_left">Визуальный дневник турнира по стендовой стрельбе с важными моментами и победами. Запись с турнира можете посмотреть на нашем YouTube канале.</p>
+                </div>
+                <div class="tour__slider_links animate_right">
+                  <a href="" class="tour__slider_link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M23.76 7.16694C23.76 7.16694 23.5253 5.50137 22.806 4.76806C21.8933 3.80506 20.8703 3.80056 20.4015 3.74469C17.043 3.5 12.0052 3.5 12.0052 3.5H11.9948C11.9948 3.5 6.957 3.5 3.5985 3.74469C3.129 3.80056 2.10675 3.80506 1.19325 4.76806C0.474 5.50156 0.24 7.16694 0.24 7.16694C0.24 7.16694 0 9.12331 0 11.0787V12.9127C0 14.8689 0.24 16.8245 0.24 16.8245C0.24 16.8245 0.474 18.4901 1.19325 19.2234C2.10675 20.1864 3.306 20.1562 3.84 20.2567C5.76 20.4425 12 20.4999 12 20.4999C12 20.4999 17.043 20.4924 20.4015 20.2477C20.8703 20.1911 21.8933 20.1866 22.806 19.2236C23.5253 18.4901 23.76 16.8247 23.76 16.8247C23.76 16.8247 24 14.8691 24 12.9127V11.0787C24 9.12331 23.76 7.16694 23.76 7.16694ZM9.522 15.1349L9.52125 8.34387L16.0057 11.7511L9.522 15.1349Z" fill="#FF0000"/>
+                    </svg>
+                    Смотреть запись с турнира
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="12" viewBox="0 0 11 12" fill="none">
+                      <path d="M3 9.935L6.09042 6.5L3 3.0575L3.95142 2L8 6.5L3.95142 11L3 9.935Z" fill="currentColor"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="tour__slider_swiper swiper animate_top">
+              <ul class="tour__slider_list swiper-wrapper">
+                <li class="tour__slider_item swiper-slide">
+                  <div class="tour__slider_image">
+                    <img src="img/tournament/tournament_1.webp" alt="">
+                  </div>
+                </li>
+                <li class="tour__slider_item swiper-slide">
+                  <div class="tour__slider_image">
+                    <img src="img/tournament/tournament_2.webp" alt="">
+                  </div>
+                </li>
+                <li class="tour__slider_item swiper-slide">
+                  <div class="tour__slider_image">
+                    <img src="img/tournament/tournament_3.webp" alt="">
+                  </div>
+                </li>
+                <li class="tour__slider_item swiper-slide">
+                  <div class="tour__slider_image">
+                    <img src="img/tournament/tournament_4.webp" alt="">
+                  </div>
+                </li>
+                <li class="tour__slider_item swiper-slide">
+                  <div class="tour__slider_image">
+                    <img src="img/tournament/toureg.webp" alt="">
+                  </div>
+                </li>
+                <li class="tour__slider_item swiper-slide">
+                  <div class="tour__slider_image">
+                    <img src="img/tournament/tournaments_top.webp" alt="">
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="tour__navigation">
+              <div class="tour__buttons">
+                <div class="swiper-button-prev tour__prev">
+                  <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 9.935L4.90958 6.5L8 3.0575L7.04858 2L3 6.5L7.04858 11L8 9.935Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="swiper-button-next tour__next">
+                  <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 9.935L6.09042 6.5L3 3.0575L3.95142 2L8 6.5L3.95142 11L3 9.935Z" fill="currentColor"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="swiper-scrollbar tour__scrollbar"></div>
             </div>
           </div>
         </div>
@@ -522,7 +581,7 @@
                     <a href="#" class="sub_one footer__link">Стрелки</a>
                   </li>
                   <li class="footer__item">
-                    <a href="#" class="sub_one footer__link">Турниры</a>
+                    <a href="tournaments.html" class="sub_one footer__link">Турниры</a>
                   </li>
                   <li class="footer__item">
                     <a href="#" class="sub_one footer__link">Документы</a>
@@ -573,6 +632,7 @@
       </div>
     </footer>
   </main>
+  <script src="js/swiper.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/animate.js"></script>
   <script>

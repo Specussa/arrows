@@ -419,3 +419,58 @@ if (tourab) {
   }
 }
 // end tour__accordion_button
+
+// start personal__competitions_tab
+const ttabActive = document.querySelectorAll(".tour .tour__tab");
+const ttabtournament = document.querySelector('.tour__tab_tournament');
+const ttabphoto = document.querySelector('.tour__tab_photo');
+
+const tinfoActive = document.querySelectorAll(".tour .tour__info");
+const titournament = document.querySelector('.tour__info_tournament');
+const tiphoto = document.querySelector('.tour__info_photo');
+
+if (ttabtournament && ttabphoto) {
+  ttabtournament.addEventListener('click', function() {
+    if (!ttabtournament.classList.contains("active")) {
+      ttabActive.forEach((n) => n.classList.remove("active"));
+      tinfoActive.forEach((n) => n.classList.remove("active"));
+      titournament.classList.add("active");
+      ttabtournament.classList.add("active");
+    }
+  })
+  
+  ttabphoto.addEventListener('click', function() {
+    if (!ttabphoto.classList.contains("active")) {
+      ttabActive.forEach((n) => n.classList.remove("active"));
+      tinfoActive.forEach((n) => n.classList.remove("active"));
+      tiphoto.classList.add("active");
+      ttabphoto.classList.add("active");
+    }
+  })
+}
+// end personal__competitions_tab
+
+// start tour__accordion_button
+const toursliderswiper = document.querySelector('.tour__slider_swiper');
+  if(toursliderswiper){
+  var swiper = new Swiper(".tour__slider_swiper", {
+    slidesPerView: "auto",
+    spaceBetween: 20,
+    speed: 500,
+    navigation: {
+      nextEl: '.tour__next',
+      prevEl: '.tour__prev',
+    },
+    scrollbar: {
+      el: ".swiper-scrollbar",
+      draggable: true,
+      clickable: true,
+    },
+    breakpoints: {
+      1439: {
+        spaceBetween: 40,
+      },
+    },
+  });
+}
+// end tour__accordion_button
