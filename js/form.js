@@ -1,5 +1,10 @@
 var i;
 
+const finputs = document.querySelectorAll(".form__input");
+for (i = 0; i < finputs.length; i++) {
+  finputs[i].addEventListener("input", updateformValue);
+}
+
 function updateformValue() {
   if (this.value.length < this.getAttribute('minl')) {
     this.parentElement.classList.add('error');
@@ -169,11 +174,7 @@ if(personalform) {
       this.nextElementSibling.classList.add('success');
     }
   })
-
-  personalform.addEventListener('submit', e => {
-    e.preventDefault();
-    checkpersonalformInputs();
-  });
+  
   function checkpersonalformInputs() {
     const plastnameValue = plastname.value.trim();
     const pfirstnameValue = pfirstname.value.trim();
@@ -224,11 +225,23 @@ if(personalform) {
     } else {
       setErrorFor(paddress);
     }
+  }
+
+  personalform.addEventListener('submit', e => {
+    const plastnameValue = plastname.value.trim();
+    const pfirstnameValue = pfirstname.value.trim();
+    const psurnameValue = psurname.value.trim();
+    const pdateofbirthValue = pdateofbirth.value.trim();
+    const pemailValue = pemail.value.trim();
+    const pphoneValue = pphone.value.trim();
+    const paddressValue = paddress.value.trim();
     
     if(!isFormEmailValid(pemailValue)) {
       setErrorFor(pemail);
+      e.preventDefault();
     } else if(!/^\d{4}\-\d{2}\-\d{2}$/.test(pdateofbirthValue)) {
       setErrorFor(pdateofbirth);
+      e.preventDefault();
     } else if(
     plastnameValue !== '' && plastnameValue.length >= plastnameMin && plastnameValue.length <= plastnameMax && 
     pfirstnameValue !== '' && pfirstnameValue.length >= pfirstnameMin && pfirstnameValue.length <= pfirstnameMax && 
@@ -238,25 +251,28 @@ if(personalform) {
     pphoneValue !== '' && pphoneValue.length >= pphoneMin && pphoneValue.length <= pphoneMax && 
     // paddressValue !== '' && paddressValue.length >= paddressMin && 
     paddressValue.length <= paddressMax) {
-      fperror.classList.add('active');
-      fpsuccess.classList.add('active');
-      fetch('/ajax/sendMail.php', {
-        method: 'POST',
-        body: JSON.stringify({
-          plastnameValue: plastnameValue,
-          pfirstnameValue: pfirstnameValue,
-          psurnameValue: psurnameValue,
-          pdateofbirthValue: pdateofbirthValue,
-          pemailValue: pemailValue,
-          pphoneValue: pphoneValue,
-          paddressValue: paddressValue
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8"
-        },
-      });
+      // fperror.classList.add('active');
+      // fpsuccess.classList.add('active');
+      // fetch('/ajax/sendMail.php', {
+      //   method: 'POST',
+      //   body: JSON.stringify({
+      //     plastnameValue: plastnameValue,
+      //     pfirstnameValue: pfirstnameValue,
+      //     psurnameValue: psurnameValue,
+      //     pdateofbirthValue: pdateofbirthValue,
+      //     pemailValue: pemailValue,
+      //     pphoneValue: pphoneValue,
+      //     paddressValue: paddressValue
+      //   }),
+      //   headers: {
+      //     "Content-type": "application/json; charset=UTF-8"
+      //   },
+      // });
+    } else {
+      e.preventDefault();
     }
-  }
+    checkpersonalformInputs();
+  });
 }
 // end validate personalform
 
@@ -292,10 +308,6 @@ if(personalpass) {
     if(fperror && fperror.classList.contains("active")){fperror.classList.remove('active')};
   }
 
-  personalpass.addEventListener('submit', e => {
-    e.preventDefault();
-    checkpersonalpassInputs();
-  });
   function checkpersonalpassInputs() {
     const poldpassValue = poldpass.value.trim();
     const pnewpassValue = pnewpass.value.trim();
@@ -316,26 +328,35 @@ if(personalpass) {
     } else {
       setErrorFor(prepeatpass);
     }
+  }
+  
+  personalpass.addEventListener('submit', e => {
+    const poldpassValue = poldpass.value.trim();
+    const pnewpassValue = pnewpass.value.trim();
+    const prepeatpassValue = prepeatpass.value.trim();
     
     if(
     poldpassValue !== '' && poldpassValue.length >= poldpassMin && poldpassValue.length <= poldpassMax && 
     pnewpassValue !== '' && pnewpassValue.length >= pnewpassMin && pnewpassValue.length <= pnewpassMax && 
     prepeatpassValue !== '' && prepeatpassValue.length >= prepeatpassMin && prepeatpassValue.length <= prepeatpassMax && pnewpassValue === prepeatpassValue) {
-      fperror.classList.add('active');
-      fpsuccess.classList.add('active');
-      fetch('/ajax/sendMail.php', {
-        method: 'POST',
-        body: JSON.stringify({
-          poldpassValue: poldpassValue,
-          pnewpassValue: pnewpassValue,
-          prepeatpassValue: prepeatpassValue
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8"
-        },
-      });
+      // fperror.classList.add('active');
+      // fpsuccess.classList.add('active');
+      // fetch('/ajax/sendMail.php', {
+      //   method: 'POST',
+      //   body: JSON.stringify({
+      //     poldpassValue: poldpassValue,
+      //     pnewpassValue: pnewpassValue,
+      //     prepeatpassValue: prepeatpassValue
+      //   }),
+      //   headers: {
+      //     "Content-type": "application/json; charset=UTF-8"
+      //   },
+      // });
+    } else {
+      e.preventDefault();
     }
-  }
+    checkpersonalpassInputs();
+  });
 }
 // end validate personalpass
 
@@ -381,11 +402,7 @@ if(authform) {
       this.nextElementSibling.classList.add('success');
     }
   })
-
-  authform.addEventListener('submit', e => {
-    e.preventDefault();
-    checkauthformInputs();
-  });
+  
   function checkauthformInputs() {
     const apassValue = apass.value.trim();
     const aemailValue = aemail.value.trim();
@@ -402,26 +419,35 @@ if(authform) {
     } else {
       setErrorFor(aemail);
     }
+  }
+
+  authform.addEventListener('submit', e => {
+    const apassValue = apass.value.trim();
+    const aemailValue = aemail.value.trim();
     
     if(!isFormEmailValid(aemailValue)) {
       setErrorFor(aemail);
+      e.preventDefault();  
     } else if(
     apassValue !== '' && apassValue.length >= apassMin && apassValue.length <= apassMax && 
     aemailValue !== '' && aemailValue.length >= aemailMin && aemailValue.length <= aemailMax ) {
       // window.location.href = 'personal.html';
-      fperror.classList.add('active');
-      fpsuccess.classList.add('active');
-      fetch('/ajax/sendMail.php', {
-        method: 'POST',
-        body: JSON.stringify({
-          aemailValue: aemailValue,
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8"
-        },
-      });
+      // fperror.classList.add('active');
+      // fpsuccess.classList.add('active');
+      // fetch('/ajax/sendMail.php', {
+      //   method: 'POST',
+      //   body: JSON.stringify({
+      //     aemailValue: aemailValue,
+      //   }),
+      //   headers: {
+      //     "Content-type": "application/json; charset=UTF-8"
+      //   },
+      // });
+    } else {
+      e.preventDefault();  
     }
-  }
+    checkauthformInputs();
+  });
 }
 // end validate auth__form
 
@@ -458,14 +484,10 @@ if(recoveryform) {
       this.nextElementSibling.classList.add('success');
     }
   })
-
-  recoveryform.addEventListener('submit', e => {
-    e.preventDefault();
-    checkrecoveryformInputs();
-  });
+  
   function checkrecoveryformInputs() {
     const remailValue = remail.value.trim();
-    
+      
     if(!isFormEmailValid(remailValue)) {
       setErrorFor(remail);
     } else if (remailValue !== '' && remailValue.length >= remailMin && remailValue.length <= remailMax) {
@@ -473,23 +495,31 @@ if(recoveryform) {
     } else {
       setErrorFor(remail);
     }
-    
+  }
+
+  recoveryform.addEventListener('submit', e => {
+    const remailValue = remail.value.trim();
+      
     if(!isFormEmailValid(remailValue)) {
       setErrorFor(remail);
+      e.preventDefault();
     } else if(remailValue !== '' && remailValue.length >= remailMin && remailValue.length <= remailMax ) {
-      fperror.classList.add('active');
-      fpsuccess.classList.add('active');
-      fetch('/ajax/sendMail.php', {
-        method: 'POST',
-        body: JSON.stringify({
-          remailValue: remailValue,
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8"
-        },
-      });
+      // fperror.classList.add('active');
+      // fpsuccess.classList.add('active');
+      // fetch('/ajax/sendMail.php', {
+      //   method: 'POST',
+      //   body: JSON.stringify({
+      //     remailValue: remailValue,
+      //   }),
+      //   headers: {
+      //     "Content-type": "application/json; charset=UTF-8"
+      //   },
+      // });
+    } else {
+      e.preventDefault();
     }
-  }
+    checkrecoveryformInputs();
+  });
 }
 // end validate recovery__form
 
@@ -517,10 +547,6 @@ if(changeform) {
     if(fperror && fperror.classList.contains("active")){fperror.classList.remove('active')};
   }
 
-  changeform.addEventListener('submit', e => {
-    e.preventDefault();
-    checkchangeformInputs();
-  });
   function checkchangeformInputs() {
     const cnewpassValue = cnewpass.value.trim();
     const crepeatpassValue = crepeatpass.value.trim();
@@ -535,24 +561,32 @@ if(changeform) {
     } else {
       setErrorFor(crepeatpass);
     }
+  }
+  
+  changeform.addEventListener('submit', e => {
+    const cnewpassValue = cnewpass.value.trim();
+    const crepeatpassValue = crepeatpass.value.trim();
     
     if(
     cnewpassValue !== '' && cnewpassValue.length >= cnewpassMin && cnewpassValue.length <= cnewpassMax && 
     crepeatpassValue !== '' && crepeatpassValue.length >= crepeatpassMin && crepeatpassValue.length <= crepeatpassMax && cnewpassValue === crepeatpassValue) {
-      fperror.classList.add('active');
-      fpsuccess.classList.add('active');
-      fetch('/ajax/sendMail.php', {
-        method: 'POST',
-        body: JSON.stringify({
-          cnewpassValue: cnewpassValue,
-          crepeatpassValue: crepeatpassValue
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8"
-        },
-      });
+      // fperror.classList.add('active');
+      // fpsuccess.classList.add('active');
+      // fetch('/ajax/sendMail.php', {
+      //   method: 'POST',
+      //   body: JSON.stringify({
+      //     cnewpassValue: cnewpassValue,
+      //     crepeatpassValue: crepeatpassValue
+      //   }),
+      //   headers: {
+      //     "Content-type": "application/json; charset=UTF-8"
+      //   },
+      // });
+    } else {
+      e.preventDefault();
     }
-  }
+    checkchangeformInputs();
+  });
 }
 // end validate change__form
 
@@ -572,34 +606,37 @@ if(confirmationform) {
     if(fperror && fperror.classList.contains("active")){fperror.classList.remove('active')};
   }
 
-  confirmationform.addEventListener('submit', e => {
-    e.preventDefault();
-    checkconfirmationformInputs();
-  });
   function checkconfirmationformInputs() {
     const concodeValue = concode.value.trim();
-    
+  
     if(concodeValue !== '' && concodeValue.length >= concodeMin && concodeValue.length <= concodeMax) {
       setSuccessFor(concode);
     } else {
       setErrorFor(concode);
     }
-    
+  }
+
+  confirmationform.addEventListener('submit', e => {
+    const concodeValue = concode.value.trim();
+  
     if(
     concodeValue !== '' && concodeValue.length >= concodeMin && concodeValue.length <= concodeMax) {
-      fperror.classList.add('active');
-      fpsuccess.classList.add('active');
-      fetch('/ajax/sendMail.php', {
-        method: 'POST',
-        body: JSON.stringify({
-          concodeValue: concodeValue
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8"
-        },
-      });
+      // fperror.classList.add('active');
+      // fpsuccess.classList.add('active');
+      // fetch('/ajax/sendMail.php', {
+      //   method: 'POST',
+      //   body: JSON.stringify({
+      //     concodeValue: concodeValue
+      //   }),
+      //   headers: {
+      //     "Content-type": "application/json; charset=UTF-8"
+      //   },
+      // });
+    } else {
+      e.preventDefault();
     }
-  }
+    checkconfirmationformInputs();
+  });
 }
 // end validate confirmation__form
 
@@ -684,10 +721,6 @@ if(registrationform) {
     }
   })
 
-  registrationform.addEventListener('submit', e => {
-    e.preventDefault();
-    checkregistrationformInputs();
-  });
   function checkregistrationformInputs() {
     const rlastnameValue = rlastname.value.trim();
     const rfirstnameValue = rfirstname.value.trim();
@@ -695,7 +728,7 @@ if(registrationform) {
     const remailValue = remail.value.trim();
     const rpassValue = rpass.value.trim();
     const rrepeatpassValue = rrepeatpass.value.trim();
-    
+  
     if(rlastnameValue !== '' && rlastnameValue.length >= rlastnameMin && rlastnameValue.length <= rlastnameMax) {
       setSuccessFor(rlastname);
     } else {
@@ -733,9 +766,19 @@ if(registrationform) {
     } else {
       registrationcheckbox.nextElementSibling.classList.add('error');
     }
-    
+  }
+  registrationform.addEventListener('submit', e => {
+    const rlastnameValue = rlastname.value.trim();
+    const rfirstnameValue = rfirstname.value.trim();
+    const rsurnameValue = rsurname.value.trim();
+    const remailValue = remail.value.trim();
+    const rpassValue = rpass.value.trim();
+    const rrepeatpassValue = rrepeatpass.value.trim();
+  
+    checkregistrationformInputs();
     if(!isFormEmailValid(remailValue)) {
       setErrorFor(remail);
+      e.preventDefault();
     } else if(
     rlastnameValue !== '' && rlastnameValue.length >= rlastnameMin && rlastnameValue.length <= rlastnameMax && 
     rfirstnameValue !== '' && rfirstnameValue.length >= rfirstnameMin && rfirstnameValue.length <= rfirstnameMax && 
@@ -744,24 +787,26 @@ if(registrationform) {
     rpassValue !== '' && rpassValue.length >= rpassMin && rpassValue.length <= rpassMax && 
     rrepeatpassValue !== '' && rrepeatpassValue.length >= rrepeatpassMin && rrepeatpassValue.length <= rrepeatpassMax && rpassValue === rrepeatpassValue && 
     registrationcheckbox.checked) {
-      fperror.classList.add('active');
-      fpsuccess.classList.add('active');
-      fetch('/ajax/sendMail.php', {
-        method: 'POST',
-        body: JSON.stringify({
-          rlastnameValue: rlastnameValue,
-          rfirstnameValue: rfirstnameValue,
-          rsurnameValue: rsurnameValue,
-          remailValue: remailValue,
-          rpassValue: rpassValue,
-          rrepeatpassValue: rrepeatpassValue
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8"
-        },
-      });
+      // fperror.classList.add('active');
+      // fpsuccess.classList.add('active');
+      // fetch('/ajax/sendMail.php', {
+      //   method: 'POST',
+      //   body: JSON.stringify({
+      //     rlastnameValue: rlastnameValue,
+      //     rfirstnameValue: rfirstnameValue,
+      //     rsurnameValue: rsurnameValue,
+      //     remailValue: remailValue,
+      //     rpassValue: rpassValue,
+      //     rrepeatpassValue: rrepeatpassValue
+      //   }),
+      //   headers: {
+      //     "Content-type": "application/json; charset=UTF-8"
+      //   },
+      // });
+    } else {
+      e.preventDefault();
     }
-  }
+  });
 }
 // end validate registrationform
 
