@@ -2441,7 +2441,7 @@ strong {
   display: flex;
   margin: 20px 0 0;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
 }
 
 .form__link {
@@ -5164,8 +5164,7 @@ strong {
   .rating__block {
     padding: 0 0 60px;
   }
-  .rating_top__flex,
-  .rating__filters {
+  .rating_top__flex {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -6258,6 +6257,10 @@ strong {
   }
   .rating__number .rating__bottom {
     width: calc(55% - 21px);
+  }
+  .rating__filters {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 /* end 580px */
