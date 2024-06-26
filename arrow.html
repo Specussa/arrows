@@ -155,13 +155,13 @@
         </div>
         <div class="header__buttons">
           <div class="header__personal_flex">
-            <!-- <a href="personal.html" class="sub_two header__personal">
+            <a href="personal.html" class="sub_two header__personal">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7.5 6.5C7.5 8.981 9.519 11 12 11C14.481 11 16.5 8.981 16.5 6.5C16.5 4.019 14.481 2 12 2C9.519 2 7.5 4.019 7.5 6.5ZM20 21H21V20C21 16.141 17.859 13 14 13H10C6.14 13 3 16.141 3 20V21H20Z" fill="currentColor"/>
               </svg>
               <span>Личный кабинет</span>
-            </a> -->
-            <button class="sub_two header__personal_button">
+            </a>
+            <!-- <button class="sub_two header__personal_button">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7.5 6.5C7.5 8.981 9.519 11 12 11C14.481 11 16.5 8.981 16.5 6.5C16.5 4.019 14.481 2 12 2C9.519 2 7.5 4.019 7.5 6.5ZM20 21H21V20C21 16.141 17.859 13 14 13H10C6.14 13 3 16.141 3 20V21H20Z" fill="currentColor"/>
               </svg>
@@ -169,19 +169,19 @@
             </button>
             <ul class="header__personal_list">
               <li class="header__personal_item">
-                <a href="personal.html" class="header__personal_link sub_two">Личные данные</a>
+                <a href="#" class="header__personal_link sub_two">Личные данные</a>
               </li>
               <li class="header__personal_item">
-                <a href="personal.html" class="header__personal_link sub_two">Мои соревнования</a>
+                <a href="#" class="header__personal_link sub_two">Мои соревнования</a>
               </li>
               <li class="header__personal_item">
-                <a href="personal.html" class="header__personal_link sub_two">Моя статистика</a>
+                <a href="#" class="header__personal_link sub_two">Моя статистика</a>
               </li>
               <li class="header__personal_item">
-                <a href="personal.html" class="header__personal_link sub_two">Выйти</a>
+                <a href="#" class="header__personal_link sub_two">Выйти</a>
               </li>
             </ul>
-            <div class="header__personal_overlay"></div>
+            <div class="header__personal_overlay"></div> -->
           </div>
           <div class="header__social">
             <a href="#" class="header__social_link" target="_blank">
@@ -232,49 +232,20 @@
     <section class="personal">
       <div class="container personal__container">
         <div class="personal__block">
-          <h1 class="personal__head animate_top">ЛИЧНЫЙ КАБИНЕТ</h1>
           <div class="personal__flex">
             <div class="personal__image animate_image">
-              <form action="" class="personal__image_form">
-                <input name="file" type="file" id="input__file" class="personal__image_file">
-                <label for="input__file" class="input__file-button personal__image_button body_one">
-                   Выберите файл
-                </label>
-              </form>
-              <img src="img/personal.webp" alt="">
+              <img src="img/arrow.webp" alt="">
             </div>
             <div class="personal__info">
               <div class="personal__left">
                 <div class="personal__top">
-                  <h4 class="personal__heading">Иванов иван иванович</h4>
+                  <h2 class="personal__heading">Михайлов Сергей Иванович</h2>
                   <p class="personal__article body_small">ID : 45968772</p>
                 </div>
                 <div class="personal__bottom">
                   <p class="personal__age body_one">Возраст: <span>38 лет</span></p>
                   <p class="personal__male body_one">Пол: <span>Мужской</span></p>
                 </div>
-              </div>
-              <div class="personal__right">
-                <div class="personal__right_flex">
-                  <p class="personal__desc sub_one">Стрелок лиги</p>
-                  <p class="personal__status body_small">Неактивный</p>
-                  <!-- <p class="personal__status body_small active">Активный</p>
-                  <p class="personal__male body_one">Взнос действует до: : <span>30.06.2024</span></p> -->
-                </div>
-                <a href="activation.html" class="btn">
-                  <span>Активировать</span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </a>
-                <!-- <button class="btn">
-                  <span>Продлить</span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </button> -->
               </div>
             </div>
           </div>
@@ -288,637 +259,232 @@
               </button>
               <div class="personal__tabs">
                 <button class="personal__tab personal__tab_forms body_small active">
-                  Личные данные
+                  Результаты турниров
                 </button>
                 <button class="personal__tab personal__tab_competitions body_small">
-                  Мои соревнования
+                  Достижения стрелка
                 </button>
                 <button class="personal__tab personal__tab_statistics body_small">
-                  Моя статистика
+                  Информация о стрелке
                 </button>
               </div>
             </div>
             <div class="personal__tab_block personal__tabs_forms active">
-              <div class="personal__forms">
-                <form action="" id="personal__form" class="personal__form">
-                  <h3 class="personal__form_head animate_top">Основные данные:</h3>
-                  <div class="form__group">
-                    <div class="form__control animate_top">
-                      <input class="form__input" type="text" minl="2" maxl="40" id="personal__lastname" placeholder="Иванов" />
-                      <label class="form__label body_small" for="personal__lastname">Фамилия: <span>*</span></label>
-                      <span class="form__bar"><span></span></span>
-                      <span class="form__border"><span></span></span>
-                      <small class="form__error">Введите фамилию</small>
+              <div class="arrow__block">
+                <p class="arrow__head sub_one animate_left">Результаты турниров</p>
+                <ul class="arrow__list">
+                  <li class="arrow__item animate_top">
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Название турнира</p>
                     </div>
-                    <div class="form__control animate_top">
-                      <input class="form__input" type="text" minl="2" maxl="40" id="personal__firstname" placeholder="Иван" />
-                      <label class="form__label body_small" for="personal__firstname">Имя: <span>*</span></label>
-                      <span class="form__bar"><span></span></span>
-                      <span class="form__border"><span></span></span>
-                      <small class="form__error">Введите имя</small>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Дата</p>
                     </div>
-                    <div class="form__control animate_top">
-                      <input class="form__input" type="text" minl="4" maxl="40" id="personal__surname" placeholder="Иванович" />
-                      <label class="form__label body_small" for="personal__surname">Отчество: <span>*</span></label>
-                      <span class="form__bar"><span></span></span>
-                      <span class="form__border"><span></span></span>
-                      <small class="form__error">Введите отчество</small>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Квалификация</p>
                     </div>
-                  </div>
-                  <div class="form__group">
-                    <div class="form__control animate_top">
-                      <input class="form__input" type="date" minl="0" maxl="12" id="personal__dateofbirth" />
-                      <label class="form__label body_small" for="personal__dateofbirth">Дата рождения: <span>*</span></label>
-                      <span class="form__bar"><span></span></span>
-                      <span class="form__border"><span></span></span>
-                      <small class="form__error">Введите дату рождения</small>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Финал</p>
                     </div>
-                    <div class="form__control animate_top">
-                      <input class="form__input" type="text" minl="4" maxl="40" id="personal__email" placeholder="name@gmail.com" />
-                      <label class="form__label body_small" for="personal__email">E-mail: <span>*</span></label>
-                      <span class="form__bar"><span></span></span>
-                      <span class="form__border"><span></span></span>
-                      <small class="form__error">Введите e-mail</small>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Сумма</p>
                     </div>
-                    <div class="form__control animate_top">
-                      <input class="form__input" data-phone-pattern type="text" minl="4" maxl="40" id="personal__phone" placeholder="+7 (999) 555-66-77" />
-                      <label class="form__label body_small" for="personal__phone">Номер телефона: <span>*</span></label>
-                      <span class="form__bar"><span></span></span>
-                      <span class="form__border"><span></span></span>
-                      <small class="form__error">Введите корректный номер</small>
+                  </li>
+                  <li class="arrow__item animate_top">
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Название турнира</p>
+                      <a href="tour.html" class="arrow__td body_caption">Один в поле не воин</a>
                     </div>
-                  </div>
-                  <div class="form__control animate_top">
-                    <input class="form__input" type="text" minl="4" maxl="40" id="personal__address" placeholder="г.Москва, ул. Пролетарская, д.55, кв. 6" />
-                    <label class="form__label body_small" for="personal__address">Адрес регистрации:</label>
-                    <span class="form__bar"><span></span></span>
-                    <span class="form__border"><span></span></span>
-                    <small class="form__error">Введите корректный адрес</small>
-                  </div>
-                  <p class="form__pop_success body_two">
-                    Профиль сохранен.
-                  </p>
-                  <p class="form__pop_error body_two">
-                    Профиль не сохранен.
-                  </p>
-                  <button class="btn btn__white personal__form_btn">
-                    <span>Cохранить</span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </button>
-                </form>
-                <form action="" id="personal__pass" class="personal__pass">
-                  <h3 class="personal__form_head animate_top">Основные данные:</h3>
-                  <div class="form__group">
-                    <div class="form__control animate_top">
-                      <input class="form__input form__input_pass" type="password" minl="4" maxl="40" id="personal__oldpass" placeholder="Старый пароль" />
-                      <label class="form__label body_small" for="personal__oldpass">Старый пароль: <span>*</span></label>
-                      <span class="form__bar"><span></span></span>
-                      <span class="form__border"><span></span></span>
-                      <small class="form__error">Введите старый пароль</small>
-                      <a class="form__button_pass">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M11.83 9L15 12.16V12C15 11.2044 14.6839 10.4413 14.1213 9.87868C13.5587 9.31607 12.7956 9 12 9H11.83ZM7.53 9.8L9.08 11.35C9.03 11.56 9 11.77 9 12C9 12.7956 9.31607 13.5587 9.87868 14.1213C10.4413 14.6839 11.2044 15 12 15C12.22 15 12.44 14.97 12.65 14.92L14.2 16.47C13.53 16.8 12.79 17 12 17C10.6739 17 9.40215 16.4732 8.46447 15.5355C7.52678 14.5979 7 13.3261 7 12C7 11.21 7.2 10.47 7.53 9.8ZM2 4.27L4.28 6.55L4.73 7C3.08 8.3 1.78 10 1 12C2.73 16.39 7 19.5 12 19.5C13.55 19.5 15.03 19.2 16.38 18.66L16.81 19.08L19.73 22L21 20.73L3.27 3M12 7C13.3261 7 14.5979 7.52678 15.5355 8.46447C16.4732 9.40215 17 10.6739 17 12C17 12.64 16.87 13.26 16.64 13.82L19.57 16.75C21.07 15.5 22.27 13.86 23 12C21.27 7.61 17 4.5 12 4.5C10.6 4.5 9.26 4.75 8 5.2L10.17 7.35C10.74 7.13 11.35 7 12 7Z" fill="currentColor"/>
-                        </svg>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12 9C11.2044 9 10.4413 9.31607 9.87868 9.87868C9.31607 10.4413 9 11.2044 9 12C9 12.7956 9.31607 13.5587 9.87868 14.1213C10.4413 14.6839 11.2044 15 12 15C12.7956 15 13.5587 14.6839 14.1213 14.1213C14.6839 13.5587 15 12.7956 15 12C15 11.2044 14.6839 10.4413 14.1213 9.87868C13.5587 9.31607 12.7956 9 12 9ZM12 17C10.6739 17 9.40215 16.4732 8.46447 15.5355C7.52678 14.5979 7 13.3261 7 12C7 10.6739 7.52678 9.40215 8.46447 8.46447C9.40215 7.52678 10.6739 7 12 7C13.3261 7 14.5979 7.52678 15.5355 8.46447C16.4732 9.40215 17 10.6739 17 12C17 13.3261 16.4732 14.5979 15.5355 15.5355C14.5979 16.4732 13.3261 17 12 17ZM12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5C17 19.5 21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5Z" fill="currentColor"/>
-                        </svg>
-                      </a>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Дата</p>
+                      <p class="arrow__td body_caption">01.01.2024</p>
                     </div>
-                    <div class="form__control animate_top">
-                      <input class="form__input form__input_pass" type="password" minl="4" maxl="40" id="personal__newpass" placeholder="Новый пароль" />
-                      <label class="form__label body_small" for="personal__newpass">Новый пароль: <span>*</span></label>
-                      <span class="form__bar"><span></span></span>
-                      <span class="form__border"><span></span></span>
-                      <small class="form__error">Введите новый пароль</small>
-                      <a class="form__button_pass">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M11.83 9L15 12.16V12C15 11.2044 14.6839 10.4413 14.1213 9.87868C13.5587 9.31607 12.7956 9 12 9H11.83ZM7.53 9.8L9.08 11.35C9.03 11.56 9 11.77 9 12C9 12.7956 9.31607 13.5587 9.87868 14.1213C10.4413 14.6839 11.2044 15 12 15C12.22 15 12.44 14.97 12.65 14.92L14.2 16.47C13.53 16.8 12.79 17 12 17C10.6739 17 9.40215 16.4732 8.46447 15.5355C7.52678 14.5979 7 13.3261 7 12C7 11.21 7.2 10.47 7.53 9.8ZM2 4.27L4.28 6.55L4.73 7C3.08 8.3 1.78 10 1 12C2.73 16.39 7 19.5 12 19.5C13.55 19.5 15.03 19.2 16.38 18.66L16.81 19.08L19.73 22L21 20.73L3.27 3M12 7C13.3261 7 14.5979 7.52678 15.5355 8.46447C16.4732 9.40215 17 10.6739 17 12C17 12.64 16.87 13.26 16.64 13.82L19.57 16.75C21.07 15.5 22.27 13.86 23 12C21.27 7.61 17 4.5 12 4.5C10.6 4.5 9.26 4.75 8 5.2L10.17 7.35C10.74 7.13 11.35 7 12 7Z" fill="currentColor"/>
-                        </svg>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12 9C11.2044 9 10.4413 9.31607 9.87868 9.87868C9.31607 10.4413 9 11.2044 9 12C9 12.7956 9.31607 13.5587 9.87868 14.1213C10.4413 14.6839 11.2044 15 12 15C12.7956 15 13.5587 14.6839 14.1213 14.1213C14.6839 13.5587 15 12.7956 15 12C15 11.2044 14.6839 10.4413 14.1213 9.87868C13.5587 9.31607 12.7956 9 12 9ZM12 17C10.6739 17 9.40215 16.4732 8.46447 15.5355C7.52678 14.5979 7 13.3261 7 12C7 10.6739 7.52678 9.40215 8.46447 8.46447C9.40215 7.52678 10.6739 7 12 7C13.3261 7 14.5979 7.52678 15.5355 8.46447C16.4732 9.40215 17 10.6739 17 12C17 13.3261 16.4732 14.5979 15.5355 15.5355C14.5979 16.4732 13.3261 17 12 17ZM12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5C17 19.5 21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5Z" fill="currentColor"/>
-                        </svg>
-                      </a>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Квалификация</p>
+                      <p class="arrow__td body_caption">234</p>
                     </div>
-                    <div class="form__control animate_top">
-                      <input class="form__input form__input_pass" type="password" minl="4" maxl="40" id="personal__repeatpass" placeholder="Повторите пароль" />
-                      <label class="form__label body_small" for="personal__repeatpass">Повторите пароль: <span>*</span></label>
-                      <span class="form__bar"><span></span></span>
-                      <span class="form__border"><span></span></span>
-                      <small class="form__error">Пароли не совпадают</small>
-                      <a class="form__button_pass">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M11.83 9L15 12.16V12C15 11.2044 14.6839 10.4413 14.1213 9.87868C13.5587 9.31607 12.7956 9 12 9H11.83ZM7.53 9.8L9.08 11.35C9.03 11.56 9 11.77 9 12C9 12.7956 9.31607 13.5587 9.87868 14.1213C10.4413 14.6839 11.2044 15 12 15C12.22 15 12.44 14.97 12.65 14.92L14.2 16.47C13.53 16.8 12.79 17 12 17C10.6739 17 9.40215 16.4732 8.46447 15.5355C7.52678 14.5979 7 13.3261 7 12C7 11.21 7.2 10.47 7.53 9.8ZM2 4.27L4.28 6.55L4.73 7C3.08 8.3 1.78 10 1 12C2.73 16.39 7 19.5 12 19.5C13.55 19.5 15.03 19.2 16.38 18.66L16.81 19.08L19.73 22L21 20.73L3.27 3M12 7C13.3261 7 14.5979 7.52678 15.5355 8.46447C16.4732 9.40215 17 10.6739 17 12C17 12.64 16.87 13.26 16.64 13.82L19.57 16.75C21.07 15.5 22.27 13.86 23 12C21.27 7.61 17 4.5 12 4.5C10.6 4.5 9.26 4.75 8 5.2L10.17 7.35C10.74 7.13 11.35 7 12 7Z" fill="currentColor"/>
-                        </svg>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12 9C11.2044 9 10.4413 9.31607 9.87868 9.87868C9.31607 10.4413 9 11.2044 9 12C9 12.7956 9.31607 13.5587 9.87868 14.1213C10.4413 14.6839 11.2044 15 12 15C12.7956 15 13.5587 14.6839 14.1213 14.1213C14.6839 13.5587 15 12.7956 15 12C15 11.2044 14.6839 10.4413 14.1213 9.87868C13.5587 9.31607 12.7956 9 12 9ZM12 17C10.6739 17 9.40215 16.4732 8.46447 15.5355C7.52678 14.5979 7 13.3261 7 12C7 10.6739 7.52678 9.40215 8.46447 8.46447C9.40215 7.52678 10.6739 7 12 7C13.3261 7 14.5979 7.52678 15.5355 8.46447C16.4732 9.40215 17 10.6739 17 12C17 13.3261 16.4732 14.5979 15.5355 15.5355C14.5979 16.4732 13.3261 17 12 17ZM12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5C17 19.5 21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5Z" fill="currentColor"/>
-                        </svg>
-                      </a>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Финал</p>
+                      <p class="arrow__td body_caption">3</p>
                     </div>
-                  </div>
-                  <p class="form__pop_success body_two">
-                    Пароль изменен.
-                  </p>
-                  <p class="form__pop_error body_two">
-                    Неверный пароль.
-                  </p>
-                  <button class="btn btn__white personal__pass_btn">
-                    <span>Cохранить</span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </button>
-                </form>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Сумма</p>
+                      <p class="arrow__td body_caption">237</p>
+                    </div>
+                  </li>
+                  <li class="arrow__item animate_top">
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Название турнира</p>
+                      <a href="tour.html" class="arrow__td body_caption">Волга-Волга</a>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Дата</p>
+                      <p class="arrow__td body_caption">01.01.2024</p>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Квалификация</p>
+                      <p class="arrow__td body_caption">674</p>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Финал</p>
+                      <p class="arrow__td body_caption">1</p>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Сумма</p>
+                      <p class="arrow__td body_caption">675</p>
+                    </div>
+                  </li>
+                  <li class="arrow__item animate_top">
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Название турнира</p>
+                      <a href="tour.html" class="arrow__td body_caption">Невская битва</a>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Дата</p>
+                      <p class="arrow__td body_caption">01.01.2024</p>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Квалификация</p>
+                      <p class="arrow__td body_caption">234</p>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Финал</p>
+                      <p class="arrow__td body_caption">3</p>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Сумма</p>
+                      <p class="arrow__td body_caption">237</p>
+                    </div>
+                  </li>
+                  <li class="arrow__item animate_top">
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Название турнира</p>
+                      <a href="tour.html" class="arrow__td body_caption">Александр Невский</a>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Дата</p>
+                      <p class="arrow__td body_caption">01.01.2024</p>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Квалификация</p>
+                      <p class="arrow__td body_caption">234</p>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Финал</p>
+                      <p class="arrow__td body_caption">3</p>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Сумма</p>
+                      <p class="arrow__td body_caption">237</p>
+                    </div>
+                  </li>
+                  <li class="arrow__item animate_top">
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Название турнира</p>
+                      <a href="tour.html" class="arrow__td body_caption">Бородинская битва</a>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Дата</p>
+                      <p class="arrow__td body_caption">01.01.2024</p>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Квалификация</p>
+                      <p class="arrow__td body_caption">234</p>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Финал</p>
+                      <p class="arrow__td body_caption">3</p>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Сумма</p>
+                      <p class="arrow__td body_caption">237</p>
+                    </div>
+                  </li>
+                  <li class="arrow__item animate_top">
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Название турнира</p>
+                      <a href="tour.html" class="arrow__td body_caption">Князь Владимир</a>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Дата</p>
+                      <p class="arrow__td body_caption">01.01.2024</p>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Квалификация</p>
+                      <p class="arrow__td body_caption">234</p>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Финал</p>
+                      <p class="arrow__td body_caption">3</p>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Сумма</p>
+                      <p class="arrow__td body_caption">237</p>
+                    </div>
+                  </li>
+                  <li class="arrow__item animate_top">
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Название турнира</p>
+                      <a href="tour.html" class="arrow__td body_caption">Бородинская битва</a>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Дата</p>
+                      <p class="arrow__td body_caption">01.01.2024</p>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Квалификация</p>
+                      <p class="arrow__td body_caption">234</p>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Финал</p>
+                      <p class="arrow__td body_caption">3</p>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Сумма</p>
+                      <p class="arrow__td body_caption">237</p>
+                    </div>
+                  </li>
+                  <li class="arrow__item animate_top">
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Название турнира</p>
+                      <a href="tour.html" class="arrow__td body_caption">Князь Владимир</a>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Дата</p>
+                      <p class="arrow__td body_caption">01.01.2024</p>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Квалификация</p>
+                      <p class="arrow__td body_caption">234</p>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Финал</p>
+                      <p class="arrow__td body_caption">3</p>
+                    </div>
+                    <div class="arrow__tr">
+                      <p class="arrow__type body_table">Сумма</p>
+                      <p class="arrow__td body_caption">237</p>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
             <div class="personal__tab_block personal__tabs_competitions">
-              <div class="personal__competitions_tabs animate_top">
-                <button class="btn btn__gray personal__competitions_tab personal__competitions_tab_future active">
-                  <span>Текущие и будущие</span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </button>
-                <button class="btn btn__gray personal__competitions_tab personal__competitions_tab_past">
-                  <span>Прошедшие</span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </button>
-              </div>
-              <div class="personal__competitions_block personal__competitions_future active">
-                <div class="personal__competitions">
-                  <h3 class="personal__competitions_head animate_top">Апрель, 2024</h3>
-                  <ul class="personal__competitions_list">
-                    <li class="personal__competitions_item animate_top">
-                      <button class="personal__competitions_button">
-                        <div class="personal__competitions_button_left">
-                          <p class="personal__competitions_heading sub_two">Всероссийский Кубок ice dream (xii этап гран-при россии и снг фрмфк)</p>
-                        </div>
-                        <div class="personal__competitions_button_right">
-                          <p class="personal__competitions_date body_two">18-25 мая, 2024г.</p>
-                          <p class="personal__competitions_record body_two active">Идёт запись</p>
-                          <div class="personal__competitions_arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                              <path d="M14.625 8V11.6H4V13.4H14.625V17L21 12.446L14.625 8Z" fill="currentColor"/>
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
-                      <div class="personal__competitions_info">
-                        <div class="personal__competitions_flex">
-                          <div class="personal__competitions_left">
-                            <div class="personal__competitions_image">
-                              <img src="img/competitions.webp" alt="">
-                            </div>
-                          </div>
-                          <div class="personal__competitions_right">
-                            <div class="personal__competitions_top">
-                              <p class="personal__competitions_discipline body_two"><span>Дисциплина:</span> Спортинг-компакт</p>
-                              <p class="personal__competitions_place body_two"><span>Место:</span> МАУ ГСЦ Ермак, Ростов-на-Дону</p>
-                            </div>
-                            <div class="personal__competitions_bottom">
-                              <p class="personal__competitions_desc body_two">
-                                Lorem ipsum dolor sit amet consectetur. Ante egestas etiam lectus 
-                                lectus cursus blandit. Tellus blandit adipiscing venenatis enim 
-                                sit arcu libero vestibulum condimentum. 
-                              </p>
-                              <button class="btn btn__white personal__competitions_btn">
-                                <span>Подробнее о мероприятии</span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="personal__competitions">
-                  <h3 class="personal__competitions_head animate_top">Июнь, 2024</h3>
-                  <ul class="personal__competitions_list">
-                    <li class="personal__competitions_item animate_top">
-                      <button class="personal__competitions_button">
-                        <div class="personal__competitions_button_left">
-                          <p class="personal__competitions_heading sub_two">Всероссийский Кубок ice dream (xii этап гран-при россии и снг фрмфк)</p>
-                        </div>
-                        <div class="personal__competitions_button_right">
-                          <p class="personal__competitions_date body_two">18-25 мая, 2024г.</p>
-                          <p class="personal__competitions_record body_two active">Идёт запись</p>
-                          <div class="personal__competitions_arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                              <path d="M14.625 8V11.6H4V13.4H14.625V17L21 12.446L14.625 8Z" fill="currentColor"/>
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
-                      <div class="personal__competitions_info">
-                        <div class="personal__competitions_flex">
-                          <div class="personal__competitions_left">
-                            <div class="personal__competitions_image">
-                              <img src="img/competitions.webp" alt="">
-                            </div>
-                          </div>
-                          <div class="personal__competitions_right">
-                            <div class="personal__competitions_top">
-                              <p class="personal__competitions_discipline body_two"><span>Дисциплина:</span> Спортинг-компакт</p>
-                              <p class="personal__competitions_place body_two"><span>Место:</span> МАУ ГСЦ Ермак, Ростов-на-Дону</p>
-                            </div>
-                            <div class="personal__competitions_bottom">
-                              <p class="personal__competitions_desc body_two">
-                                Lorem ipsum dolor sit amet consectetur. Ante egestas etiam lectus 
-                                lectus cursus blandit. Tellus blandit adipiscing venenatis enim 
-                                sit arcu libero vestibulum condimentum. 
-                              </p>
-                              <button class="btn btn__white personal__competitions_btn">
-                                <span>Подробнее о мероприятии</span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="personal__competitions_item animate_top">
-                      <button class="personal__competitions_button">
-                        <div class="personal__competitions_button_left">
-                          <p class="personal__competitions_heading sub_two">Всероссийский Кубок ice dream (xii этап гран-при россии и снг фрмфк)</p>
-                        </div>
-                        <div class="personal__competitions_button_right">
-                          <p class="personal__competitions_date body_two">18-25 мая, 2024г.</p>
-                          <p class="personal__competitions_record body_two active">Идёт запись</p>
-                          <div class="personal__competitions_arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                              <path d="M14.625 8V11.6H4V13.4H14.625V17L21 12.446L14.625 8Z" fill="currentColor"/>
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
-                      <div class="personal__competitions_info">
-                        <div class="personal__competitions_flex">
-                          <div class="personal__competitions_left">
-                            <div class="personal__competitions_image">
-                              <img src="img/competitions.webp" alt="">
-                            </div>
-                          </div>
-                          <div class="personal__competitions_right">
-                            <div class="personal__competitions_top">
-                              <p class="personal__competitions_discipline body_two"><span>Дисциплина:</span> Спортинг-компакт</p>
-                              <p class="personal__competitions_place body_two"><span>Место:</span> МАУ ГСЦ Ермак, Ростов-на-Дону</p>
-                            </div>
-                            <div class="personal__competitions_bottom">
-                              <p class="personal__competitions_desc body_two">
-                                Lorem ipsum dolor sit amet consectetur. Ante egestas etiam lectus 
-                                lectus cursus blandit. Tellus blandit adipiscing venenatis enim 
-                                sit arcu libero vestibulum condimentum. 
-                              </p>
-                              <button class="btn btn__white personal__competitions_btn">
-                                <span>Подробнее о мероприятии</span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="personal__competitions_item animate_top">
-                      <button class="personal__competitions_button">
-                        <div class="personal__competitions_button_left">
-                          <p class="personal__competitions_heading sub_two">Всероссийский Кубок ice dream (xii этап гран-при россии и снг фрмфк)</p>
-                        </div>
-                        <div class="personal__competitions_button_right">
-                          <p class="personal__competitions_date body_two">18-25 мая, 2024г.</p>
-                          <p class="personal__competitions_record body_two active">Идёт запись</p>
-                          <div class="personal__competitions_arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                              <path d="M14.625 8V11.6H4V13.4H14.625V17L21 12.446L14.625 8Z" fill="currentColor"/>
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
-                      <div class="personal__competitions_info">
-                        <div class="personal__competitions_flex">
-                          <div class="personal__competitions_left">
-                            <div class="personal__competitions_image">
-                              <img src="img/competitions.webp" alt="">
-                            </div>
-                          </div>
-                          <div class="personal__competitions_right">
-                            <div class="personal__competitions_top">
-                              <p class="personal__competitions_discipline body_two"><span>Дисциплина:</span> Спортинг-компакт</p>
-                              <p class="personal__competitions_place body_two"><span>Место:</span> МАУ ГСЦ Ермак, Ростов-на-Дону</p>
-                            </div>
-                            <div class="personal__competitions_bottom">
-                              <p class="personal__competitions_desc body_two">
-                                Lorem ipsum dolor sit amet consectetur. Ante egestas etiam lectus 
-                                lectus cursus blandit. Tellus blandit adipiscing venenatis enim 
-                                sit arcu libero vestibulum condimentum. 
-                              </p>
-                              <button class="btn btn__white personal__competitions_btn">
-                                <span>Подробнее о мероприятии</span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="personal__competitions_block personal__competitions_past">
-                <div class="personal__competitions">
-                  <h3 class="personal__competitions_head animate_top">Апрель, 2024</h3>
-                  <ul class="personal__competitions_list">
-                    <li class="personal__competitions_item animate_top">
-                      <button class="personal__competitions_button">
-                        <div class="personal__competitions_button_left">
-                          <p class="personal__competitions_heading sub_two">Всероссийский Кубок ice dream (xii этап гран-при россии и снг фрмфк)</p>
-                        </div>
-                        <div class="personal__competitions_button_right">
-                          <p class="personal__competitions_date body_two">18-25 мая, 2024г.</p>
-                          <p class="personal__competitions_record body_two over">Завершён</p>
-                          <div class="personal__competitions_arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                              <path d="M14.625 8V11.6H4V13.4H14.625V17L21 12.446L14.625 8Z" fill="currentColor"/>
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
-                      <div class="personal__competitions_info">
-                        <div class="personal__competitions_flex">
-                          <div class="personal__competitions_left">
-                            <div class="personal__competitions_image">
-                              <img src="img/competitions.webp" alt="">
-                            </div>
-                          </div>
-                          <div class="personal__competitions_right">
-                            <div class="personal__competitions_top">
-                              <p class="personal__competitions_discipline body_two"><span>Дисциплина:</span> Спортинг-компакт</p>
-                              <p class="personal__competitions_place body_two"><span>Место:</span> МАУ ГСЦ Ермак, Ростов-на-Дону</p>
-                            </div>
-                            <div class="personal__competitions_bottom">
-                              <p class="personal__competitions_desc body_two">
-                                Lorem ipsum dolor sit amet consectetur. Ante egestas etiam lectus 
-                                lectus cursus blandit. Tellus blandit adipiscing venenatis enim 
-                                sit arcu libero vestibulum condimentum. 
-                              </p>
-                              <button class="btn btn__white personal__competitions_btn">
-                                <span>Результаты</span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="personal__competitions">
-                  <h3 class="personal__competitions_head animate_top">Май, 2024</h3>
-                  <ul class="personal__competitions_list">
-                    <li class="personal__competitions_item animate_top">
-                      <button class="personal__competitions_button">
-                        <div class="personal__competitions_button_left">
-                          <p class="personal__competitions_heading sub_two">Всероссийский Кубок ice dream (xii этап гран-при россии и снг фрмфк)</p>
-                        </div>
-                        <div class="personal__competitions_button_right">
-                          <p class="personal__competitions_date body_two">18-25 мая, 2024г.</p>
-                          <p class="personal__competitions_record body_two over">Завершён</p>
-                          <div class="personal__competitions_arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                              <path d="M14.625 8V11.6H4V13.4H14.625V17L21 12.446L14.625 8Z" fill="currentColor"/>
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
-                      <div class="personal__competitions_info">
-                        <div class="personal__competitions_flex">
-                          <div class="personal__competitions_left">
-                            <div class="personal__competitions_image">
-                              <img src="img/competitions.webp" alt="">
-                            </div>
-                          </div>
-                          <div class="personal__competitions_right">
-                            <div class="personal__competitions_top">
-                              <p class="personal__competitions_discipline body_two"><span>Дисциплина:</span> Спортинг-компакт</p>
-                              <p class="personal__competitions_place body_two"><span>Место:</span> МАУ ГСЦ Ермак, Ростов-на-Дону</p>
-                            </div>
-                            <div class="personal__competitions_bottom">
-                              <p class="personal__competitions_desc body_two">
-                                Lorem ipsum dolor sit amet consectetur. Ante egestas etiam lectus 
-                                lectus cursus blandit. Tellus blandit adipiscing venenatis enim 
-                                sit arcu libero vestibulum condimentum. 
-                              </p>
-                              <button class="btn btn__white personal__competitions_btn">
-                                <span>Результаты</span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+              <div class="arrow__block">
+                <p class="arrow__head sub_one animate_left">Результаты турниров</p>
               </div>
             </div>
             <div class="personal__tab_block personal__tabs_statistics personal__statistics_info">
-              <div class="personal__statistics">
-                <h3 class="personal__statistics_head animate_top">Статистика</h3>
-                <div class="personal__statistics_information">
-                  <div class="personal__statistics_flex">
-                    <h2 class="personal__statistics_heading animate_top">
-                      58
-                    </h2>
-                    <p class="personal__statistics_name animate_top body_table">
-                      турниров
-                    </p>
-                    <p class="personal__statistics_desc animate_top body_caption">
-                      все мои посещенные турниры
-                    </p>
-                  </div>
-                  <div class="personal__statistics_flex">
-                    <h2 class="personal__statistics_heading animate_top">
-                      15
-                    </h2>
-                    <p class="personal__statistics_name animate_top body_table">
-                      топ-25
-                    </p>
-                    <p class="personal__statistics_desc animate_top body_caption">
-                      занятые места, входящие в топ-25 
-                    </p>
-                  </div>
-                  <div class="personal__statistics_flex">
-                    <h2 class="personal__statistics_heading animate_top">
-                      5 000
-                    </h2>
-                    <p class="personal__statistics_name animate_top body_table">
-                      призовых очков
-                    </p>
-                    <p class="personal__statistics_desc animate_top body_caption">
-                      количество призовых очков за всё время
-                    </p>
-                  </div>
-                </div>
-                <div class="personal__statistics_table">
-                  <p class="personal__statistics_table_head animate_top sub_one">Сводная таблица соревнований</p>
-                  <ul class="personal__statistics_list">
-                    <li class="personal__statistics_item animate_top">
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Тип соревнований</p>
-                        <p class="personal__statistics_td">x</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Призёр</p>
-                        <p class="personal__statistics_td">2</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">1-е место</p>
-                        <p class="personal__statistics_td">8</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Участник финала</p>
-                        <p class="personal__statistics_td">12</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Призёр в финале</p>
-                        <p class="personal__statistics_td">3</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Победитель в финале</p>
-                        <p class="personal__statistics_td">5</p>
-                      </div>
-                    </li>
-                    <li class="personal__statistics_item animate_top">
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Тип соревнований</p>
-                        <p class="personal__statistics_td">2x</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Призёр</p>
-                        <p class="personal__statistics_td">13</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">1-е место</p>
-                        <p class="personal__statistics_td">4</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Участник финала</p>
-                        <p class="personal__statistics_td">17</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Призёр в финале</p>
-                        <p class="personal__statistics_td">12</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Победитель в финале</p>
-                        <p class="personal__statistics_td">1</p>
-                      </div>
-                    </li>
-                    <li class="personal__statistics_item animate_top">
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Тип соревнований</p>
-                        <p class="personal__statistics_td">4x</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Призёр</p>
-                        <p class="personal__statistics_td">6</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">1-е место</p>
-                        <p class="personal__statistics_td">8</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Участник финала</p>
-                        <p class="personal__statistics_td">3</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Призёр в финале</p>
-                        <p class="personal__statistics_td">7</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Победитель в финале</p>
-                        <p class="personal__statistics_td">9</p>
-                      </div>
-                    </li>
-                    <li class="personal__statistics_item animate_top">
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Тип соревнований</p>
-                        <p class="personal__statistics_td">Ветераны</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Призёр</p>
-                        <p class="personal__statistics_td">2</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">1-е место</p>
-                        <p class="personal__statistics_td">4</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Участник финала</p>
-                        <p class="personal__statistics_td">7</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Призёр в финале</p>
-                        <p class="personal__statistics_td">10</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Победитель в финале</p>
-                        <p class="personal__statistics_td">11</p>
-                      </div>
-                    </li>
-                    <li class="personal__statistics_item animate_top">
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Тип соревнований</p>
-                        <p class="personal__statistics_td">Женщины</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Призёр</p>
-                        <p class="personal__statistics_td">—</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">1-е место</p>
-                        <p class="personal__statistics_td">—</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Участник финала</p>
-                        <p class="personal__statistics_td">—</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Призёр в финале</p>
-                        <p class="personal__statistics_td">—</p>
-                      </div>
-                      <div class="personal__statistics_tr">
-                        <p class="personal__statistics_type body_table">Победитель в финале</p>
-                        <p class="personal__statistics_td">—</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+              <div class="arrow__block">
+                <p class="arrow__head sub_one animate_left">Краткая информация</p>
+                <p class="arrow__desc body_two animate_right">
+                  Lorem ipsum dolor sit amet consectetur. Orci leo morbi in at at 
+                  convallis nisl tortor nibh. Eu iaculis augue bibendum lectus tempor 
+                  id sed. At nisl at ligula aliquam ultricies tincidunt laoreet purus. 
+                  Erat fames ultricies libero cursus ornare vitae. Mattis quisque 
+                  tortor ultricies phasellus. Facilisi orci malesuada eget sit lectus. 
+                  Cursus mauris dignissim amet ultrices.
+                </p>
               </div>
             </div>
           </div>
