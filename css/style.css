@@ -2008,6 +2008,11 @@ strong {
   background-color: var(--bg-gray);
 }
 
+.personal__article {
+  color: var(--text-gray);
+  text-transform: uppercase;
+}
+
 /* end personal */
 
 /* start form */
