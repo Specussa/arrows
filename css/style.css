@@ -2119,7 +2119,7 @@ strong {
   width: calc(100% - 2px);
   height: 54px;
   max-height: 54px;
-  padding: 0 20px;
+  padding: 10px 20px;
   margin: 1px 1px 0;
   flex: 0 0 auto;
   border: none;
@@ -4821,7 +4821,8 @@ strong {
   width: calc(40% - 40px);
 }
 
-.arrow__type {
+.arrow__type,
+.arrow__name {
   text-transform: uppercase;
 }
 
@@ -4829,7 +4830,213 @@ strong {
   display: none;
 }
 
+.arrow__achievement,
+.arrow__cup,
+.arrow__medal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.arrow__achievements,
+.arrow__cups,
+.arrow__medals,
+.arrow__award {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.arrow__text {
+  color: var(--text-gray);
+}
+
+.arrow__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.arrow__place {
+  padding: 0 0 5px;
+}
+
+.arrow__place span {
+  text-decoration: underline;
+}
+
+.arrow__names {
+  display: flex;
+  padding: 0 0 5px;
+  align-items: center;
+  gap: 10px;
+}
+
+.arrow__date {
+  display: flex;
+  width: max-content;
+  padding: 5px 15px;
+  flex: 0 0 auto;
+  background-color: var(--bg-gray);
+}
+
+.arrow__navigation {
+  padding: 40px 40px 50px;
+}
+
+.arrow__cup_item {
+  display: flex;
+  padding: 30px 40px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 70px;
+  background-color: var(--bg-gray);
+}
+
+.arrow__cup_item:nth-child(2n) {
+  background-color: var(--bg);
+}
+
+.arrow__cup_image {
+  width: 40px;
+  height: 40px;
+}
+
+.arrow__cup_image svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.arrow__cup_head {
+  width: calc(45% - 110px);
+}
+
+.arrow__cup_desc {
+  width: calc(35% - 70px);
+}
+
+.arrow__cup_point {
+  width: calc(20% - 70px);
+  color: var(--color);
+  text-align: right;
+}
+
+.arrow__tour_list {
+  display: flex;
+  padding: 50px 40px;
+  flex-wrap: wrap;
+  gap: 1px;
+  background-color: var(--bg-gray);
+}
+
+.arrow__tour_item {
+  width: calc(25% - 1px);
+}
+
+.arrow__tour_link {
+  display: flex;
+  width: 100%;
+  padding: 25px 20px 20px;
+  flex-direction: column;
+  gap: 25px;
+  background-color: var(--bg);
+}
+
+.arrow__tour_flex {
+  display: flex;
+  height: 135px;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+  position: relative;
+}
+
+.arrow__tour_head {
+  text-transform: uppercase;
+  color: var(--color);
+  text-align: center;
+}
+
+.arrow__tour_image {
+  width: 135px;
+  height: 135px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: 1;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.arrow__tour_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.arrow__tour_points,
+.arrow__tour_place {
+  text-shadow: 1px 1px 1px var(--bg);
+  position: relative;
+  z-index: 2;
+}
+
 /* end arrow */
+
+/* start navigation */
+
+.navigation__list {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.navigation__item:first-child {
+  margin: 0 auto 0 0;
+}
+
+.navigation__item:last-child {
+  margin: 0 0 0 auto;
+}
+
+.navigation__item svg {
+  width: 11px;
+  height: 11px;
+  object-fit: contain;
+}
+
+.navigation__link {
+  display: flex;
+  width: 35px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  background-color: var(--bg);
+  border: 1px solid var(--border-gray);
+  -webkit-transition: color 0.15s linear, background-color 0.15s linear;
+  transition: color 0.15s linear, background-color 0.15s linear;
+}
+
+.navigation__link:hover,
+.navigation__item.active .navigation__link {
+  color: var(--bg);
+  background-color: var(--text);
+}
+
+.navigation_disabled .navigation__link,
+.navigation_disabled .navigation__link:hover,
+.navigation_disabled .navigation__link.active {
+  color: var(--text-gray);
+  background-color: var(--bg);
+  pointer-events: none;
+}
+
+/* end navigation */
 
 /* start 1919px */
 @media (max-width: 1919px) {
@@ -5034,8 +5241,23 @@ strong {
   .arrow__head {
     padding: 40px 30px 20px;
   }
+  .arrow__desc {
+    padding: 0 30px 40px;
+  }
   .arrow__item {
     padding: 16px 30px;
+  }
+  .arrow__navigation {
+    padding: 40px 30px 50px;
+  }
+  .arrow__cup_item {
+    padding: 30px;
+  }
+  .arrow__tour_item {
+    width: calc(33.333% - 1px);
+  }
+  .arrow__tour_list {
+    padding: 40px 30p;
   }
 }
 /* end 1919px */
@@ -5083,11 +5305,6 @@ strong {
     padding: 16px 0 16px 15px;
   }
   .personal__left {
-    gap: 20px;
-  }
-  .personal__info {
-    flex-direction: column;
-    align-items: flex-start;
     gap: 20px;
   }
   
@@ -5275,6 +5492,9 @@ strong {
   .arrow__head {
     padding: 40px 20px 20px;
   }
+  .arrow__desc {
+    padding: 0 20px 40px;
+  }
   .arrow__item {
     padding: 16px 20px;
   }
@@ -5286,6 +5506,32 @@ strong {
   }
   .arrow__tr:nth-child(2) {
     width: 24%;
+  }
+  .arrow__navigation {
+    padding: 40px 20px 50px;
+  }
+  .arrow__cup_item {
+    padding: 30px 20px;
+    gap: 50px;
+  }
+  .arrow__cup_head {
+    width: calc(45% - 90px);
+  }
+  .arrow__cup_desc {
+    width: calc(35% - 50px);
+  }
+  .arrow__cup_point {
+    width: calc(20% - 50px);
+  }
+  .arrow__tour_list {
+    padding: 40px 20px;
+  }
+  .arrow__tour_image {
+    width: 100px;
+    height: 100px;
+  }
+  .arrow__tour_flex {
+    height: 100px;
   }
 
   .footer__list {
@@ -5575,6 +5821,11 @@ strong {
     padding: 50px 20px;
   }
   
+  .personal__info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
   .personal__image_button {
     opacity: 1;
   }
@@ -6306,8 +6557,14 @@ strong {
   .arrow__item:not(:first-child) .arrow__type {
     display: flex;
   }
+  .arrow__navigation {
+    padding: 30px 15px 40px;
+  }
   .arrow__head {
     padding: 30px 15px 20px;
+  }
+  .arrow__desc {
+    padding: 0 15px 30px;
   }
   .arrow__list {
     display: flex;
@@ -6342,6 +6599,23 @@ strong {
   .arrow__tr:nth-child(3),
   .arrow__tr:nth-child(5) {
     background-color: var(--bg-gray);
+  }
+  .arrow__cup_item {
+    padding: 20px 15px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .arrow__cup_head,
+  .arrow__cup_desc,
+  .arrow__cup_point {
+    width: 100%;
+    text-align: center;
+  }
+  .arrow__tour_list {
+    padding: 30px 15px;
+  }
+  .arrow__tour_item {
+    width: calc(50% - 1px);
   }
 
   .footer__flex {
@@ -6421,6 +6695,15 @@ strong {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .navigation__link {
+    width: 25px;
+    height: 24px;
+  }
+
+  .arrow__tour_item {
+    width: 100%;
+  }
 }
 /* end 580px */
 
@@ -6488,6 +6771,11 @@ strong {
   }
   .toureg__reg_btn.btn {
     width: 100%;
+  }
+
+  .navigation__link {
+    width: 21px;
+    height: 20px;
   }
 }
 /* end 390px */

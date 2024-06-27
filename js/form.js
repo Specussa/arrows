@@ -276,6 +276,56 @@ if(personalform) {
 }
 // end validate personalform
 
+// start validate personalinform
+const personalinform = document.getElementById('personal__inform');
+
+if(personalinform) {
+  const fpsuccess = document.querySelector(".personal__inform .form__pop_success");
+  const fperror = document.querySelector(".personal__inform .form__pop_error");
+  const personalinformation = document.getElementById('personal__information');
+  const personalinformationMin = personalinformation.getAttribute('minl');
+  const personalinformationMax = personalinformation.getAttribute('maxl');
+
+  personalinformation.oninput = function(){
+    this.value = this.value.substr(0, personalinformationMax);
+    if(fpsuccess && fpsuccess.classList.contains("active")){fpsuccess.classList.remove('active')};
+    if(fperror && fperror.classList.contains("active")){fperror.classList.remove('active')};
+  }
+
+  function checkpersonalinformInputs() {
+    const personalinformationValue = personalinformation.value.trim();
+    
+    if(personalinformationValue !== '' && personalinformationValue.length >= personalinformationMin && personalinformationValue.length <= personalinformationMax) {
+      setSuccessFor(personalinformation);
+    } else {
+      setErrorFor(personalinformation);
+    }
+  }
+  
+  personalinform.addEventListener('submit', e => {
+    const personalinformationValue = personalinformation.value.trim();
+    
+    if(
+    personalinformationValue !== '' && personalinformationValue.length >= personalinformationMin && personalinformationValue.length <= personalinformationMax) {
+      // fperror.classList.add('active');
+      // fpsuccess.classList.add('active');
+      // fetch('/ajax/sendMail.php', {
+      //   method: 'POST',
+      //   body: JSON.stringify({
+      //     personalinformationValue: personalinformationValue,
+      //   }),
+      //   headers: {
+      //     "Content-type": "application/json; charset=UTF-8"
+      //   },
+      // });
+    } else {
+      e.preventDefault();
+    }
+    checkpersonalinformInputs();
+  });
+}
+// end validate personalinform
+
 // start validate personalpass
 const personalpass = document.getElementById('personal__pass');
 
