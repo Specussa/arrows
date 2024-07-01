@@ -116,8 +116,7 @@ burger.addEventListener('click', function() {
     burger.classList.remove("active");
     headerbuttons.classList.remove("active");
     header.classList.remove("open");
-    document.body.style.overflow = null;
-    document.body.style.height = null;
+    document.documentElement.classList.remove("noscroll");
   } else {
     menu.scrollTop = 0;
     overlay.classList.add("active");
@@ -125,8 +124,7 @@ burger.addEventListener('click', function() {
     burger.classList.add("active");
     headerbuttons.classList.add("active");
     header.classList.add("open");
-    document.body.style.overflow = "hidden";
-    document.body.style.height = "100vh";
+    document.documentElement.classList.add("noscroll");
   }
 })
 // end header__burger
@@ -137,8 +135,7 @@ overlay.addEventListener('click', function() {
   menu.classList.remove("active");
   burger.classList.remove("active");
   headerbuttons.classList.remove("active");
-  document.body.style.overflow = null;
-  document.body.style.height = null;
+  document.documentElement.classList.remove("noscroll");
 })
 // end overlay
 
@@ -242,6 +239,21 @@ if (pctabfuture && pctabpast) {
   })
 }
 // end personal__competitions_tab
+
+// start personal__image_file
+const inputfile = document.getElementById('input__file');
+const personalfile = document.getElementById('personal__file');
+
+if (personalfile) {
+  inputfile.addEventListener("change", (event) => {
+    let photo = document.getElementById("input__file").files[0];
+    let formData = new FormData();
+        
+    formData.append("photo", photo);
+    fetch('/ajax/avatar.php', {method: "POST", body: formData});
+  });
+}
+// end personal__image_file
 
 // start header__personal_button
 const hpbutton = document.querySelector('.header__personal_button');
@@ -621,3 +633,41 @@ if (faq) {
   })
 }
 // end faq
+
+// start tournament__popup
+const tpb = document.querySelector('.tournament__popup_button');
+const tp = document.querySelector('.tournament__popup');
+const toverlay = document.querySelector('.tournament__overlay');
+if (tp) {
+  tpb.addEventListener('click', function() {
+    if (!tp.classList.contains("active")) {
+      tp.classList.add("active");
+      toverlay.classList.add("active");
+      document.documentElement.classList.add("noscroll");
+    } else {
+      tp.classList.remove("active");
+      toverlay.classList.remove("active");
+      document.documentElement.classList.remove("noscroll");
+    }
+  })
+  toverlay.addEventListener('click', function() {
+    tp.classList.remove("active");
+    toverlay.classList.remove("active");
+    document.documentElement.classList.remove("noscroll");
+  })
+  const tournamentnumber = document.getElementsByClassName("tournament__popup_number");
+  for (i = 0; i < tournamentnumber.length; i++) {
+    tournamentnumber[i].onclick = function(e) {
+      const tournamentnumberNext = this.nextElementSibling;
+
+      if (tournamentnumberNext && this.parentElement.parentElement.parentElement.classList.contains("active")) {
+        this.parentElement.parentElement.parentElement.classList.remove("active");
+        tournamentnumberNext.style.maxHeight = null;
+      } else if (tournamentnumberNext) {
+        tournamentnumberNext.style.maxHeight = tournamentnumberNext.scrollHeight + "px";
+        this.parentElement.parentElement.parentElement.classList.add("active");
+      }
+    };
+  }
+}
+// end tournament__popup

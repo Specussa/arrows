@@ -221,7 +221,7 @@
       <div class="container tournaments_top__container">
         <div class="tournaments_top__block">
           <div class="tournaments_top__heads">
-            <p class="tournaments_top__desc animate_left">Прошедшие и будущие</p>
+            <p class="tournaments_top__desc sub_one animate_left">Прошедшие и будущие</p>
             <h1 class="tournaments_top__head body_big animate_top">Турниры</h1>
           </div>
           <div class="tournaments_top__flex">
@@ -245,14 +245,14 @@
                 </ul>
               </div>
               <div class="tournaments_top__info_bottom animate_top">
-                <a href="personal.html" class="btn tournaments_top__button">
+                <button class="btn tournaments_top__button tournament__popup_button">
                   <span>Результаты</span>
                   <span></span>
                   <span></span>
                   <span></span>
                   <span></span>
-                </a>
-                <a href="#" class="tournament__linked animate_right body_caption">
+                </button>
+                <a href="#" class="tournament__linked body_caption">
                   Смотреть турниры
                   <svg xmlns="http://www.w3.org/2000/svg" width="11" height="12" viewBox="0 0 11 12" fill="none">
                     <path d="M3 9.935L6.09042 6.5L3 3.0575L3.95142 2L8 6.5L3.95142 11L3 9.935Z" fill="currentColor"/>
@@ -1101,6 +1101,603 @@
         </div>
       </div>
     </section>
+    <div class="tournament__overlay"></div>
+    <div class="tournament__popup">
+      <div class="tournament__popup_block">
+        <div class="container tournament__popup_container">
+          <a class="body_small tournament__popup_back">
+            <div class="tournament__popup_image">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M16.6719 9.5H17.1719V10.5H16.6719V9.5ZM3.33854 10L8.33854 7.11325V12.8868L3.33854 10ZM16.6719 10.5H7.83854V9.5H16.6719V10.5Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <span>Назад</span>
+          </a>
+          <div class="tournament__popup_informaion">
+            <div class="tournament__popup_informaion_left">
+              <p class="tournament__popup_desc body_small square">Результаты соревнования</p>
+              <h2 class="tournament__popup_head">Бородинская битва</h2>
+              <p class="tournament__popup_date body_small">18-25 мая, 2024г.</p>
+            </div>
+            <div class="tournament__popup_informaion_right">
+              <!-- <p class="personal__competitions_record body_two active">Идёт запись</p> -->
+              <p class="personal__competitions_record body_two over">Завершён</p>
+            </div>
+          </div>
+        </div>
+        <div class="tournament__statistics_information">
+          <div class="container tournament__statistics_container">
+            <div class="personal__statistics_flex">
+              <h3 class="personal__statistics_heading animate_top animated">
+                1 место
+              </h3>
+              <p class="personal__statistics_name animate_top body_table animated">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M12.9649 4.608C11.8109 3.54467 10.3162 2.846 8.66555 2.69667L10.0002 0H15.2449L12.9649 4.608ZM7.33088 2.69733L6.00021 0H0.685547L2.98288 4.65667C4.14288 3.56667 5.65621 2.85 7.33088 2.69733ZM14.0002 10C14.0002 13.3087 11.3082 16 8.00021 16C4.69221 16 2.00021 13.3087 2.00021 10C2.00021 6.69133 4.69221 4 8.00021 4C11.3082 4 14.0002 6.69133 14.0002 10ZM11.3335 9H8.94555L8.28155 6.648H7.73355L7.06888 9H4.66755V9.498L6.46888 10.55L5.75288 12.6667L6.16021 12.9733L8.00888 11.5433L9.85021 12.9673L10.2735 12.672L9.50421 10.582L11.3335 9.49533V9.00067V9Z" fill="#F2CC2F"/>
+                </svg>
+                Сергеев Сергей Иванович
+              </p>
+              <p class="personal__statistics_desc animate_top body_caption animated">
+                50 000 ₽
+              </p>
+            </div>
+            <div class="personal__statistics_flex">
+              <h3 class="personal__statistics_heading animate_top animated">
+                2 место
+              </h3>
+              <p class="personal__statistics_name animate_top body_table animated">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M12.9649 4.608C11.8109 3.54467 10.3162 2.846 8.66555 2.69667L10.0002 0H15.2449L12.9649 4.608ZM7.33088 2.69733L6.00021 0H0.685547L2.98288 4.65667C4.14288 3.56667 5.65621 2.85 7.33088 2.69733ZM14.0002 10C14.0002 13.3087 11.3082 16 8.00021 16C4.69221 16 2.00021 13.3087 2.00021 10C2.00021 6.69133 4.69221 4 8.00021 4C11.3082 4 14.0002 6.69133 14.0002 10ZM11.3335 9H8.94555L8.28155 6.648H7.73355L7.06888 9H4.66755V9.498L6.46888 10.55L5.75288 12.6667L6.16021 12.9733L8.00888 11.5433L9.85021 12.9673L10.2735 12.672L9.50421 10.582L11.3335 9.49533V9.00067V9Z" fill="#BFBFBF"/>
+                </svg>
+                Михайлов Михаил Иванович
+              </p>
+              <p class="personal__statistics_desc animate_top body_caption animated">
+                25 000 ₽
+              </p>
+            </div>
+            <div class="personal__statistics_flex">
+              <h3 class="personal__statistics_heading animate_top animated">
+                3 место
+              </h3>
+              <p class="personal__statistics_name animate_top body_table animated">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M12.9649 4.608C11.8109 3.54467 10.3162 2.846 8.66555 2.69667L10.0002 0H15.2449L12.9649 4.608ZM7.33088 2.69733L6.00021 0H0.685547L2.98288 4.65667C4.14288 3.56667 5.65621 2.85 7.33088 2.69733ZM14.0002 10C14.0002 13.3087 11.3082 16 8.00021 16C4.69221 16 2.00021 13.3087 2.00021 10C2.00021 6.69133 4.69221 4 8.00021 4C11.3082 4 14.0002 6.69133 14.0002 10ZM11.3335 9H8.94555L8.28155 6.648H7.73355L7.06888 9H4.66755V9.498L6.46888 10.55L5.75288 12.6667L6.16021 12.9733L8.00888 11.5433L9.85021 12.9673L10.2735 12.672L9.50421 10.582L11.3335 9.49533V9.00067V9Z" fill="#B87333"/>
+                </svg>
+                Алексеев Алексей Иванович
+              </p>
+              <p class="personal__statistics_desc animate_top body_caption animated">
+                15 000 ₽
+              </p>
+            </div>
+          </div>
+        </div>
+        <ul class="tournament__popup_list">
+          <li class="tournament__popup_item animate_top">
+            <div class="container tournament__popup_list_container">
+              <div class="tournament__popup_flex">
+                <p class="tournament__popup_number">Место</p>
+                <div class="tournament__popup_info">
+                  <div class="tournament__popup_info_flex">
+                    <p class="tournament__popup_id body_small">ID</p>
+                    <p class="tournament__popup_name body_small">ФИО</p>
+                    <p class="tournament__popup_points body_small">Очки</p>
+                    <p class="tournament__popup_qualification body_small">Квалификация</p>
+                    <p class="tournament__popup_final body_small">Финал</p>
+                    <p class="tournament__popup_total body_small">Сумма</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="tournament__popup_item animate_top">
+            <div class="container tournament__popup_list_container">
+              <div class="tournament__popup_flex">
+                <div class="tournament__popup_number">
+                  <div class="tournament__popup_top">
+                    <p class="body_small">Место</p>
+                  </div>
+                  <div class="tournament__popup_bottom">
+                    <p class="body_caption">1</p>
+                  </div>
+                  <svg class="tournament__popup_arrow" xmlns="http://www.w3.org/2000/svg" width="11" height="12" viewBox="0 0 11 12" fill="none">
+                    <path d="M1.565 3.5L5 6.59042L8.4425 3.5L9.5 4.45142L5 8.5L0.5 4.45142L1.565 3.5Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="tournament__popup_info">
+                  <div class="tournament__popup_info_flex">
+                    <div class="tournament__popup_id">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">ID</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">1788</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_name">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">ФИО</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <a href="arrow.html" class="body_caption">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M12.9649 4.608C11.8109 3.54467 10.3162 2.846 8.66555 2.69667L10.0002 0H15.2449L12.9649 4.608ZM7.33088 2.69733L6.00021 0H0.685547L2.98288 4.65667C4.14288 3.56667 5.65621 2.85 7.33088 2.69733ZM14.0002 10C14.0002 13.3087 11.3082 16 8.00021 16C4.69221 16 2.00021 13.3087 2.00021 10C2.00021 6.69133 4.69221 4 8.00021 4C11.3082 4 14.0002 6.69133 14.0002 10ZM11.3335 9H8.94555L8.28155 6.648H7.73355L7.06888 9H4.66755V9.498L6.46888 10.55L5.75288 12.6667L6.16021 12.9733L8.00888 11.5433L9.85021 12.9673L10.2735 12.672L9.50421 10.582L11.3335 9.49533V9.00067V9Z" fill="#F2CC2F"/>
+                          </svg>
+                          Константинов Константин Викторович
+                        </a>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_points">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Очки</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_qualification">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Квалификация</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_final">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Финал</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_total">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Сумма</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="tournament__popup_item animate_top">
+            <div class="container tournament__popup_list_container">
+              <div class="tournament__popup_flex">
+                <div class="tournament__popup_number">
+                  <div class="tournament__popup_top">
+                    <p class="body_small">Место</p>
+                  </div>
+                  <div class="tournament__popup_bottom">
+                    <p class="body_caption">2</p>
+                  </div>
+                  <svg class="tournament__popup_arrow" xmlns="http://www.w3.org/2000/svg" width="11" height="12" viewBox="0 0 11 12" fill="none">
+                    <path d="M1.565 3.5L5 6.59042L8.4425 3.5L9.5 4.45142L5 8.5L0.5 4.45142L1.565 3.5Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="tournament__popup_info">
+                  <div class="tournament__popup_info_flex">
+                    <div class="tournament__popup_id">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">ID</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">1788</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_name">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">ФИО</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <a href="arrow.html" class="body_caption">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M12.9649 4.608C11.8109 3.54467 10.3162 2.846 8.66555 2.69667L10.0002 0H15.2449L12.9649 4.608ZM7.33088 2.69733L6.00021 0H0.685547L2.98288 4.65667C4.14288 3.56667 5.65621 2.85 7.33088 2.69733ZM14.0002 10C14.0002 13.3087 11.3082 16 8.00021 16C4.69221 16 2.00021 13.3087 2.00021 10C2.00021 6.69133 4.69221 4 8.00021 4C11.3082 4 14.0002 6.69133 14.0002 10ZM11.3335 9H8.94555L8.28155 6.648H7.73355L7.06888 9H4.66755V9.498L6.46888 10.55L5.75288 12.6667L6.16021 12.9733L8.00888 11.5433L9.85021 12.9673L10.2735 12.672L9.50421 10.582L11.3335 9.49533V9.00067V9Z" fill="#BFBFBF"/>
+                          </svg>
+                          Константинов Константин Викторович
+                        </a>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_points">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Очки</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_qualification">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Квалификация</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_final">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Финал</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_total">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Сумма</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="tournament__popup_item animate_top">
+            <div class="container tournament__popup_list_container">
+              <div class="tournament__popup_flex">
+                <div class="tournament__popup_number">
+                  <div class="tournament__popup_top">
+                    <p class="body_small">Место</p>
+                  </div>
+                  <div class="tournament__popup_bottom">
+                    <p class="body_caption">3</p>
+                  </div>
+                  <svg class="tournament__popup_arrow" xmlns="http://www.w3.org/2000/svg" width="11" height="12" viewBox="0 0 11 12" fill="none">
+                    <path d="M1.565 3.5L5 6.59042L8.4425 3.5L9.5 4.45142L5 8.5L0.5 4.45142L1.565 3.5Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="tournament__popup_info">
+                  <div class="tournament__popup_info_flex">
+                    <div class="tournament__popup_id">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">ID</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">1788</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_name">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">ФИО</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <a href="arrow.html" class="body_caption">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M12.9649 4.608C11.8109 3.54467 10.3162 2.846 8.66555 2.69667L10.0002 0H15.2449L12.9649 4.608ZM7.33088 2.69733L6.00021 0H0.685547L2.98288 4.65667C4.14288 3.56667 5.65621 2.85 7.33088 2.69733ZM14.0002 10C14.0002 13.3087 11.3082 16 8.00021 16C4.69221 16 2.00021 13.3087 2.00021 10C2.00021 6.69133 4.69221 4 8.00021 4C11.3082 4 14.0002 6.69133 14.0002 10ZM11.3335 9H8.94555L8.28155 6.648H7.73355L7.06888 9H4.66755V9.498L6.46888 10.55L5.75288 12.6667L6.16021 12.9733L8.00888 11.5433L9.85021 12.9673L10.2735 12.672L9.50421 10.582L11.3335 9.49533V9.00067V9Z" fill="#B87333"/>
+                          </svg>
+                          Константинов Вячеслав Святославович
+                        </a>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_points">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Очки</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_qualification">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Квалификация</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_final">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Финал</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_total">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Сумма</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="tournament__popup_item animate_top">
+            <div class="container tournament__popup_list_container">
+              <div class="tournament__popup_flex">
+                <div class="tournament__popup_number">
+                  <div class="tournament__popup_top">
+                    <p class="body_small">Место</p>
+                  </div>
+                  <div class="tournament__popup_bottom">
+                    <p class="body_caption">4</p>
+                  </div>
+                  <svg class="tournament__popup_arrow" xmlns="http://www.w3.org/2000/svg" width="11" height="12" viewBox="0 0 11 12" fill="none">
+                    <path d="M1.565 3.5L5 6.59042L8.4425 3.5L9.5 4.45142L5 8.5L0.5 4.45142L1.565 3.5Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="tournament__popup_info">
+                  <div class="tournament__popup_info_flex">
+                    <div class="tournament__popup_id">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">ID</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">1788</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_name">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">ФИО</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <a href="arrow.html" class="body_caption">
+                          Константинов Вячеслав Святославович
+                        </a>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_points">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Очки</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_qualification">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Квалификация</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_final">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Финал</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_total">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Сумма</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="tournament__popup_item animate_top">
+            <div class="container tournament__popup_list_container">
+              <div class="tournament__popup_flex">
+                <div class="tournament__popup_number">
+                  <div class="tournament__popup_top">
+                    <p class="body_small">Место</p>
+                  </div>
+                  <div class="tournament__popup_bottom">
+                    <p class="body_caption">5</p>
+                  </div>
+                  <svg class="tournament__popup_arrow" xmlns="http://www.w3.org/2000/svg" width="11" height="12" viewBox="0 0 11 12" fill="none">
+                    <path d="M1.565 3.5L5 6.59042L8.4425 3.5L9.5 4.45142L5 8.5L0.5 4.45142L1.565 3.5Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="tournament__popup_info">
+                  <div class="tournament__popup_info_flex">
+                    <div class="tournament__popup_id">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">ID</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">1788</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_name">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">ФИО</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <a href="arrow.html" class="body_caption">
+                          Константинов Вячеслав Святославович
+                        </a>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_points">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Очки</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_qualification">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Квалификация</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_final">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Финал</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_total">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Сумма</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="tournament__popup_item animate_top">
+            <div class="container tournament__popup_list_container">
+              <div class="tournament__popup_flex">
+                <div class="tournament__popup_number">
+                  <div class="tournament__popup_top">
+                    <p class="body_small">Место</p>
+                  </div>
+                  <div class="tournament__popup_bottom">
+                    <p class="body_caption">6</p>
+                  </div>
+                  <svg class="tournament__popup_arrow" xmlns="http://www.w3.org/2000/svg" width="11" height="12" viewBox="0 0 11 12" fill="none">
+                    <path d="M1.565 3.5L5 6.59042L8.4425 3.5L9.5 4.45142L5 8.5L0.5 4.45142L1.565 3.5Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="tournament__popup_info">
+                  <div class="tournament__popup_info_flex">
+                    <div class="tournament__popup_id">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">ID</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">1788</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_name">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">ФИО</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <a href="arrow.html" class="body_caption">
+                          Константинов Вячеслав Святославович
+                        </a>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_points">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Очки</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_qualification">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Квалификация</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_final">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Финал</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_total">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Сумма</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="tournament__popup_item animate_top">
+            <div class="container tournament__popup_list_container">
+              <div class="tournament__popup_flex">
+                <div class="tournament__popup_number">
+                  <div class="tournament__popup_top">
+                    <p class="body_small">Место</p>
+                  </div>
+                  <div class="tournament__popup_bottom">
+                    <p class="body_caption">7</p>
+                  </div>
+                  <svg class="tournament__popup_arrow" xmlns="http://www.w3.org/2000/svg" width="11" height="12" viewBox="0 0 11 12" fill="none">
+                    <path d="M1.565 3.5L5 6.59042L8.4425 3.5L9.5 4.45142L5 8.5L0.5 4.45142L1.565 3.5Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="tournament__popup_info">
+                  <div class="tournament__popup_info_flex">
+                    <div class="tournament__popup_id">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">ID</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">1788</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_name">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">ФИО</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <a href="arrow.html" class="body_caption">
+                          Константинов Вячеслав Святославович
+                        </a>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_points">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Очки</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_qualification">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Квалификация</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_final">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Финал</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                    <div class="tournament__popup_total">
+                      <div class="tournament__popup_top">
+                        <p class="body_small">Сумма</p>
+                      </div>
+                      <div class="tournament__popup_bottom">
+                        <p class="body_caption">6098</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
     <footer class="footer">
       <div class="container footer__container">
         <div class="footer__block">

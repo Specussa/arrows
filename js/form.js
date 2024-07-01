@@ -305,8 +305,7 @@ if(personalinform) {
   personalinform.addEventListener('submit', e => {
     const personalinformationValue = personalinformation.value.trim();
     
-    if(
-    personalinformationValue !== '' && personalinformationValue.length >= personalinformationMin && personalinformationValue.length <= personalinformationMax) {
+    if(personalinformationValue !== '' && personalinformationValue.length >= personalinformationMin && personalinformationValue.length <= personalinformationMax) {
       // fperror.classList.add('active');
       // fpsuccess.classList.add('active');
       // fetch('/ajax/sendMail.php', {
