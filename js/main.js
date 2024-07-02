@@ -638,6 +638,7 @@ if (faq) {
 const tpb = document.querySelector('.tournament__popup_button');
 const tp = document.querySelector('.tournament__popup');
 const toverlay = document.querySelector('.tournament__overlay');
+const tpback = document.querySelector('.tournament__popup_back');
 if (tp) {
   tpb.addEventListener('click', function() {
     if (!tp.classList.contains("active")) {
@@ -651,6 +652,11 @@ if (tp) {
     }
   })
   toverlay.addEventListener('click', function() {
+    tp.classList.remove("active");
+    toverlay.classList.remove("active");
+    document.documentElement.classList.remove("noscroll");
+  })
+  tpback.addEventListener('click', function() {
     tp.classList.remove("active");
     toverlay.classList.remove("active");
     document.documentElement.classList.remove("noscroll");

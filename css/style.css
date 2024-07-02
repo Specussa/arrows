@@ -3916,6 +3916,7 @@ textarea,
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
   z-index: 111;
+  overflow-x: hidden;
   overflow-y: scroll;
 }
 
@@ -4065,11 +4066,13 @@ textarea,
 
 .tournament__popup_back {
   display: none;
+  padding: 20px 0;
   margin: 0 0 40px;
   align-items: center;
   gap: 10px;
   text-transform: uppercase;
   color: var(--text);
+  border-bottom: 1px solid var(--border);
 }
 
 .tournament__popup_image {
@@ -5459,6 +5462,9 @@ textarea,
     width: calc(100% - 190px);
     max-width: 1250px;
   }
+  .tournament__popup_block {
+    padding: 70px 0;
+  }
   
   .toureg__block {
     padding: 80px 0;
@@ -5703,6 +5709,10 @@ textarea,
   }
   .tournaments__block {
     padding: 50px 0;
+  }
+  
+  .tournament__popup_block {
+    padding: 0 0 20px;
   }
   
   .toureg__reg_desc {
@@ -6769,6 +6779,10 @@ textarea,
   }
   .container.tournament__popup_list_container {
     padding: 0;
+  }
+  .tournament__statistics_container {
+    padding: 20px 15px;
+    flex-direction: column;
   }
 
   .toureg__block {
