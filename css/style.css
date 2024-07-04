@@ -1688,8 +1688,13 @@ textarea,
   background-color: var(--bg-success);
 }
 
+.personal__competitions_list {
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+
 .personal__data {
-  border: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .personal__tabs {
@@ -1775,6 +1780,7 @@ textarea,
 
 .personal__competitions_head {
   padding: 60px 40px 40px;
+  text-transform: uppercase;
 }
 
 .personal__competitions_item {
@@ -4090,7 +4096,7 @@ textarea,
 
 .tournament__popup_back:hover .tournament__popup_image {
   background-color: var(--color);
-  color: var(--text);
+  color: var(--bg);
 }
 
 .tournament__popup_image svg {
@@ -4176,6 +4182,10 @@ textarea,
   cursor: pointer;
   -webkit-transition: color 0.2s linear;
   transition: color 0.2s linear;
+}
+
+.btn.filters__button span:first-child {
+  text-transform: capitalize;
 }
 
 .filters__button svg {
