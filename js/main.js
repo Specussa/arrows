@@ -604,6 +604,66 @@ if (ratingitem) {
 }
 // end rating__item
 
+// start arrows_bottom__item
+const arrowsbottomitem = document.querySelector('.arrows_bottom__item');
+if (arrowsbottomitem) {
+  const arrowsbottomnumber = document.getElementsByClassName("arrows_bottom__number");
+  for (i = 0; i < arrowsbottomnumber.length; i++) {
+    arrowsbottomnumber[i].onclick = function(e) {
+      const arrowsbottomnumberNext = this.nextElementSibling;
+
+      if (arrowsbottomnumberNext && this.parentElement.parentElement.parentElement.classList.contains("active")) {
+        this.parentElement.parentElement.parentElement.classList.remove("active");
+        arrowsbottomnumberNext.style.maxHeight = null;
+      } else if (arrowsbottomnumberNext) {
+        arrowsbottomnumberNext.style.maxHeight = arrowsbottomnumberNext.scrollHeight + "px";
+        this.parentElement.parentElement.parentElement.classList.add("active");
+      }
+    };
+  }
+}
+// end arrows_bottom__item
+
+// start arrows_bottom__item
+const arrowssearch = document.getElementById('arrows__search');
+const arrowsformsearch = document.querySelector(".arrows__form_search");
+const arrowssearchclear = document.querySelector(".arrows__search_clear");
+if (arrowssearch) {
+  arrowssearch.oninput = function(){
+    let arrowsformlist = document.querySelector(".arrows__form_list");
+    this.value = this.value.substr(0, arrowssearch.getAttribute('maxl'));
+    this.value = this.value.replace(/[()!?•—:,'";№\-_=«»<>%#~`&\/\$\^\*\+\\\{\}\[\]\(\|]$/g, '');
+    if(this.value.length >= 1) {
+      arrowsformsearch.classList.add("active");
+      arrowssearchclear.classList.add("active")
+      if(arrowsformlist.children.length === 1) {
+        arrowsformsearch.style.maxHeight = arrowsformlist.children[0].scrollHeight + 2 + "px";
+      } else if(arrowsformlist.children.length === 2) {
+        arrowsformsearch.style.maxHeight = (arrowsformlist.children[0].scrollHeight + arrowsformlist.children[1].scrollHeight) + 2 + "px";
+      } else if(arrowsformlist.children.length === 3) {
+        arrowsformsearch.style.maxHeight = (arrowsformlist.children[0].scrollHeight + arrowsformlist.children[1].scrollHeight + arrowsformlist.children[2].scrollHeight) + 2 + "px";
+      } else if(arrowsformlist.children.length === 4) {
+        arrowsformsearch.style.maxHeight = (arrowsformlist.children[0].scrollHeight + arrowsformlist.children[1].scrollHeight + arrowsformlist.children[2].scrollHeight + arrowsformlist.children[3].scrollHeight) + 2 + "px";
+      } else if(arrowsformlist.children.length === 5) {
+        arrowsformsearch.style.maxHeight = (arrowsformlist.children[0].scrollHeight + arrowsformlist.children[1].scrollHeight + arrowsformlist.children[2].scrollHeight + arrowsformlist.children[3].scrollHeight + arrowsformlist.children[4].scrollHeight) + 2 + "px";
+      } else {
+        arrowsformsearch.style.maxHeight = (arrowsformlist.children[0].scrollHeight + arrowsformlist.children[1].scrollHeight + arrowsformlist.children[2].scrollHeight + arrowsformlist.children[3].scrollHeight + arrowsformlist.children[4].scrollHeight + arrowsformlist.children[5].scrollHeight) + 2 + "px";
+      }
+    } else {
+      arrowssearchclear.classList.remove("active");
+      arrowsformsearch.classList.remove("active");
+      arrowsformsearch.style.maxHeight = null;
+    }
+  }
+  arrowssearchclear.addEventListener('click', function() {
+    arrowssearch.value = "";
+    arrowssearchclear.classList.remove("active");
+    arrowsformsearch.classList.remove("active");
+    arrowsformsearch.style.maxHeight = null;
+  })
+}
+// end arrows_bottom__item
+
 // start faq
 const faq = document.querySelector('.faq');
 const faqActive = document.querySelectorAll("html .faq");

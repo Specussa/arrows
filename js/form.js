@@ -227,7 +227,7 @@ if(personalform) {
     }
   }
 
-  personalform.addEventListener('submit', e => {
+  document.getElementById("personal__form_btn").addEventListener('click', function() {
     const plastnameValue = plastname.value.trim();
     const pfirstnameValue = pfirstname.value.trim();
     const psurnameValue = psurname.value.trim();
@@ -302,7 +302,7 @@ if(personalinform) {
     }
   }
   
-  personalinform.addEventListener('submit', e => {
+  document.getElementById("personal__inform_btn").addEventListener('click', function() {
     const personalinformationValue = personalinformation.value.trim();
     
     if(personalinformationValue !== '' && personalinformationValue.length >= personalinformationMin && personalinformationValue.length <= personalinformationMax) {
@@ -379,7 +379,7 @@ if(personalpass) {
     }
   }
   
-  personalpass.addEventListener('submit', e => {
+  document.getElementById("personal__pass_btn").addEventListener('click', function() {
     const poldpassValue = poldpass.value.trim();
     const pnewpassValue = pnewpass.value.trim();
     const prepeatpassValue = prepeatpass.value.trim();
