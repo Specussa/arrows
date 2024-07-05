@@ -7161,6 +7161,13 @@ textarea,
     padding: 16px 15px;
     gap: 10px;
   }
+  .arrows_bottom__name svg {
+    margin: 0 5px 0 0;
+  }
+  .arrows_bottom__archive {
+    margin: 0 0 0 5px;
+    padding: 1px 3px;
+  }
   .arrows_bottom__top {
     display: flex;
   }
